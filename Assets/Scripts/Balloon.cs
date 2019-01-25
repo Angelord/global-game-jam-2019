@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Balloon : MonoBehaviour {
 
-
+	public int damage;
 	public float speed = 10.0f;
 	public float travelDist = 5.0f;
+	public GameObject explosion;
 	// public float falloffDist = 3.0f;
 
 	private Vector3 startPos;
@@ -32,12 +33,14 @@ public class Balloon : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Enemy") {
+			Debug.Log("Hit enemy");
 			Explode();
 		}
 	}
 
 	private void Explode() {
-		Debug.Log("Exploding");
+		GameObject newExp = Instantiate(explosion, transform.position, Quaternion.identity);
+		newExp.GetComponent<Explosion>().Initialize(damage);
 		Destroy(this.gameObject);
 	}
 }
