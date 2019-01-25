@@ -7,10 +7,12 @@ public class Kid : MonoBehaviour {
 	private static int lastIndex = 0;
 
 	public float mvmSpeed;
+	public Transform directionArrow;
 
 	private int index;
 	private Controls controls;
-	private new Rigidbody2D rigidbody;
+	private new Rigidbody rigidbody;
+	private Direction direction = Direction.Down;
 
 	private void Start() {
 		index = lastIndex++;
@@ -19,7 +21,7 @@ public class Kid : MonoBehaviour {
 		controls.Vertical = "Vertical_" + index;
 		controls.Attack = "Throw_" + index;
 
-		rigidbody = GetComponent<Rigidbody2D>();
+		rigidbody = GetComponent<Rigidbody>();
 	}
 
 	private void OnDestroy() {
@@ -40,11 +42,32 @@ public class Kid : MonoBehaviour {
 		
 		Vector2 movDir = new Vector2(hor, ver);
 
-		if(movDir.magnitude > 1.0f) {
+		float magnitude = movDir.magnitude;
+		if(magnitude > 0.0001f) {
+			DetermineDir(hor, ver);
+		}
+
+		if(magnitude >= 1.0f) {
 			movDir.Normalize();
 		}
 
-		rigidbody.AddForce(movDir * mvmSpeed, ForceMode2D.Force);
+		Debug.Log("Adding force");
+		rigidbody.AddForce(new Vector3(movDir.x, 0.0f, movDir.y) * mvmSpeed, ForceMode.Force);
+	}
+
+	private void DetermineDir(float hor, float ver) {
+
+		if(Mathf.Abs(hor) > Mathf.Abs(ver)) {
+			direction = hor > 0.0f ? Direction.Right : Direction.Left;
+		}
+		else {
+			direction = ver > 0.0f ? Direction.Up : Direction.Down;
+		}
+
+		// switch(direction) {
+			// case Direction.Up:
+				// directionArrow.rotation = Quaternion.EulerAngles();
+		// }
 	}
 
 	private void Attack() {
