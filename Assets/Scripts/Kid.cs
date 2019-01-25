@@ -64,10 +64,20 @@ public class Kid : MonoBehaviour {
 			direction = ver > 0.0f ? Direction.Up : Direction.Down;
 		}
 
-		// switch(direction) {
-			// case Direction.Up:
-				// directionArrow.rotation = Quaternion.EulerAngles();
-		// }
+		switch(direction) {
+			case Direction.Down:
+				directionArrow.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+				break;
+			case Direction.Up:
+				directionArrow.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+				break;
+			case Direction.Left:
+				directionArrow.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+				break;
+			case Direction.Right:
+				directionArrow.rotation = Quaternion.Euler(0.0f, 270.0f, 0.0f);
+				break;
+		}
 	}
 
 	private void Attack() {
