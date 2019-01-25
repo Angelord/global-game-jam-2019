@@ -474,7 +474,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45788634, y: 1, z: 0.53862655}
+  m_Size: {x: 0.5, y: 1, z: 0.55}
   m_Center: {x: 0.0057671666, y: 0, z: 0.11534339}
 --- !u!54 &934012398
 Rigidbody:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d0af9937b425488a9901cc350fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 10
   damage: 5
   attackCooldown: 1.2
 --- !u!1 &1340883350
