@@ -110,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322892987440150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: 0, z: -0.3}
+  m_LocalPosition: {x: -2.64, y: 0, z: -0.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4919686570487872}
@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mvmSpeed: 300
+  attackCooldown: 0.7
+  balloon: {fileID: 1516319621658444, guid: ccd7cebd2c3a04d99accdc41359ce94a, type: 2}
+  ballonSpawn: {fileID: 4173711033276232}
   directionArrow: {fileID: 4126007453056692}
 --- !u!212 &212466509601370098
 SpriteRenderer:

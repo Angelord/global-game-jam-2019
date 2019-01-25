@@ -7,9 +7,13 @@ public class Kid : MonoBehaviour {
 	private static int lastIndex = 0;
 
 	public float mvmSpeed;
+	public float attackCooldown;
+	public GameObject balloon;
+	public Transform ballonSpawn;
 	public Transform directionArrow;
 
 	private int index;
+	private float lastAttack;
 	private Controls controls;
 	private new Rigidbody rigidbody;
 	private Direction direction = Direction.Down;
@@ -19,9 +23,11 @@ public class Kid : MonoBehaviour {
 
 		controls.Horizontal = "Horizontal_" + index;
 		controls.Vertical = "Vertical_" + index;
-		controls.Attack = "Throw_" + index;
+		controls.Attack = "Attack_" + index;
 
 		rigidbody = GetComponent<Rigidbody>();
+
+		lastAttack = -attackCooldown;
 	}
 
 	private void OnDestroy() {
@@ -29,10 +35,9 @@ public class Kid : MonoBehaviour {
 	}
 
 	private void Update() {
-
-		// if(Input.GetKeyDown(controls.Attack)) {
-			// Attack();
-		// }
+		if(Input.GetButtonDown(controls.Attack)) {
+			Attack();
+		}
 	}
 
 	private void FixedUpdate () {
@@ -51,7 +56,6 @@ public class Kid : MonoBehaviour {
 			movDir.Normalize();
 		}
 
-		Debug.Log("Adding force");
 		rigidbody.AddForce(new Vector3(movDir.x, 0.0f, movDir.y) * mvmSpeed, ForceMode.Force);
 	}
 
@@ -81,7 +85,11 @@ public class Kid : MonoBehaviour {
 	}
 
 	private void Attack() {
-		Debug.Log("Attacking");
+		if((Time.time - lastAttack) >= attackCooldown) {
+			GameObject toLaunch = Instantiate(balloon, ballonSpawn.transform.position, Quaternion.identity);
+			toLaunch.GetComponent<Balloon>().Launch(direction);
+			lastAttack = Time.time;
+		}
 	}
 
 	private struct Controls {
