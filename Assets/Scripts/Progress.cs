@@ -7,10 +7,20 @@ public static class Progress {
 	private static bool started = false;
 	private static int day = 0;
 	private static int candy = 0;
+	private static List<ShopOffer> offers = new List<ShopOffer>();
 
 	public static bool GameStarted { get { return started; } set { started = value; } }
 	public static int Day { get { return day; } }
 	public static int Candy { get { return candy; } set { candy = value; } }
+	public static List<ShopOffer> Offers { get { return offers; } }
+
+	public static void AddOffer(ShopOffer offer) {
+		offers.Add(offer);
+	}
+
+	public static void RemoveOffer(ShopOffer offer) {
+		offers.Remove(offer);
+	}
 
 	public static void Reset() {
 		day = 0;

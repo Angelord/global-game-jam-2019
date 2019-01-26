@@ -5,11 +5,11 @@ using UnityEngine;
 public class Kid : Unit {
 
 	private const int SCREEN_LOCK_MARGIN = 60;
+	public static readonly Color[] PLAYER_COLORS = new Color[2] { new Color32(229, 69, 69, 255), new Color32(248, 115, 49, 255) };
 
 	private static int lastIndex = 0;
 	private static bool locked = false;
 
-	public Color[] playerColors = new Color[2];
 	[Header("Prefabs")]
 	[SerializeField] private GameObject healthBar;
 	[SerializeField] private GameObject speachBubblePref;
@@ -34,7 +34,7 @@ public class Kid : Unit {
 	private float lastRegen;
 
 	public static bool Locked { get { return locked; } set { locked = value; } }
-	public Color Color { get { return playerColors[index]; } }
+	public Color Color { get { return PLAYER_COLORS[index]; } }
 
 	public void Say(string text) {
 		speech.Show(text);
