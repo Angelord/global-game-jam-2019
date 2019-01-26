@@ -9,6 +9,8 @@ public class Kid : Unit {
 	private static int lastIndex = 0;
 	private static bool locked = false;
 
+	public Color[] playerColors = new Color[2];
+	public GameObject healthBar;
 	public float mvmSpeed;
 	public float attackCooldown;
 	public GameObject balloon;
@@ -20,8 +22,15 @@ public class Kid : Unit {
 	private Controls controls;
 	private new Rigidbody rigidbody;
 	private Direction direction = Direction.Down;
+	private Counterbar bar;
 
 	public static bool Locked { get { return locked; } set { locked = value; } }
+	public Color Color { get { return playerColors[index]; } }
+
+	protected override void OnTakeDamage(int amount) {
+		Debug.Log("Health " + CurHealth + " dmg " + amount);
+		bar.SetValue(Mathf.Clamp(CurHealth - amount, 0, int.MaxValue));
+	}
 
 	protected override void Die() {
 		Debug.Log("Kid dead");
@@ -30,6 +39,11 @@ public class Kid : Unit {
 
 	private void Start() {
 		index = lastIndex++;
+
+		bar = Instantiate(healthBar, StageGUI.Instance.transform).GetComponent<Counterbar>();
+		bar.SetColor(Color);
+		bar.SetValue(MaxHealth);
+		bar.GetComponent<FollowerGUI>().SetTarget(transform);
 
 		controls.Horizontal = "Horizontal_" + index;
 		controls.Vertical = "Vertical_" + index;

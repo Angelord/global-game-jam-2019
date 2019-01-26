@@ -65,7 +65,7 @@ public class Enemy : Unit {
 	private void Update() {
 		if(!agent.enabled || !following || !Stage.Playing) { return; }
 
-		if(!target.enabled) {
+		if(!target.enabled || target.Dead) {
 			agent.stoppingDistance = houseStoppingDist;
 			target = house;
 		}

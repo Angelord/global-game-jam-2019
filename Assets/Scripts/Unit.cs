@@ -9,6 +9,7 @@ public abstract class Unit : MonoBehaviour {
 
 	public int MaxHealth { get { return health; } }
 	public int CurHealth { get { return curHealth; } }
+	public bool Dead { get { return curHealth <= 0; } }
 
 	private void Awake() {
 		curHealth = health;

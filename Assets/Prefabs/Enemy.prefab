@@ -238,10 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d0af9937b425488a9901cc350fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 4
   playerStoppingDist: 0.64
   houseStoppingDist: 1.2
-  damage: 5
+  damage: 1
   attackRange: 0.74
   attackPushback: 18
   attackCooldown: 1
