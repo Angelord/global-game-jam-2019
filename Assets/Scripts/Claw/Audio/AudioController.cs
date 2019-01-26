@@ -128,10 +128,9 @@ public class AudioController : MonoBehaviour {
         }
 
         AudioClip sound = SFX.Find(x => x.name == soundName);
-
         if (sound != null)
         {
-            return PlayClipAt(sound, Vector3.zero);
+            return PlayClipAt(sound, transform.position);
         }
 
         return null;

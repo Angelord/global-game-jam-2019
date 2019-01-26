@@ -21,6 +21,8 @@ public class Shop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Progress.Candy += 100;
+
 		defaultSelectorSize = selectors[0].sizeDelta.x;
 
 		#if UNITY_EDITOR 
@@ -69,7 +71,6 @@ public class Shop : MonoBehaviour {
 			if(hor <= -0.1f) {
 				playerSelections[i] = playerSelections[i] - 1;
 				if(playerSelections[i] < 0) { playerSelections[i] = Progress.Offers.Count - 1; } 
-				Debug.Log("Switching " + playerSelections[i]);
 				lastSwitches[i] = Time.time;
 			}
 

@@ -21,7 +21,7 @@ public class ShopOfferGUI : MonoBehaviour {
 			return;
 		}
 
-		//TODO : Play caching sound
+		AudioController.Instance.PlaySound("cashier");
 
 		Progress.Candy -= offer.price;
 		//TODO : Effect
