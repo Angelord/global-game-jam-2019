@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Balloon : MonoBehaviour {
 
+	[SerializeField] private float arcPeak = 0.6f;
 	[SerializeField] private int damage;
 	[SerializeField] private float riseSpeed = 6.0f;
 	[SerializeField] private float fallSpeed = 12.0f;
@@ -36,16 +37,23 @@ public class Balloon : MonoBehaviour {
 
 		float distanceTraveled = (transform.position - startPos).magnitude;
 
-		if(distanceTraveled > travelDist / 2) {
+		float peakDist = travelDist * arcPeak;
+
+		float scale;
+		if(distanceTraveled > peakDist) {
 			speed = fallSpeed;
+			float diff = distanceTraveled - peakDist;
+			scale = maxSize - (diff / (travelDist - peakDist)) * (maxSize - minSize);
 		}
+		else {
+			scale = minSize + (maxSize - minSize) * (distanceTraveled / peakDist);
+		}
+		sprite.transform.localScale = new Vector3(scale, scale, scale);
+
 
 		if(distanceTraveled >= travelDist) {
 			Explode();
 		}
-
-		float scale = minSize + (maxSize - minSize) * Mathf.Abs(distanceTraveled - travelDist) / (travelDist / 2);
-		sprite.transform.localScale = new Vector3(scale, scale, scale);
 	}
 
 	private void OnTriggerEnter(Collider other) {

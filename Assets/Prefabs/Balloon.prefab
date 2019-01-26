@@ -130,12 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780c00570d34a4d7a9b8e8703dea46ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arcPeak: 0.6
   damage: 2
   riseSpeed: 9
   fallSpeed: 12
   travelDist: 3.6
   explosion: {fileID: 1383556172638086, guid: c799bad41767349f19a0f0f564d31fab, type: 2}
-  maxSize: 3.5
+  maxSize: 3
   minSize: 1
 --- !u!135 &135165600718899088
 SphereCollider:
