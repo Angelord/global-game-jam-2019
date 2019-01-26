@@ -6,6 +6,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : Unit {
 
+	private const float DEATH_DELAY = 0.7f;
+
 	private static Treehouse house;
 
 	public int damage;
@@ -22,6 +24,11 @@ public class Enemy : Unit {
 	}
 
 	protected override void Die() {
+		this.enabled = false;
+		Invoke("DestroySelf", DEATH_DELAY);
+	}
+
+	private void DestroySelf() {
 		Destroy(this.gameObject);
 	}
 
@@ -39,7 +46,7 @@ public class Enemy : Unit {
 
 	private void Update() {
 		if(!agent.enabled) { return; }
-		
+
 		if(!target.enabled) {
 			target = house;
 		}
