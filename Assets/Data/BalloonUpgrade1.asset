@@ -14,7 +14,7 @@ MonoBehaviour:
   price: 20
   offerType: 2
   name: House Upgrade 1
-  description: 
+  description: Upgrades balloon damage.
   icon: {fileID: 21300000, guid: 6ef5f298a7d9f4773976928399ab69d2, type: 3}
   singlePurchase: 1
   nextLevel: {fileID: 0}

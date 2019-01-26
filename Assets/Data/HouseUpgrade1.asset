@@ -14,7 +14,7 @@ MonoBehaviour:
   price: 50
   offerType: 0
   name: House Upgrade 1
-  description: 
+  description: Upgrades you tree house, increasing its health.
   icon: {fileID: 21300000, guid: 3a31b550085364de6ba801e694bbc88f, type: 3}
   singlePurchase: 1
   nextLevel: {fileID: 0}

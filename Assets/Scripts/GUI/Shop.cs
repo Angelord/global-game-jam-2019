@@ -11,6 +11,7 @@ public class Shop : MonoBehaviour {
 	public float selectorSpeed = 2000.0f;
 	public float swithcFreq = 1.0f;
 	public float enlargedSelectorSize = 130.0f;
+	public Text candyText;
 
 	public Text[] descriptions = new Text[2];
 	public RectTransform[] selectors = new RectTransform[2];
@@ -51,6 +52,10 @@ public class Shop : MonoBehaviour {
 	private void Update() {
 
 		for(int i = 0; i < 2; i++) {
+			if(playerSelections[i] >= Progress.Offers.Count) {
+				playerSelections[i] = Progress.Offers.Count - 1;
+			}
+
 			if((Time.time - lastSwitches[i]) <= swithcFreq) {
 				continue;
 			}
@@ -82,6 +87,14 @@ public class Shop : MonoBehaviour {
 			Vector2 targetPos = optionGroup.GetChild(playerSelections[i]).GetComponent<RectTransform>().position;
 			selectors[i].anchoredPosition = Vector3.Lerp(selectors[i].anchoredPosition, targetPos, selectorSpeed * Time.deltaTime); 
 		}
+
+		for(int i = 0; i < 2; i++) {
+			if(Input.GetButtonDown("Attack_" + i)) {
+				optionGroup.GetChild(playerSelections[i]).GetComponent<ShopOfferGUI>().Buy();
+			}
+		}
+
+		candyText.text = "$ " + Progress.Candy.ToString();
 	}
 
 }

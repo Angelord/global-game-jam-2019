@@ -16,7 +16,15 @@ public class ShopOfferGUI : MonoBehaviour {
 
 	public void Buy() {
 
-		//TODO : Show effect
+		if(!Progress.CanAfford(offer)) {
+			//TODO : play can't afford sound
+			return;
+		}
+
+		//TODO : Play caching sound
+
+		Progress.Candy -= offer.price;
+		//TODO : Effect
 
 		if(!offer.singlePurchase) {
 			return;

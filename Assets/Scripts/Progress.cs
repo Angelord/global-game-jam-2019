@@ -14,6 +14,10 @@ public static class Progress {
 	public static int Candy { get { return candy; } set { candy = value; } }
 	public static List<ShopOffer> Offers { get { return offers; } }
 
+	public static bool CanAfford(ShopOffer offer) {
+		return Candy >= offer.price;
+	}
+
 	public static void AddOffer(ShopOffer offer) {
 		offers.Add(offer);
 	}
