@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Loot : MonoBehaviour {
 
-	[SerializeField]private float followSpeed = 5.0f;
+	[SerializeField]private float followSpeed = 8.5f;
 	[SerializeField]private float pickUpRange = 0.4f;
 
 	private Transform targetPlayer;
