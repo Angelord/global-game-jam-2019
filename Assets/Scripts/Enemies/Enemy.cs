@@ -10,6 +10,8 @@ public class Enemy : Unit {
 
 	private static Treehouse house;
 
+	public float playerStoppingDist = 0.72f;
+	public float houseStoppingDist = 1.0f;
 	public int damage;
 	public float attackRange;
 	public float attackPushback;
@@ -28,6 +30,7 @@ public class Enemy : Unit {
 	}
 
 	public void SetTarget(Unit target) {
+		agent.stoppingDistance = playerStoppingDist;
 		this.target = target;
 	}
 
@@ -46,6 +49,7 @@ public class Enemy : Unit {
 		agent = GetComponent<NavMeshAgent>();
 		range = GetComponentInChildren<EnemyRange>();
 
+		agent.stoppingDistance = houseStoppingDist;
 		target = house;
 	}
 
@@ -59,6 +63,7 @@ public class Enemy : Unit {
 		if(!agent.enabled || !following) { return; }
 
 		if(!target.enabled) {
+			agent.stoppingDistance = houseStoppingDist;
 			target = house;
 		}
 
