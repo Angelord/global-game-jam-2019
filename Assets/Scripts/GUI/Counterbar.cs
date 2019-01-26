@@ -5,28 +5,16 @@ using UnityEngine.UI;
 
 public class Counterbar : MonoBehaviour {
 
-	public List<GameObject> counters = new List<GameObject>();
-
-	public void SetColor(Color col) {
-		foreach(var counter in counters) {
-			counter.GetComponent<Image>().color = col;
-		}
-	}
+	public List<Image> counters = new List<Image>();
 
 	public void SetValue(int val) {
-		if(val > counters.Count) {
-			int toCreate = val - counters.Count;
-			for(int i = 0; i < toCreate; i++) {
-				Instantiate(counters[0], this.transform);
-			}
-		}
-
+	
 		foreach(var counter in counters) {
-			counter.SetActive(false);
+			counter.color = Color.black;
 		}
 
 		for(int i = 0; i < val; i++) {
-			counters[i].SetActive(true);
+			counters[i].color = Color.white;
 		}
 	}
 }

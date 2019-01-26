@@ -64,7 +64,6 @@ public class Kid : Unit {
 		index = lastIndex++;
 
 		bar = Instantiate(healthBar, StageGUI.Instance.transform).GetComponent<Counterbar>();
-		bar.SetColor(Color);
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
 
