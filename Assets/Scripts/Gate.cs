@@ -5,9 +5,8 @@ using UnityEngine;
 public class Gate : MonoBehaviour {
 
 	public void Open() {
-
-		//TODO : playe open animation
 		
-		this.GetComponent<Collider>().enabled = false;
+		this.GetComponentInChildren<Collider>().enabled = false;
+		this.GetComponentInChildren<Animator>().SetTrigger("Open");
 	}
 }
