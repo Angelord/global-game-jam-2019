@@ -21,6 +21,7 @@ public class Enemy : Unit {
 	private float lastAttack;
 	private NavMeshAgent agent;
 	private EnemyRange range;
+	private SpriteRenderer sprite;
 	private Unit target;
 
 	public Unit Target { get { return target; } }
@@ -56,6 +57,7 @@ public class Enemy : Unit {
 
 		agent = GetComponent<NavMeshAgent>();
 		range = GetComponentInChildren<EnemyRange>();
+		sprite = GetComponentInChildren<SpriteRenderer>();
 
 		agent.stoppingDistance = houseStoppingDist;
 		target = house;
@@ -82,6 +84,8 @@ public class Enemy : Unit {
 		if((Time.time - lastAttack) > attackCooldown && range.InRange(target)) {
 			Attack();
 		}
+
+		sprite.flipX = target.transform.position.x < transform.position.x ? true : false;
 	}
 
 	private void Attack() {
