@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Stage : MonoBehaviour {
 
-	public GameObject gameOverScreen;
+	private const float END_GAME_DELAY = 2.0f;
+
+	[SerializeField] private GameObject gameOverScreen;
+	
 	private GameState state = GameState.Playing;
 	
 	private static Stage instance;
@@ -29,7 +32,9 @@ public class Stage : MonoBehaviour {
 
 	public void GameOver() {
 		state = GameState.Lost;
-		gameOverScreen.SetActive(true);
+		Treehouse house = GameObject.FindGameObjectWithTag("Treehouse").GetComponent<Treehouse>();
+		Camera.main.GetComponent<CameraControl>().Focus(house.transform.position);
+		CustomCoroutine.WaitThenExecute( END_GAME_DELAY, () => gameOverScreen.SetActive(true));
 	}
 
 	public void Restart() {
