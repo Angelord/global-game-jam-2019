@@ -44,11 +44,20 @@ public class CameraControl : MonoBehaviour {
 		}
 		else {
 			Vector3 center = Vector3.zero;
+
+			int validKids = 0;
 			foreach(var kid in kids) {
-				center += kid.transform.position;
+				if(kid != null && !kid.Dead) {
+					center += kid.transform.position;
+					validKids++;
+				}
 			}
 
-			center /= kids.Count;
+			if(validKids == 0) {
+				return;
+			}
+
+			center /= validKids;
 
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(center.x, transform.position.y, center.z), mvmStep);
 		}
@@ -58,7 +67,7 @@ public class CameraControl : MonoBehaviour {
 		kids.Add(kidSpawned.Kid);
 	}
 
-	private void HandleKidDiedEvent(KidDiedEvent kidDied) {
-		kids.Remove(kidDied.Kid);
-	}
+	// private void HandleKidDiedEvent(KidDiedEvent kidDied) {
+	// 	kids.Remove(kidDied.Kid);
+	// }
 }

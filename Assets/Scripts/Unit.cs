@@ -10,11 +10,7 @@ public abstract class Unit : MonoBehaviour {
 	public int MaxHealth { get { return health; } }
 	public int CurHealth { get { return curHealth; } }
 	public bool Dead { get { return curHealth <= 0; } }
-
-	private void Awake() {
-		curHealth = health;
-	}
-
+	
 	public void TakeDamage(int amount) {
 		OnTakeDamage(amount);
 		curHealth -= amount;
@@ -23,7 +19,16 @@ public abstract class Unit : MonoBehaviour {
 		}
 	}
 
+	protected void ResetHealth() {
+		curHealth = health;
+	}
+
 	protected virtual void OnTakeDamage(int amount) { }
 
 	protected abstract void Die();
+
+	private void Awake() {
+		curHealth = health;
+	}
+
 }

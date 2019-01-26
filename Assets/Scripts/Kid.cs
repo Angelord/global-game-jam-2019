@@ -11,11 +11,13 @@ public class Kid : Unit {
 
 	public Color[] playerColors = new Color[2];
 	public GameObject healthBar;
-	public float mvmSpeed;
-	public float attackCooldown;
 	public GameObject balloon;
 	public Transform ballonSpawn;
 	public Transform directionArrow;
+	public float dazeDuration;
+	public float mvmSpeed;
+	public float attackCooldown;
+	[SerializeField] private GameObject dazeEffect;
 
 	private int index;
 	private float lastAttack;
@@ -33,8 +35,15 @@ public class Kid : Unit {
 	}
 
 	protected override void Die() {
-		Debug.Log("Kid dead");
+		dazeEffect.SetActive(true);
 		EventManager.QueueEvent(new KidDiedEvent(this));
+		Invoke("Undaze", dazeDuration);
+	}
+
+	private void Undaze() {	
+		ResetHealth();
+		bar.SetValue(CurHealth);
+		dazeEffect.SetActive(false);
 	}
 
 	private void Start() {
@@ -44,6 +53,8 @@ public class Kid : Unit {
 		bar.SetColor(Color);
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
+
+		dazeEffect.SetActive(false);
 
 		controls.Horizontal = "Horizontal_" + index;
 		controls.Vertical = "Vertical_" + index;
@@ -61,7 +72,7 @@ public class Kid : Unit {
 	}
 
 	private void Update() {
-		if(locked) { return; } 
+		if(locked || Dead) { return; } 
 
 		if(Input.GetButtonDown(controls.Attack)) {
 			Attack();
@@ -69,7 +80,7 @@ public class Kid : Unit {
 	}
 
 	private void FixedUpdate () {
-		if(locked) { return; }
+		if(locked || Dead) { return; }
 
 		float hor = Input.GetAxis(controls.Horizontal);
 		float ver = Input.GetAxis(controls.Vertical);
