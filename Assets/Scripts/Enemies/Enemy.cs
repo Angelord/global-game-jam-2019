@@ -37,6 +37,7 @@ public class Enemy : Unit {
 	protected override void Die() {
 		this.enabled = false;
 		Invoke("DestroySelf", DEATH_DELAY);
+		EventManager.QueueEvent(new EnemyDiedEvent());
 	}
 
 	private void DestroySelf() {
@@ -51,6 +52,8 @@ public class Enemy : Unit {
 
 		agent.stoppingDistance = houseStoppingDist;
 		target = house;
+
+		EventManager.TriggerEvent(new EnemySpawnedEvent());
 	}
 
 	private void TryFindTreehouse() {
@@ -85,5 +88,4 @@ public class Enemy : Unit {
 		CustomCoroutine.WaitThenExecute(attackCooldown, () => following = true);
 	}
 
-	
 }
