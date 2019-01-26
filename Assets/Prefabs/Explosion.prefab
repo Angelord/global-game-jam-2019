@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbf03c10a34142e695a02d696f27e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 8
+  explosionForce: 38
 --- !u!135 &135008397004426820
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -11,6 +11,17 @@ public class Enemy : Unit {
 	public int damage;
 	public float attackCooldown;
 	private NavMeshAgent agent;
+	private Unit target;
+
+	public void SetTarget(Unit target) {
+		this.target = target;
+	}
+
+	private void Start() {
+		TryFindTreehouse();
+		agent = GetComponent<NavMeshAgent>();
+		target = house;
+	}
 
 	private void TryFindTreehouse() {
 		if(house == null) {
@@ -18,10 +29,12 @@ public class Enemy : Unit {
 		}
 	}
 
-	private void Start() {
-		TryFindTreehouse();
-		agent = GetComponent<NavMeshAgent>();
-		agent.SetDestination(house.transform.position);
+	private void Update() {
+		if(!target.enabled) {
+			target = house;
+		}
+
+		agent.SetDestination(target.transform.position);
 	}
 
 	protected override void Die() {
