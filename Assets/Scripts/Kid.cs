@@ -20,6 +20,7 @@ public class Kid : Unit {
 
 	protected override void Die() {
 		Debug.Log("Kid dead");
+		EventManager.QueueEvent(new KidDiedEvent(this));
 	}
 
 	private void Start() {
@@ -32,6 +33,8 @@ public class Kid : Unit {
 		rigidbody = GetComponent<Rigidbody>();
 
 		lastAttack = -attackCooldown;
+
+		EventManager.QueueEvent(new KidSpawnedEvent(this));
 	}
 
 	private void OnDestroy() {
