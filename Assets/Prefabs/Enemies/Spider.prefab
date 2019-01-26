@@ -239,6 +239,7 @@ MonoBehaviour:
   egg: {fileID: 1161724633103742, guid: 58cb811beb27b4597abc13726a6b3c47, type: 2}
   spawnFreq: 2.2
   spawnDuration: 1.2
+  startSpawnDelay: 3
 --- !u!114 &114023420474554212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,7 +337,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.32
-  m_Speed: 2.45
+  m_Speed: 2
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 0
