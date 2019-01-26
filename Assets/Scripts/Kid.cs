@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Kid : Unit {
 
+	private const int SCREEN_LOCK_MARGIN = 60;
+
 	private static int lastIndex = 0;
 
 	public float mvmSpeed;
@@ -52,8 +54,25 @@ public class Kid : Unit {
 		float hor = Input.GetAxis(controls.Horizontal);
 		float ver = Input.GetAxis(controls.Vertical);
 		
-		Vector2 movDir = new Vector2(hor, ver);
 
+		Vector3 topLeft = Camera.main.ScreenToWorldPoint(new Vector3(SCREEN_LOCK_MARGIN, SCREEN_LOCK_MARGIN, 0));
+		Vector3 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - SCREEN_LOCK_MARGIN, Screen.height - SCREEN_LOCK_MARGIN, 0.0f));
+
+		if(transform.position.x <= topLeft.x && hor < 0.0f) {
+			hor = 0.0f;
+		}
+		if(transform.position.x >= bottomLeft.x && hor > 0.0f) {
+			hor = -0.0f;
+		}
+		if(transform.position.z <= topLeft.z && ver < 0.0f) {
+			ver = 0.0f;
+		}
+		if(transform.position.z >= bottomLeft.z && ver > 0.0f) {
+			ver = -0.0f;
+		}
+
+		Vector2 movDir = new Vector2(hor, ver);
+		
 		float magnitude = movDir.magnitude;
 		if(magnitude > 0.0001f) {
 			DetermineDir(hor, ver);
