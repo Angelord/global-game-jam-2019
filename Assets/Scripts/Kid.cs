@@ -7,6 +7,7 @@ public class Kid : Unit {
 	private const int SCREEN_LOCK_MARGIN = 60;
 
 	private static int lastIndex = 0;
+	private static bool locked = false;
 
 	public float mvmSpeed;
 	public float attackCooldown;
@@ -19,6 +20,8 @@ public class Kid : Unit {
 	private Controls controls;
 	private new Rigidbody rigidbody;
 	private Direction direction = Direction.Down;
+
+	public static bool Locked { get { return locked; } set { locked = value; } }
 
 	protected override void Die() {
 		Debug.Log("Kid dead");
@@ -44,12 +47,15 @@ public class Kid : Unit {
 	}
 
 	private void Update() {
+		if(locked) { return; } 
+
 		if(Input.GetButtonDown(controls.Attack)) {
 			Attack();
 		}
 	}
 
 	private void FixedUpdate () {
+		if(locked) { return; }
 
 		float hor = Input.GetAxis(controls.Horizontal);
 		float ver = Input.GetAxis(controls.Vertical);

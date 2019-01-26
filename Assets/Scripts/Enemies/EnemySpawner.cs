@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 	
-    public float breakTimes = 1.0f;
-    public List<Transform> spawnPoints = new List<Transform>();
-    public List<Wave> waves = new List<Wave>();
+    [SerializeField] private float breakTimes = 1.0f;
+    [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
+    [SerializeField] private List<Wave> waves = new List<Wave>();
+    [SerializeField] private Stage stage;
 
     private int waveIndex = 0;
     private int lastSpawnPoint = 0;
@@ -42,7 +43,13 @@ public class EnemySpawner : MonoBehaviour {
     private void HandleEnemyDiedEvent(EnemyDiedEvent diedEv) {
         livingEnemies--;
         if(livingEnemies == 0) {
-            StartCoroutine(SpawnNextWave());
+            waveIndex++;
+            if(waveIndex == waves.Count) {
+                stage.StageOver();
+            }
+            else {
+                StartCoroutine(SpawnNextWave());
+            }
         }
     } 
 }

@@ -7,12 +7,14 @@ public class Stage : MonoBehaviour {
 
 	private const float END_GAME_DELAY = 2.0f;
 
+	[SerializeField] private Gate gate;
 	[SerializeField] private GameObject gameOverScreen;
 
 	[Header("Music")]
 	[SerializeField] private AudioClip battleLoop; 
 
 	private GameState state = GameState.Playing;
+	private CameraControl cameraControl; 
 	
 	private static Stage instance;
 
@@ -20,6 +22,8 @@ public class Stage : MonoBehaviour {
 
 	private void Start() {
 		instance = this;
+
+		cameraControl = Camera.main.GetComponent<CameraControl>();
 
 		AudioController.Instance.SetLoop("battle_main");
         AudioController.Instance.SetLoopVolume(0f);
@@ -32,10 +36,15 @@ public class Stage : MonoBehaviour {
 		}
 	}
 
+	public void StageOver() {
+		state = GameState.Victory;
+		StartCoroutine(OnStageOver());
+	}
+
 	public void GameOver() {
 		state = GameState.Lost;
 		Treehouse house = GameObject.FindGameObjectWithTag("Treehouse").GetComponent<Treehouse>();
-		Camera.main.GetComponent<CameraControl>().Focus(house.transform.position);
+		cameraControl.Focus(house.transform.position);
 		CustomCoroutine.WaitThenExecute( END_GAME_DELAY, () => gameOverScreen.SetActive(true));
 	}
 
@@ -43,6 +52,23 @@ public class Stage : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
+	private IEnumerator OnStageOver() {
+		Kid.Locked = true;
+
+		cameraControl.Focus(gate.transform.position);
+
+		yield return new WaitUntil(() => cameraControl.FocusedOnTarget);
+
+		//TODO : Show mom dialogue
+
+		gate.Open();
+
+		yield return new WaitForSeconds(1.5f);
+
+		cameraControl.StopFocus();
+
+		Kid.Locked = false;
+	}
 }
 
 public enum GameState {

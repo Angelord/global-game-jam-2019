@@ -10,6 +10,16 @@ public class CameraControl : MonoBehaviour {
 	private bool focusing = false;
 	private Vector3 focusTarget;
 
+	public bool FocusedOnTarget {
+		get {
+			if(!focusing) { return false; }
+			else { 
+				Vector2 distance = new Vector3(transform.position.x - focusTarget.x, 0.0f, transform.position.z - focusTarget.z);
+				return distance.magnitude < 0.0001f;
+			}
+		}
+	}
+
 	public void Focus(Vector3 position) {
 		focusTarget = position;
 		focusing = true;
