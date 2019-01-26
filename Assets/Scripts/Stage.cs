@@ -8,7 +8,10 @@ public class Stage : MonoBehaviour {
 	private const float END_GAME_DELAY = 2.0f;
 
 	[SerializeField] private GameObject gameOverScreen;
-	
+
+	[Header("Music")]
+	[SerializeField] private AudioClip battleLoop; 
+
 	private GameState state = GameState.Playing;
 	
 	private static Stage instance;
@@ -16,12 +19,11 @@ public class Stage : MonoBehaviour {
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
 
 	private void Start() {
-		if(instance == null) {
-			instance = this;
-		}
-		else {
-			Destroy(this.gameObject);
-		}
+		instance = this;
+
+		AudioController.Instance.SetLoop("battle_main");
+        AudioController.Instance.SetLoopVolume(0f);
+        AudioController.Instance.FadeInLoop(0.2f, 0.75f);
 	}
 
 	private void OnDestroy() {

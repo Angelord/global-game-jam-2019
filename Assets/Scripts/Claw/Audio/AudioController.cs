@@ -69,11 +69,9 @@ public class AudioController : MonoBehaviour {
 
     private Coroutine skippingCoroutine;
 
-    private const string NULL_INITIAL_SONG = "null";
-
     void Awake() {
         if (Instance) {
-            if (InitialSong != NULL_INITIAL_SONG)
+            if (!string.IsNullOrEmpty(InitialSong))
             {
                 if (!string.IsNullOrEmpty(InitialSong))
                 {
@@ -102,7 +100,7 @@ public class AudioController : MonoBehaviour {
             Loops.Add((AudioClip)o);
         }
 
-        if (InitialSong != NULL_INITIAL_SONG)
+        if (!string.IsNullOrEmpty(InitialSong))
         {
             CrossFadeLoop(InitialSong, 1f, 5f, 1f, loopOffset);
         }
