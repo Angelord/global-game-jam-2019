@@ -11,7 +11,7 @@ public class StageGUI : MonoBehaviour {
 
 	public static StageGUI Instance { get { return instance; } }
 
-	private void Start() {
+	private void Awake() {
 		instance = this;
 	}
 

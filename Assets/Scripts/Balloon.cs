@@ -8,11 +8,17 @@ public class Balloon : MonoBehaviour {
 	public float speed = 10.0f;
 	public float travelDist = 5.0f;
 	public GameObject explosion;
-	// public float falloffDist = 3.0f;
+	[SerializeField] private float maxSize;
+	[SerializeField] private float minSize;
 
 	private Vector3 startPos;
 	private Vector3 movDir;
 	private Direction direction;
+	private GameObject sprite;
+
+	private void Start() {
+		sprite = GetComponentInChildren<SpriteRenderer>().gameObject;
+	}
 
 	public void Launch(Direction direction) {
 		this.direction = direction;
@@ -25,9 +31,13 @@ public class Balloon : MonoBehaviour {
 	private void Update() {
 		transform.Translate(movDir * speed * Time.deltaTime);
 
-		if((transform.position - startPos).magnitude >= travelDist) {
+		float distanceTraveled = (transform.position - startPos).magnitude;
+		if(distanceTraveled >= travelDist) {
 			Explode();
 		}
+
+		float scale = minSize + (maxSize - minSize) * Mathf.Abs(distanceTraveled - travelDist) / (travelDist / 2);
+		sprite.transform.localScale = new Vector3(scale, scale, scale);
 	}
 
 	private void OnTriggerEnter(Collider other) {
