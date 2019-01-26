@@ -79,6 +79,7 @@ public class Stage : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 
 		dayText.gameObject.SetActive(true);
+		dayText.text = "Day " + (Progress.Day + 1);
 		dayText.GetComponent<LerpAlpha>().SetAlpha(0.0f);
 		dayText.GetComponent<LerpAlpha>().intendedAlpha = 1.0f;
 		

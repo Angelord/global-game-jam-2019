@@ -21,7 +21,7 @@ public class Spider : MonoBehaviour {
 	}
 
 	private void Update() {
-		if(Time.time - lastSpawn > spawnFreq) {
+		if(Stage.Playing && Time.time - lastSpawn > spawnFreq) {
 			StartCoroutine(SpawnEgg());
 			lastSpawn = Time.time;
 		}	
