@@ -7,11 +7,9 @@ public class Stage : MonoBehaviour {
 
 	private const float END_GAME_DELAY = 2.0f;
 
+	[SerializeField] private SpeechBubble momSpeech; 
 	[SerializeField] private Gate gate;
 	[SerializeField] private GameObject gameOverScreen;
-
-	[Header("Music")]
-	[SerializeField] private AudioClip battleLoop; 
 
 	private GameState state = GameState.Playing;
 	private CameraControl cameraControl; 
@@ -24,6 +22,8 @@ public class Stage : MonoBehaviour {
 		instance = this;
 
 		cameraControl = Camera.main.GetComponent<CameraControl>();
+
+		momSpeech.gameObject.SetActive(false);
 
 		AudioController.Instance.SetLoop("battle_main");
         AudioController.Instance.SetLoopVolume(0f);
@@ -53,17 +53,24 @@ public class Stage : MonoBehaviour {
 	}
 
 	private IEnumerator OnStageOver() {
+
 		Kid.Locked = true;
 
 		cameraControl.Focus(gate.transform.position);
 
 		yield return new WaitUntil(() => cameraControl.FocusedOnTarget);
 
-		//TODO : Show mom dialogue
+		momSpeech.gameObject.SetActive(true);
+
+		momSpeech.Show("Hank! James! Dinner is ready!");
+
+		yield return new WaitUntil( () => !momSpeech.Typing );
 
 		gate.Open();
 
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(2.4f);
+
+		momSpeech.gameObject.SetActive(false);
 
 		cameraControl.StopFocus();
 
