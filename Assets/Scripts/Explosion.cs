@@ -20,7 +20,7 @@ public class Explosion : MonoBehaviour {
 	private void OnTriggerEnter(Collider other) {
 		int instanceId = other.GetInstanceID();
 		if(other.gameObject.tag == "Enemy" && !hitTargets.Contains(instanceId)) {
-			other.GetComponent<Enemy>().TakeDamage(damage);
+			other.GetComponent<Unit>().TakeDamage(damage);
 			other.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, sphereCollider.radius, 0.0f, ForceMode.Impulse);
 			hitTargets.Add(instanceId);
 		}
