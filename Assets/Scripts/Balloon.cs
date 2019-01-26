@@ -6,6 +6,8 @@ public class Balloon : MonoBehaviour {
 
 	[SerializeField] private float arcPeak = 0.6f;
 	[SerializeField] private int damage;
+	[SerializeField] private float minHeight = 0.0f;
+	[SerializeField] private float maxHeight = 1.0f;
 	[SerializeField] private float riseSpeed = 6.0f;
 	[SerializeField] private float fallSpeed = 12.0f;
 	[SerializeField] private float travelDist = 5.0f;
@@ -50,6 +52,20 @@ public class Balloon : MonoBehaviour {
 		}
 		sprite.transform.localScale = new Vector3(scale, scale, scale);
 
+		if(direction == Direction.Right || direction == Direction.Left) {
+			float height = 0.0f;
+			if(distanceTraveled > peakDist) {
+				float diff = distanceTraveled - peakDist;
+				height = maxHeight - (diff / (travelDist - peakDist)) * (maxHeight - minHeight); 
+			}
+			else {
+				height = minHeight + (maxHeight - minHeight) * (distanceTraveled / peakDist);
+			}
+			Vector3 spritePos = sprite.transform.localPosition;
+			spritePos.z = height;
+			sprite.transform.localPosition = spritePos;
+			Debug.Log("Settign height " + height);
+		}
 
 		if(distanceTraveled >= travelDist) {
 			Explode();
