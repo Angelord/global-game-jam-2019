@@ -915,12 +915,8 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 403884428}
   - {fileID: 1175959351}
-  waves:
-  - spawnFrequency: 0.7
-    enemyType: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
-      type: 2}
-    numEnemies: 1
   stage: {fileID: 1100877976}
+  waveData: {fileID: 11400000, guid: 8bb6dff89ab6744f7af08f64fbdb3b70, type: 2}
 --- !u!4 &728107264
 Transform:
   m_ObjectHideFlags: 0

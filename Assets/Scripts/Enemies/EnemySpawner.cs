@@ -6,9 +6,10 @@ public class EnemySpawner : MonoBehaviour {
 	
     [SerializeField] private float breakTimes = 1.0f;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
-    [SerializeField] private List<Wave> waves = new List<Wave>();
     [SerializeField] private Stage stage;
+    [SerializeField] private WaveData waveData;
 
+    private List<Wave> waves = new List<Wave>();
     private int waveIndex = 0;
     private int lastSpawnPoint = 0;
     private int livingEnemies;
@@ -16,6 +17,8 @@ public class EnemySpawner : MonoBehaviour {
     private Wave CurrentWave { get { return waves[waveIndex]; } }
 
     private void Start() {
+        waves = waveData.GetWavesForDay(Progress.Day);
+
         StartCoroutine(SpawnNextWave());
 
         EventManager.AddListener<EnemySpawnedEvent>(HandleEnemySpawnedEvent);
