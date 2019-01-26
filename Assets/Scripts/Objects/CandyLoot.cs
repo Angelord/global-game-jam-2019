@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CandyLoot : Loot {
 
+	[SerializeField] private int amount = 1;
+
 	protected override void OnPickUp() {
-		Debug.Log("Picked up");
+		Progress.Candy += amount;
 	}
 }
