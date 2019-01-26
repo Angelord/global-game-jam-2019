@@ -9,8 +9,11 @@ public class Treehouse : Unit {
 	private Shaker shaker;
 
 	private void Start() {
+		
 		shaker	= GetComponent<Shaker>();
 		shaker.enabled = false;
+
+		StageGUI.Instance.CreateHealthBar(this);
 	}
 
 	protected override void OnTakeDamage(int amount) {

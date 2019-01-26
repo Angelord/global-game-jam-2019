@@ -4,12 +4,20 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour {
 
-	public int health;
+	[SerializeField]private int health;
+	private int curHealth;
+
+	public int MaxHealth { get { return health; } }
+	public int CurHealth { get { return curHealth; } }
+
+	private void Awake() {
+		curHealth = health;
+	}
 
 	public void TakeDamage(int amount) {
 		OnTakeDamage(amount);
-		health -= amount;
-		if(health <= 0) {
+		curHealth -= amount;
+		if(curHealth <= 0) {
 			Die();
 		}
 	}
