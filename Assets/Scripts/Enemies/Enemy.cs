@@ -15,6 +15,7 @@ public class Enemy : Unit {
 	public float attackPushback;
 	public float attackCooldown;
 
+	private bool following = true;
 	private float lastAttack;
 	private NavMeshAgent agent;
 	private EnemyRange range;
@@ -55,7 +56,7 @@ public class Enemy : Unit {
 	}
 
 	private void Update() {
-		if(!agent.enabled) { return; }
+		if(!agent.enabled || !following) { return; }
 
 		if(!target.enabled) {
 			target = house;
@@ -75,8 +76,8 @@ public class Enemy : Unit {
 			enRigidbody.AddForce((target.transform.position - transform.position).normalized * attackPushback, ForceMode.Impulse);
 		}
 		lastAttack = Time.time;
-		agent.enabled = false;
-		CustomCoroutine.WaitThenExecute(attackCooldown, () => agent.enabled = true);
+		following = false;
+		CustomCoroutine.WaitThenExecute(attackCooldown, () => following = true);
 	}
 
 	
