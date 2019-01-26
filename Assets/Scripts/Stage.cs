@@ -15,7 +15,7 @@ public class Stage : MonoBehaviour {
 	[SerializeField] private Gate gate;
 	[SerializeField] private GameObject gameOverScreen;
 
-	private GameState state = GameState.Playing;
+	private GameState state = GameState.InMenu;
 	private CameraControl cameraControl; 
 	private List<Kid> kids = new List<Kid>();
 	
@@ -28,8 +28,6 @@ public class Stage : MonoBehaviour {
 		instance = this;
 
 		cameraControl = Camera.main.GetComponent<CameraControl>();
-
-		StartStage();
 	}
 
 	private void OnDestroy() {
@@ -79,6 +77,8 @@ public class Stage : MonoBehaviour {
 		kids[Random.Range(0, kids.Count )].Say(startOfGameLines[Random.Range(0, startOfGameLines.Length)]);
 
 		EventManager.QueueEvent(new StageStartedEvent());
+
+		state = GameState.Playing;
 	}
 
 	private IEnumerator OnStageOver() {
@@ -104,6 +104,7 @@ public class Stage : MonoBehaviour {
 }
 
 public enum GameState {
+	InMenu,
 	Playing,
 	Lost,
 	Victory

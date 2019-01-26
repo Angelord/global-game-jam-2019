@@ -13,6 +13,10 @@ public class Treehouse : Unit {
 		shaker	= GetComponentInChildren<Shaker>();
 		shaker.enabled = false;
 
+		EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
+	}
+
+	private void HandleStageStartedEvent(StageStartedEvent stageEv) {
 		StageGUI.Instance.CreateHealthBar(this);
 	}
 

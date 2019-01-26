@@ -64,7 +64,6 @@ public class Balloon : MonoBehaviour {
 			Vector3 spritePos = sprite.transform.localPosition;
 			spritePos.z = height;
 			sprite.transform.localPosition = spritePos;
-			Debug.Log("Settign height " + height);
 		}
 
 		if(distanceTraveled >= travelDist) {
@@ -74,7 +73,6 @@ public class Balloon : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Enemy") {
-			Debug.Log("Hit enemy");
 			Explode();
 		}
 	}
