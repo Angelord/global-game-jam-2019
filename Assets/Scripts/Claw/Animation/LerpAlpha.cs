@@ -1,45 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class LerpAlpha : MonoBehaviour {
 
 	public float speed = 2.5f;
 	public float intendedAlpha;
-	SpriteRenderer sR;
-	TextMesh tM;
+	private Graphic image;
 	
-	void Awake ()
-    {
-		sR = GetComponent<SpriteRenderer>();
-		tM = GetComponent<TextMesh>();
+	void Awake () {
+		image = GetComponent<Graphic>();
 	}
 	
-	void Update()
-    {
+	void Update() {
 		Color current = GetColor ();
 		Color c = new Color(current.r, current.g, current.b, Mathf.Lerp(current.a, intendedAlpha, Time.deltaTime * speed));
 		SetColor (c);
 	}
 
-	public Color GetColor()
-	{
-		if (sR) {
-			return sR.color;
-		}
-		else if (tM) {
-			return tM.color;
-		}
-
-		return Color.black;
+	public void SetAlpha(float value) {
+		Color col = image.color;
+		col.a = value;
+		image.color = col;
 	}
 
-	public void SetColor (Color c)
-	{
-		if (sR) {
-			sR.color = c;
-		}
-		else if (tM) {
-			tM.color = c;
-		}
+	public Color GetColor() {
+		return image.color;
+	}
+
+	public void SetColor (Color color) {
+		image.color = color;
 	}
 }

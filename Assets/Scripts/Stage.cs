@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Stage : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class Stage : MonoBehaviour {
 	[SerializeField] private SpeechBubble momSpeech; 
 	[SerializeField] private Gate gate;
 	[SerializeField] private GameObject gameOverScreen;
+	[SerializeField] private Text dayText;
 
 	private GameState state = GameState.InMenu;
 	private CameraControl cameraControl; 
@@ -74,6 +76,13 @@ public class Stage : MonoBehaviour {
 		
 		yield return new WaitForSeconds(0.5f);
 
+		dayText.gameObject.SetActive(true);
+		dayText.GetComponent<LerpAlpha>().SetAlpha(0.0f);
+		dayText.GetComponent<LerpAlpha>().intendedAlpha = 1.0f;
+		
+		CustomCoroutine.WaitThenExecute(3.0f, () => dayText.GetComponent<LerpAlpha>().intendedAlpha = 0.0f);
+
+		//Play start game lines
 		kids[Random.Range(0, kids.Count )].Say(startOfGameLines[Random.Range(0, startOfGameLines.Length)]);
 
 		EventManager.QueueEvent(new StageStartedEvent());
