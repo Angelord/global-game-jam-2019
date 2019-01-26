@@ -206,6 +206,7 @@ MonoBehaviour:
   - {r: 0.049956758, g: 0.35925, b: 0.61764705, a: 1}
   - {r: 0.625, g: 0, b: 0, a: 1}
   healthBar: {fileID: 1608082177644760, guid: 8a10a9281ffcf405cb3d81e1526b0cd0, type: 2}
+  speachBubblePref: {fileID: 0}
   balloon: {fileID: 1516319621658444, guid: ccd7cebd2c3a04d99accdc41359ce94a, type: 2}
   ballonSpawn: {fileID: 4173711033276232}
   directionArrow: {fileID: 4126007453056692}

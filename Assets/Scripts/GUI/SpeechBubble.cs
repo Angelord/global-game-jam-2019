@@ -8,16 +8,24 @@ public class SpeechBubble : MonoBehaviour {
 	
 	[SerializeField] private float typePause = 0.05f;
 	[SerializeField] private float punctuationPause = 0.1f;
+	[SerializeField] private float disableDelay = 3.0f;
 	private Text uiText;
 	private bool typing = false;
 
 	public bool Typing { get { return typing; } }
 
 	private void Start() {
-		uiText = GetComponentInChildren<Text>();
+		this.gameObject.SetActive(false);
 	}
 
 	public void Show(string text) {
+		if(string.IsNullOrEmpty(text)) { return; }
+
+		if(uiText == null) {
+			uiText = GetComponentInChildren<Text>();
+		}
+
+		this.gameObject.SetActive(true);
 		StopAllCoroutines();
 		StartCoroutine(DoShow(text));
 	}
@@ -36,5 +44,8 @@ public class SpeechBubble : MonoBehaviour {
 		}
 
 		typing = false;
+
+		yield return new WaitForSeconds(disableDelay);
+		this.gameObject.SetActive(false);
 	}
 }

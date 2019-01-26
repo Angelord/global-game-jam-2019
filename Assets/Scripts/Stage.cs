@@ -7,12 +7,15 @@ public class Stage : MonoBehaviour {
 
 	private const float END_GAME_DELAY = 2.0f;
 
+
+	[SerializeField] private string[] startOfGameLines;
 	[SerializeField] private SpeechBubble momSpeech; 
 	[SerializeField] private Gate gate;
 	[SerializeField] private GameObject gameOverScreen;
 
 	private GameState state = GameState.Playing;
 	private CameraControl cameraControl; 
+	private List<Kid> kids = new List<Kid>();
 	
 	private static Stage instance;
 
@@ -28,6 +31,10 @@ public class Stage : MonoBehaviour {
 		AudioController.Instance.SetLoop("battle_main");
         AudioController.Instance.SetLoopVolume(0f);
         AudioController.Instance.FadeInLoop(0.2f, 0.75f);
+
+		EventManager.AddListener<KidSpawnedEvent>(HandleKidSpawnedEvent);
+
+		StartCoroutine(OnStageStarting());
 	}
 
 	private void OnDestroy() {
@@ -56,6 +63,16 @@ public class Stage : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
+	private void HandleKidSpawnedEvent(KidSpawnedEvent kidSpawned) {
+		kids.Add(kidSpawned.Kid);
+	}
+
+	private IEnumerator OnStageStarting() {
+		yield return new WaitForSeconds(0.5f);
+
+		kids[Random.Range(0, kids.Count )].Say(startOfGameLines[Random.Range(0, startOfGameLines.Length)]);
+	}
+
 	private IEnumerator OnStageOver() {
 
 		Kid.Locked = true;
@@ -64,8 +81,6 @@ public class Stage : MonoBehaviour {
 
 		yield return new WaitUntil(() => cameraControl.FocusedOnTarget);
 
-		momSpeech.gameObject.SetActive(true);
-
 		momSpeech.Show("Hank! James! Dinner is ready!");
 
 		yield return new WaitUntil( () => !momSpeech.Typing );
@@ -73,8 +88,6 @@ public class Stage : MonoBehaviour {
 		gate.Open();
 
 		yield return new WaitForSeconds(2.4f);
-
-		momSpeech.gameObject.SetActive(false);
 
 		cameraControl.StopFocus();
 

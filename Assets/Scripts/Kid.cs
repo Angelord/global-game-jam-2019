@@ -10,13 +10,17 @@ public class Kid : Unit {
 	private static bool locked = false;
 
 	public Color[] playerColors = new Color[2];
-	public GameObject healthBar;
-	public GameObject balloon;
-	public Transform ballonSpawn;
-	public Transform directionArrow;
-	public float dazeDuration;
-	public float mvmSpeed;
-	public float attackCooldown;
+	[Header("Prefabs")]
+	[SerializeField] private GameObject healthBar;
+	[SerializeField] private GameObject speachBubblePref;
+	[SerializeField] private GameObject balloon;
+	[Header("Locals")]
+	[SerializeField] private Transform ballonSpawn;
+	[SerializeField] private Transform directionArrow;
+	[Header("Stats")]
+	[SerializeField] private float dazeDuration;
+	[SerializeField] private float mvmSpeed;
+	[SerializeField] private float attackCooldown;
 	[SerializeField] private GameObject dazeEffect;
 
 	private int index;
@@ -25,12 +29,18 @@ public class Kid : Unit {
 	private new Rigidbody rigidbody;
 	private Direction direction = Direction.Down;
 	private Counterbar bar;
+	private SpeechBubble speech;
 
 	public static bool Locked { get { return locked; } set { locked = value; } }
 	public Color Color { get { return playerColors[index]; } }
 
+	public void Say(string text) {
+		Debug.Log("Saying " + text);
+		speech.Show(text);
+		//TODO : play text
+	}
+
 	protected override void OnTakeDamage(int amount) {
-		Debug.Log("Health " + CurHealth + " dmg " + amount);
 		bar.SetValue(Mathf.Clamp(CurHealth - amount, 0, int.MaxValue));
 	}
 
@@ -53,6 +63,9 @@ public class Kid : Unit {
 		bar.SetColor(Color);
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
+
+		speech = Instantiate(speachBubblePref, StageGUI.Instance.transform).GetComponent<SpeechBubble>();
+		speech.GetComponent<FollowerGUI>().SetTarget(transform);
 
 		dazeEffect.SetActive(false);
 
