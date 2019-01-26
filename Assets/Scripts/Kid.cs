@@ -19,6 +19,7 @@ public class Kid : Unit {
 	[SerializeField] private Transform directionArrow;
 	[Header("Stats")]
 	[SerializeField] private float dazeDuration;
+	[SerializeField] private float regenRate;
 	[SerializeField] private float mvmSpeed;
 	[SerializeField] private float attackCooldown;
 	[SerializeField] private GameObject dazeEffect;
@@ -30,18 +31,21 @@ public class Kid : Unit {
 	private Direction direction = Direction.Down;
 	private Counterbar bar;
 	private SpeechBubble speech;
+	private float lastRegen;
 
 	public static bool Locked { get { return locked; } set { locked = value; } }
 	public Color Color { get { return playerColors[index]; } }
 
 	public void Say(string text) {
-		Debug.Log("Saying " + text);
 		speech.Show(text);
-		//TODO : play text
+		//TODO : play sound
 	}
 
 	protected override void OnTakeDamage(int amount) {
 		bar.SetValue(Mathf.Clamp(CurHealth - amount, 0, int.MaxValue));
+		if(CurHealth == MaxHealth) {
+			lastRegen = Time.time;
+		}
 	}
 
 	protected override void Die() {
@@ -89,6 +93,12 @@ public class Kid : Unit {
 
 		if(Input.GetButtonDown(controls.Attack)) {
 			Attack();
+		}
+
+		if(CurHealth < MaxHealth && (Time.time - lastRegen) >= regenRate) {
+			CurHealth++;
+			bar.SetValue(CurHealth);
+			lastRegen = Time.time;
 		}
 	}
 

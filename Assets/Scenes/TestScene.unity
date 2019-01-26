@@ -1163,22 +1163,6 @@ Prefab:
       propertyPath: m_Name
       value: Kid
       objectReference: {fileID: 0}
-    - target: {fileID: 114065295026213876, guid: 8c91be735f0a14902b0d7fb5498a19c8,
-        type: 2}
-      propertyPath: speachBubblePref
-      value: 
-      objectReference: {fileID: 1989674079581356, guid: d7cec7c72865c412c9991f2660065185,
-        type: 2}
-    - target: {fileID: 212755831666945126, guid: 8c91be735f0a14902b0d7fb5498a19c8,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 212466509601370098, guid: 8c91be735f0a14902b0d7fb5498a19c8,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
   m_IsPrefabParent: 0
@@ -1501,68 +1485,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200918617}
---- !u!1001 &1307556764
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 5.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1322892987440150, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-      propertyPath: m_Name
-      value: Kid (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114065295026213876, guid: 8c91be735f0a14902b0d7fb5498a19c8,
-        type: 2}
-      propertyPath: speachBubblePref
-      value: 
-      objectReference: {fileID: 1989674079581356, guid: d7cec7c72865c412c9991f2660065185,
-        type: 2}
-    - target: {fileID: 212755831666945126, guid: 8c91be735f0a14902b0d7fb5498a19c8,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 212466509601370098, guid: 8c91be735f0a14902b0d7fb5498a19c8,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: -2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1337730947
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public abstract class Unit : MonoBehaviour {
 	private int curHealth;
 
 	public int MaxHealth { get { return health; } }
-	public int CurHealth { get { return curHealth; } }
+	public int CurHealth { get { return curHealth; } protected set { curHealth =  Mathf.Clamp(value, 0, MaxHealth); } }
 	public bool Dead { get { return curHealth <= 0; } }
 	
 	public void TakeDamage(int amount) {
