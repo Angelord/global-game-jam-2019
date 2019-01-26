@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e328a63a425482dafb37610086c8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 5
   healthBar: {fileID: 1608082177644760, guid: 8a10a9281ffcf405cb3d81e1526b0cd0, type: 2}
   speachBubblePref: {fileID: 1989674079581356, guid: d7cec7c72865c412c9991f2660065185,
     type: 2}
@@ -227,7 +227,7 @@ MonoBehaviour:
   ballonSpawn: {fileID: 4173711033276232}
   directionArrow: {fileID: 4126007453056692}
   dazeDuration: 5
-  regenRate: 2.8
+  regenRate: 2.2
   mvmSpeed: 300
   attackCooldown: 0.7
   dazeEffect: {fileID: 1040880799632246}

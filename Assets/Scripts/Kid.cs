@@ -43,9 +43,7 @@ public class Kid : Unit {
 
 	protected override void OnTakeDamage(int amount) {
 		bar.SetValue(Mathf.Clamp(CurHealth - amount, 0, int.MaxValue));
-		if(CurHealth == MaxHealth) {
-			lastRegen = Time.time;
-		}
+		lastRegen = Time.time;
 	}
 
 	protected override void Die() {
