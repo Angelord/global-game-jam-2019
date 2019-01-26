@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4053784730204862}
   - component: {fileID: 212485915222968564}
   - component: {fileID: 95830395903054876}
+  - component: {fileID: 114018724994420840}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -119,6 +120,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114018724994420840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331198926908688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d87a5088e8d4e45ac1fd77efe45504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114991656777859206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780c00570d34a4d7a9b8e8703dea46ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arcPeak: 0.6
+  arcPeak: 0.7
   damage: 2
   minHeight: 0.15
   maxHeight: 1.15
