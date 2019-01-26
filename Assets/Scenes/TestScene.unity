@@ -317,7 +317,7 @@ Transform:
   m_Children:
   - {fileID: 61009864}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &63531868
 MonoBehaviour:
@@ -472,8 +472,9 @@ GameObject:
   - component: {fileID: 533018795}
   - component: {fileID: 533018797}
   - component: {fileID: 533018796}
+  - component: {fileID: 533018798}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,6 +548,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &533018798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 533018794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2be6831261f749ffbd2a21a6df7e243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmount: 0.1
+  shakeSpeed: 32
 --- !u!1 &548313241
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +572,6 @@ GameObject:
   - component: {fileID: 548313247}
   - component: {fileID: 548313242}
   - component: {fileID: 548313246}
-  - component: {fileID: 548313243}
   m_Layer: 0
   m_Name: Treehouse
   m_TagString: Treehouse
@@ -578,19 +591,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.42
   m_Center: {x: -0.18, y: 0, z: 0}
---- !u!114 &548313243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 548313241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2be6831261f749ffbd2a21a6df7e243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeAmount: 0.1
-  shakeSpeed: 32
 --- !u!4 &548313245
 Transform:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ Transform:
   m_Children:
   - {fileID: 533018795}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &548313246
 MonoBehaviour:
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59a38dbe24824b7cb0870865c05142f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   stage: {fileID: 1100877976}
 --- !u!54 &548313247
 Rigidbody:
@@ -721,7 +721,7 @@ RectTransform:
   m_Children:
   - {fileID: 1761630886}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -767,7 +767,7 @@ Transform:
   m_Children:
   - {fileID: 1169643201}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &683144481
 GameObject:
@@ -881,7 +881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &728107262
 GameObject:
@@ -936,7 +936,7 @@ Transform:
   - {fileID: 403884428}
   - {fileID: 1175959351}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817467165
 GameObject:
@@ -1016,7 +1016,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4602488985817290, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 212755831666945126, guid: 8c91be735f0a14902b0d7fb5498a19c8,
         type: 2}
@@ -1272,7 +1272,7 @@ Transform:
   - {fileID: 1104172791}
   - {fileID: 817467166}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682738077
 GameObject:
