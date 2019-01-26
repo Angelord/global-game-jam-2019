@@ -8,6 +8,11 @@ public static class Progress {
 
 	public static int Day { get { return day; } }
 
+	public static void Reset() {
+		day = 0;
+		//...
+	}
+
 	public static void DayPassed() {
 		day++;
 	}
