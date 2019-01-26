@@ -8,6 +8,7 @@ public class Spider : MonoBehaviour {
 	[SerializeField] private GameObject egg;
 	[SerializeField] private float spawnFreq;
 	[SerializeField] private float spawnDuration;
+	[SerializeField] private float startSpawnDelay = 3.0f;
 
 	private float lastSpawn;
 	private Animator animator;
@@ -17,7 +18,7 @@ public class Spider : MonoBehaviour {
 		animator = GetComponentInChildren<Animator>();
 		agent = GetComponentInChildren<NavMeshAgent>();
 
-		lastSpawn = Time.time + spawnFreq;
+		lastSpawn = Time.time + startSpawnDelay;
 	}
 
 	private void Update() {
