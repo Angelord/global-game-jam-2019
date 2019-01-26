@@ -36,11 +36,18 @@ public class Enemy : Unit {
 
 	protected override void Die() {
 		this.enabled = false;
+
 		Invoke("DestroySelf", DEATH_DELAY);
 		EventManager.QueueEvent(new EnemyDiedEvent());
 	}
 
 	private void DestroySelf() {
+		
+		LootDropper dropper = GetComponent<LootDropper>();
+		if(dropper != null) {
+			dropper.Drop();
+		}
+
 		Destroy(this.gameObject);
 	}
 
