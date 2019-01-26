@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4483914105950356}
   - component: {fileID: 65127647745769910}
-  m_Layer: 0
+  - component: {fileID: 114808754396605072}
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +41,7 @@ GameObject:
   - component: {fileID: 195774475279644450}
   - component: {fileID: 114287650329558744}
   - component: {fileID: 114984721548747710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -57,7 +58,7 @@ GameObject:
   - component: {fileID: 4896883512500982}
   - component: {fileID: 114690401540396248}
   - component: {fileID: 135456247350631250}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Senses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +76,7 @@ GameObject:
   - component: {fileID: 212484970677775680}
   - component: {fileID: 114264808056215000}
   - component: {fileID: 95854118934099538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +93,7 @@ GameObject:
   - component: {fileID: 4189546404616184}
   - component: {fileID: 114284753527235322}
   - component: {fileID: 135092852838804332}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,6 +270,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9579eb63334ffba8b6f0cbba4cc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114808754396605072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190237500047398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0d2144b373b4fa0800eec1c7971444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerToIgnore: PlayerBlocks
 --- !u!114 &114984721548747710
 MonoBehaviour:
   m_ObjectHideFlags: 1

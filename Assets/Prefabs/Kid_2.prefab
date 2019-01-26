@@ -228,7 +228,7 @@ MonoBehaviour:
   ballonSpawn: {fileID: 4173711033276232}
   directionArrow: {fileID: 4126007453056692}
   dazeDuration: 5
-  regenRate: 2
+  regenRate: 2.8
   mvmSpeed: 300
   attackCooldown: 0.7
   dazeEffect: {fileID: 1040880799632246}

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4652684412356622}
   - component: {fileID: 65497384452753876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212943521128131272}
   - component: {fileID: 114225397708733416}
   - component: {fileID: 95790161673848944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 195429971654905244}
   - component: {fileID: 114541438160325604}
   - component: {fileID: 114023406163130322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mini_Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4325071878716226}
   - component: {fileID: 114221601694282744}
   - component: {fileID: 135029471153882190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4219036706535130}
   - component: {fileID: 114374524174103866}
   - component: {fileID: 135942484277050660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Senses
   m_TagString: Untagged
   m_Icon: {fileID: 0}

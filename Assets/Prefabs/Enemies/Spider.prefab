@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114324354518235250}
   - component: {fileID: 114107143172170120}
   - component: {fileID: 114001509964461676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4770491519956340}
   - component: {fileID: 114023420474554212}
   - component: {fileID: 135766128718438452}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4588210504048938}
   - component: {fileID: 65242626729603598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4290975616936986}
   - component: {fileID: 114230362414259424}
   - component: {fileID: 135281996063022374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Senses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 212320895555437362}
   - component: {fileID: 114379849741392242}
   - component: {fileID: 95632056060409910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

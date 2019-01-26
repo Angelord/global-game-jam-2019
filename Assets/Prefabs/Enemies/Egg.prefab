@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114734411296727352}
   - component: {fileID: 135999910960806748}
   - component: {fileID: 54001444841831838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Egg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4507825395873484}
   - component: {fileID: 212222543129928928}
   - component: {fileID: 114995975645724860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
