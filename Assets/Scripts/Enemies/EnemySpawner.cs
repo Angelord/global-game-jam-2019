@@ -17,12 +17,17 @@ public class EnemySpawner : MonoBehaviour {
     private Wave CurrentWave { get { return waves[waveIndex]; } }
 
     private void Start() {
+        
+        EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
+        EventManager.AddListener<EnemySpawnedEvent>(HandleEnemySpawnedEvent);
+        EventManager.AddListener<EnemyDiedEvent>(HandleEnemyDiedEvent);
+    }
+
+    private void HandleStageStartedEvent(StageStartedEvent startedEvent) {
+
         waves = waveData.GetWavesForDay(Progress.Day);
 
         StartCoroutine(SpawnNextWave());
-
-        EventManager.AddListener<EnemySpawnedEvent>(HandleEnemySpawnedEvent);
-        EventManager.AddListener<EnemyDiedEvent>(HandleEnemyDiedEvent);
     }
 
     private IEnumerator SpawnNextWave() {

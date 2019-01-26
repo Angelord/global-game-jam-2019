@@ -8,6 +8,8 @@ public class Stage : MonoBehaviour {
 	private const float END_GAME_DELAY = 2.0f;
 
 
+	[SerializeField] private GameObject kidPref;
+	[SerializeField] private Transform[] kidSpawns = new Transform[2];
 	[SerializeField] private string[] startOfGameLines;
 	[SerializeField] private SpeechBubble momSpeech; 
 	[SerializeField] private Gate gate;
@@ -22,19 +24,12 @@ public class Stage : MonoBehaviour {
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
 
 	private void Start() {
+
 		instance = this;
 
 		cameraControl = Camera.main.GetComponent<CameraControl>();
 
-		momSpeech.gameObject.SetActive(false);
-
-		AudioController.Instance.SetLoop("battle_main");
-        AudioController.Instance.SetLoopVolume(0f);
-        AudioController.Instance.FadeInLoop(0.2f, 0.75f);
-
-		EventManager.AddListener<KidSpawnedEvent>(HandleKidSpawnedEvent);
-
-		StartCoroutine(OnStageStarting());
+		StartStage();
 	}
 
 	private void OnDestroy() {
@@ -63,14 +58,27 @@ public class Stage : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	private void HandleKidSpawnedEvent(KidSpawnedEvent kidSpawned) {
-		kids.Add(kidSpawned.Kid);
+	public void StartStage() {
+
+		AudioController.Instance.SetLoop("battle_main");
+        AudioController.Instance.SetLoopVolume(0.0f);
+        AudioController.Instance.FadeInLoop(0.2f, 0.75f);
+
+		for(int i = 0; i < 2; i++) {
+			GameObject player = Instantiate(kidPref, kidSpawns[i].position, Quaternion.identity);
+			kids.Add(player.GetComponent<Kid>());
+		}
+
+		StartCoroutine(OnStageStarting());
 	}
 
 	private IEnumerator OnStageStarting() {
+		
 		yield return new WaitForSeconds(0.5f);
 
 		kids[Random.Range(0, kids.Count )].Say(startOfGameLines[Random.Range(0, startOfGameLines.Length)]);
+
+		EventManager.QueueEvent(new StageStartedEvent());
 	}
 
 	private IEnumerator OnStageOver() {
