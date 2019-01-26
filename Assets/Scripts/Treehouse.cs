@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Treehouse : MonoBehaviour {
+public class Treehouse : Unit {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	protected override void Die() {
+		Debug.Log("Treehouse dead");
 	}
 }

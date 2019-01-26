@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kid : MonoBehaviour {
+public class Kid : Unit {
 
 	private static int lastIndex = 0;
 
@@ -17,6 +17,10 @@ public class Kid : MonoBehaviour {
 	private Controls controls;
 	private new Rigidbody rigidbody;
 	private Direction direction = Direction.Down;
+
+	protected override void Die() {
+		Debug.Log("Kid dead");
+	}
 
 	private void Start() {
 		index = lastIndex++;

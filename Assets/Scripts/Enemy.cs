@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class Enemy : MonoBehaviour {
+public class Enemy : Unit {
 
 	private static Treehouse house;
 
-	public int health;
 	public int damage;
 	public float attackCooldown;
 	private NavMeshAgent agent;
@@ -25,14 +24,7 @@ public class Enemy : MonoBehaviour {
 		agent.SetDestination(house.transform.position);
 	}
 
-	public void TakeDamage(int amount) {
-		health -= amount;
-		if(health <= 0) {
-			Die();
-		}	
-	} 
-
-	private void Die() {
+	protected override void Die() {
 		Destroy(this.gameObject);
 	}
 }

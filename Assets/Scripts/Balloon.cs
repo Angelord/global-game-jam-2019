@@ -26,7 +26,6 @@ public class Balloon : MonoBehaviour {
 		transform.Translate(movDir * speed * Time.deltaTime);
 
 		if((transform.position - startPos).magnitude >= travelDist) {
-			Debug.Log("Distance travelled");
 			Explode();
 		}
 	}
