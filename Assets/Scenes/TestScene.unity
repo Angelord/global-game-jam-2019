@@ -2040,7 +2040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414533acc0a874036a8a4c8f7eff7a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kidPref: {fileID: 1322892987440150, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
+  kid1Pref: {fileID: 1322892987440150, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
+  kid2Pref: {fileID: 1322892987440150, guid: e28c34f6281d54e0dae85669786c5868, type: 2}
   kidSpawns:
   - {fileID: 798068659}
   - {fileID: 196222998}

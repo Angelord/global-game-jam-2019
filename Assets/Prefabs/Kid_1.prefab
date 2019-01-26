@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 54691084088911888}
   - component: {fileID: 65352914430729960}
   m_Layer: 0
-  m_Name: Kid
+  m_Name: Kid_1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,9 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
-  playerColors:
-  - {r: 0.049956758, g: 0.35925, b: 0.61764705, a: 1}
-  - {r: 0.625, g: 0, b: 0, a: 1}
   healthBar: {fileID: 1608082177644760, guid: 8a10a9281ffcf405cb3d81e1526b0cd0, type: 2}
   speachBubblePref: {fileID: 1989674079581356, guid: d7cec7c72865c412c9991f2660065185,
     type: 2}

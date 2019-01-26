@@ -9,7 +9,8 @@ public class Stage : MonoBehaviour {
 	private const float END_GAME_DELAY = 2.0f;
 
 
-	[SerializeField] private GameObject kidPref;
+	[SerializeField] private GameObject kid1Pref;
+	[SerializeField] private GameObject kid2Pref;
 	[SerializeField] private Transform[] kidSpawns = new Transform[2];
 	[SerializeField] private string[] startOfGameLines;
 	[SerializeField] private SpeechBubble momSpeech; 
@@ -64,10 +65,11 @@ public class Stage : MonoBehaviour {
         AudioController.Instance.SetLoopVolume(0.0f);
         AudioController.Instance.FadeInLoop(0.2f, 0.75f);
 
-		for(int i = 0; i < 2; i++) {
-			GameObject player = Instantiate(kidPref, kidSpawns[i].position, Quaternion.identity);
-			kids.Add(player.GetComponent<Kid>());
-		}
+		GameObject player1 = Instantiate(kid1Pref, kidSpawns[0].position, Quaternion.identity);
+		kids.Add(player1.GetComponent<Kid>());
+
+		GameObject player2 = Instantiate(kid2Pref, kidSpawns[1].position, Quaternion.identity);
+		kids.Add(player2.GetComponent<Kid>());
 
 		StartCoroutine(OnStageStarting());
 	}
