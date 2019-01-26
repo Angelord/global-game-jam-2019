@@ -37,11 +37,15 @@ public class Stage : MonoBehaviour {
 	}
 
 	public void StageOver() {
+		if(!Playing) { return; }
+
 		state = GameState.Victory;
 		StartCoroutine(OnStageOver());
 	}
 
 	public void GameOver() {
+		if(!Playing) { return; }
+
 		state = GameState.Lost;
 		Treehouse house = GameObject.FindGameObjectWithTag("Treehouse").GetComponent<Treehouse>();
 		cameraControl.Focus(house.transform.position);
