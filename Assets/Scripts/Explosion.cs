@@ -7,6 +7,7 @@ public class Explosion : MonoBehaviour {
 	public float explosionForce = 1.0f;
 	private int damage;
 	private SphereCollider sphereCollider;
+	private List<int> hitTargets = new List<int>();
 
 	private void Start() {
 		sphereCollider = GetComponent<SphereCollider>();
@@ -17,9 +18,11 @@ public class Explosion : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
-		if(other.gameObject.tag == "Enemy") {
+		int instanceId = other.GetInstanceID();
+		if(other.gameObject.tag == "Enemy" && !hitTargets.Contains(instanceId)) {
 			other.GetComponent<Enemy>().TakeDamage(damage);
 			other.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, sphereCollider.radius, 0.0f, ForceMode.Impulse);
+			hitTargets.Add(instanceId);
 		}
 	} 
 }

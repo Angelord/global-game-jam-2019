@@ -359,21 +359,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114519842211125090, guid: 6103300c26d6545da8c32ea4b3cb4376,
-        type: 2}
-      propertyPath: attackPushback
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 114519842211125090, guid: 6103300c26d6545da8c32ea4b3cb4376,
-        type: 2}
-      propertyPath: attackRange
-      value: 0.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 114519842211125090, guid: 6103300c26d6545da8c32ea4b3cb4376,
-        type: 2}
-      propertyPath: attackCooldown
-      value: 0.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6103300c26d6545da8c32ea4b3cb4376, type: 2}
   m_IsPrefabParent: 0

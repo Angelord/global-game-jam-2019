@@ -144,9 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 5
-  attackRange: 1
-  attackPushback: 5
-  attackCooldown: 1.2
+  attackRange: 0.74
+  attackPushback: 18
+  attackCooldown: 0.8
 --- !u!114 &114690401540396248
 MonoBehaviour:
   m_ObjectHideFlags: 1
