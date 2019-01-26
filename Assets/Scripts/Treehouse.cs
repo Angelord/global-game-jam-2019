@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Treehouse : Unit {
 
-	protected override void OnTakeDamage(int amount) {
-		Debug.Log("Taking damage");
-	}
+	public Stage stage;
+
+	protected override void OnTakeDamage(int amount) { }
 
 	protected override void Die() {
-		Debug.Log("Treehouse dead");
+		stage.GameOver();
 	}
 }
