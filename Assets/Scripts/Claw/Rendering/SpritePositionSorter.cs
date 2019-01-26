@@ -6,6 +6,6 @@ using UnityEngine;
 public class SpritePositionSorter : MonoBehaviour {
 	
 	private void Update() {
-		this.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.z);
+		this.GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.z * 10);
 	}
 }
