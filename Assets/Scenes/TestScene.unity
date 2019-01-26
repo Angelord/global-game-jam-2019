@@ -340,7 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdec8b49c89034e7baf92675f93ea200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusSpeed: 5
+  focusSpeed: 8
+  boundsMin: {x: -18.25, y: -11.14}
+  boundsMax: {x: 18.06, y: 11.6}
 --- !u!1 &104256545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2271,31 @@ Prefab:
     - target: {fileID: 4794350106280974, guid: 51659371e8f664d0da4a6856c9c7ab58, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167609111767974, guid: 51659371e8f664d0da4a6856c9c7ab58,
+        type: 2}
+      propertyPath: boundsMin.x
+      value: -18.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167609111767974, guid: 51659371e8f664d0da4a6856c9c7ab58,
+        type: 2}
+      propertyPath: boundsMax.x
+      value: 18.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167609111767974, guid: 51659371e8f664d0da4a6856c9c7ab58,
+        type: 2}
+      propertyPath: boundsMin.y
+      value: -11.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167609111767974, guid: 51659371e8f664d0da4a6856c9c7ab58,
+        type: 2}
+      propertyPath: boundsMax.y
+      value: 11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167609111767974, guid: 51659371e8f664d0da4a6856c9c7ab58,
+        type: 2}
+      propertyPath: focusSpeed
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51659371e8f664d0da4a6856c9c7ab58, type: 2}

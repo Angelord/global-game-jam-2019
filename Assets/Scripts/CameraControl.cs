@@ -5,10 +5,15 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour {
 
 	[SerializeField] private float focusSpeed = 5.0f;
-
+	[SerializeField] private Vector2 boundsMin = new Vector2(0.0f, 0.0f);
+	[SerializeField] private Vector2 boundsMax = new Vector2(0.0f, 0.0f);
+ 
 	private List<Kid> kids = new List<Kid>();
 	private bool focusing = false;
 	private Vector3 focusTarget;
+	private float halfscreenWidth;
+	private float halfscreenHeight;
+	private Camera cam;
 
 	public bool FocusedOnTarget {
 		get {
@@ -30,17 +35,28 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	private void Awake() {
+		cam = GetComponent<Camera>();
+		
 		EventManager.AddListener<KidSpawnedEvent>(HandleKidSpawnedEvent);
+
+		Vector3 topLeft = cam.ScreenToWorldPoint(new Vector2(0.0f, 0.0f));
+		Vector3 middle = cam.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height / 2));
+
+		halfscreenHeight = middle.z - topLeft.z;
+		halfscreenWidth = middle.x - topLeft.x;
+		boundsMin.x += halfscreenWidth;
+		boundsMax.x -= halfscreenWidth;
+		boundsMin.y += halfscreenHeight;
+		boundsMax.y -= halfscreenHeight;
 	}
 
 	private void Update() {
 		if(kids.Count == 0) { return; }
 
-		float mvmStep = focusSpeed * Time.deltaTime;
 		
 		if(focusing) {
 
-			transform.position = Vector3.MoveTowards(transform.position, new Vector3(focusTarget.x, transform.position.y, focusTarget.z), mvmStep);
+			MoveTowards(new Vector3(focusTarget.x, transform.position.y, focusTarget.z));
 		}
 		else {
 			Vector3 center = Vector3.zero;
@@ -59,15 +75,30 @@ public class CameraControl : MonoBehaviour {
 
 			center /= validKids;
 
-			transform.position = Vector3.MoveTowards(transform.position, new Vector3(center.x, transform.position.y, center.z), mvmStep);
+			Vector3 targetPos = new Vector3(center.x, transform.position.y, center.z);
+			MoveTowards(targetPos);
 		}
+	}
+
+	private void MoveTowards(Vector3 targetPos) {
+
+		float mvmStep = focusSpeed * Time.deltaTime;
+		
+		Vector3 newPos = Vector3.MoveTowards(transform.position, targetPos, mvmStep);
+
+		if(newPos.x < boundsMin.x || newPos.x > boundsMax.x) {
+			newPos.x = transform.position.x;
+		}
+
+		if(newPos.z < boundsMin.y || newPos.z > boundsMax.y) {
+			newPos.z = transform.position.z;
+		}
+
+		transform.position = newPos;
+
 	}
 
 	private void HandleKidSpawnedEvent(KidSpawnedEvent kidSpawned) {
 		kids.Add(kidSpawned.Kid);
 	}
-
-	// private void HandleKidDiedEvent(KidDiedEvent kidDied) {
-	// 	kids.Remove(kidDied.Kid);
-	// }
 }
