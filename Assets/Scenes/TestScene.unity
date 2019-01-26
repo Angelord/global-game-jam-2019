@@ -331,7 +331,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403884427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.7, y: 0, z: -6}
+  m_LocalPosition: {x: -15.45, y: 0, z: -8.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728107264}
@@ -602,7 +602,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &617838514
 Transform:
   m_ObjectHideFlags: 0
@@ -886,6 +886,12 @@ Prefab:
       propertyPath: m_Center.z
       value: -0.00000017881393
       objectReference: {fileID: 0}
+    - target: {fileID: 65352914430729960, guid: 8c91be735f0a14902b0d7fb5498a19c8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: ae9a66311659643cdb49ff8f99658ef2,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
   m_IsPrefabParent: 0
@@ -988,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1169643201
 Transform:
   m_ObjectHideFlags: 0
@@ -996,8 +1002,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169643200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.21}
-  m_LocalScale: {x: 19.095118, y: 1, z: 11.343735}
+  m_LocalPosition: {x: -0.234, y: -0.5, z: 0.106}
+  m_LocalScale: {x: 37.502537, y: 0.9999999, z: 24.05062}
   m_Children: []
   m_Father: {fileID: 617838514}
   m_RootOrder: 0
@@ -1077,7 +1083,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1175959350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.9, y: 0, z: -6}
+  m_LocalPosition: {x: 16.07, y: 0, z: -9.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 728107264}
