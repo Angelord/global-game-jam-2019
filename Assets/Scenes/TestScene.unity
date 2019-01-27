@@ -6837,7 +6837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kid1Pref: {fileID: 1322892987440150, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
-  kid2Pref: {fileID: 1322892987440150, guid: e28c34f6281d54e0dae85669786c5868, type: 2}
+  kid2Pref: {fileID: 1322892987440150, guid: 8c91be735f0a14902b0d7fb5498a19c8, type: 2}
   kidSpawns:
   - {fileID: 798068659}
   - {fileID: 196222998}

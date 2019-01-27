@@ -357,6 +357,9 @@ MonoBehaviour:
   - {fileID: 4609966731506332}
   ballonSpawn: {fileID: 4173711033276232}
   arrowSprite: {fileID: 212466509601370098}
+  animControllers:
+  - {fileID: 9100000, guid: e9ee0592a7541475a8bdce6ba65fe201, type: 2}
+  - {fileID: 9100000, guid: 477ba87ba131245968e6663a7b6d36b6, type: 2}
 --- !u!114 &114285863070251450
 MonoBehaviour:
   m_ObjectHideFlags: 1

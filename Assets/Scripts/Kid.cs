@@ -25,6 +25,8 @@ public class Kid : Unit {
 	[SerializeField] private Transform[] arrowPositions;
 	[SerializeField] private Transform ballonSpawn;
 	[SerializeField] private SpriteRenderer arrowSprite;
+	[Header("Visuals")]
+	[SerializeField] private RuntimeAnimatorController[] animControllers = new RuntimeAnimatorController[2];
 
 	private int index;
 	private float lastAttack;
@@ -72,6 +74,8 @@ public class Kid : Unit {
 
 		dazeEffect.SetActive(false);
 		
+		GetComponentInChildren<Animator>().runtimeAnimatorController = animControllers[index];
+
 		arrowSprite.color = Color;
 
 		controls.Horizontal = "Horizontal_" + index;
