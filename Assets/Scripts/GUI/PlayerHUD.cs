@@ -26,6 +26,15 @@ public class PlayerHUD : MonoBehaviour {
 	}
 
 	private void Update() {
+
+		if(!root.activeSelf) {
+			return;
+		}
+
+		if(!Stage.Playing) {
+			root.SetActive(false);
+		}
+
 		for(int i = 0; i < kids.Count; i++) {
 			Image icon = usableIcons[i];
 			if(icon.sprite != kids[i].CurUsable.Icon) {
@@ -33,5 +42,6 @@ public class PlayerHUD : MonoBehaviour {
 				icon.sprite = kids[i].CurUsable.Icon;
 			}
 		}
+
 	}
 }
