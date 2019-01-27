@@ -13,32 +13,31 @@ public class Kid : Unit {
 	[Header("Prefabs")]
 	[SerializeField] private GameObject healthBar;
 	[SerializeField] private GameObject speachBubblePref;
-	[SerializeField] private GameObject balloon;
 	[Header("Stats")]
 	[SerializeField] private float dazeDuration;
 	[SerializeField] private float regenRate;
 	[SerializeField] private float mvmSpeed;
-	[SerializeField] private float attackCooldown;
 	[SerializeField] private GameObject dazeEffect;
 	[Header("Arrow")]
 	[SerializeField] private Sprite[] arrows;
 	[SerializeField] private Transform[] arrowPositions;
-	[SerializeField] private Transform ballonSpawn;
 	[SerializeField] private SpriteRenderer arrowSprite;
 	[Header("Visuals")]
 	[SerializeField] private RuntimeAnimatorController[] animControllers = new RuntimeAnimatorController[2];
 
 	private int index;
-	private float lastAttack;
 	private Controls controls;
 	private new Rigidbody rigidbody;
 	private Direction direction = Direction.Down;
 	private Counterbar bar;
 	private SpeechBubble speech;
 	private float lastRegen;
+	private Usable[] usables;
+	private int curUsable = 0;
 
 	public static bool Locked { get { return locked; } set { locked = value; } }
 	public Color Color { get { return PLAYER_COLORS[index]; } }
+	public Direction Direction { get { return direction; } }
 
 	public void Say(string text) {
 		speech.Show(text);
@@ -65,6 +64,8 @@ public class Kid : Unit {
 	private void Start() {
 		index = lastIndex++;
 
+		usables = GetComponentsInChildren<Usable>();
+
 		bar = Instantiate(healthBar, StageGUI.Instance.transform).GetComponent<Counterbar>();
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
@@ -84,8 +85,6 @@ public class Kid : Unit {
 
 		rigidbody = GetComponent<Rigidbody>();
 
-		lastAttack = -attackCooldown;
-
 		EventManager.QueueEvent(new KidSpawnedEvent(this));
 	}
 
@@ -97,7 +96,7 @@ public class Kid : Unit {
 		if(locked || Dead) { return; } 
 
 		if(Input.GetButtonDown(controls.Attack)) {
-			Attack();
+			usables[curUsable].Use();
 		}
 
 		if(CurHealth < MaxHealth && (Time.time - lastRegen) >= regenRate) {
@@ -156,14 +155,6 @@ public class Kid : Unit {
 		arrowSprite.transform.position = arrowPositions[(int)direction].position;
 		arrowSprite.sprite = arrows[(int)direction];
 		arrowSprite.flipX = direction == Direction.Left ? true : false;
-	}
-
-	private void Attack() {
-		if((Time.time - lastAttack) >= attackCooldown) {
-			GameObject toLaunch = Instantiate(balloon, ballonSpawn.transform.position, Quaternion.identity);
-			toLaunch.GetComponent<Balloon>().Launch(direction);
-			lastAttack = Time.time;
-		}
 	}
 
 	private struct Controls {

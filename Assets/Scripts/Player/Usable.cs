@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Usable : MonoBehaviour {
+public abstract class Usable : MonoBehaviour {
 
+	[SerializeField] private Sprite icon;
 	private Kid kid;
 
+	public Sprite Icon { get { return icon; } } 
 	protected Kid Kid { get { return kid; } }
 
 	private void Awake() {
 		kid = GetComponentInParent<Kid>();
 	}
 
-	public void Use() {
-		
-	}
+	public abstract void Use();
 }
