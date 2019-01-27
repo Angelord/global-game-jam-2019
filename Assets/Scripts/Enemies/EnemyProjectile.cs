@@ -6,6 +6,7 @@ public class EnemyProjectile : MonoBehaviour {
 
 	public float speed;
 	public float lifetime;
+	public float pushback;
 
 	private Vector3 mvDir;
 	private int damage;
@@ -35,6 +36,12 @@ public class EnemyProjectile : MonoBehaviour {
 	private void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Player" || other.gameObject.tag == "Treehouse") {
 			other.gameObject.GetComponent<Unit>().TakeDamage(damage);
+
+			if(other.gameObject.tag == "Player") {
+				Rigidbody otherRigid = other.gameObject.GetComponent<Rigidbody>();
+				otherRigid.AddForce(mvDir * pushback, ForceMode.Impulse);
+			}
+
 			Destroy(this.gameObject);
 		}
 	}

@@ -299,12 +299,12 @@ MonoBehaviour:
   houseStoppingDist: 3
   damage: 1
   attackPushback: 0
-  attackCooldown: 1.2
+  attackCooldown: 1.6
   slashPref: {fileID: 0}
   hasDeathAnim: 0
   deathDelay: 0.5
   projectile: {fileID: 1632073560677946, guid: d6d52be2237984d21a79210dd9be8ed0, type: 2}
-  spawnDist: 0.8
+  spawnDist: 0.6
 --- !u!114 &114932604139807662
 MonoBehaviour:
   m_ObjectHideFlags: 1

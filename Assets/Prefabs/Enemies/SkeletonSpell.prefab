@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   lifetime: 3.4
+  pushback: 9.6
 --- !u!135 &135217990612431882
 SphereCollider:
   m_ObjectHideFlags: 1
