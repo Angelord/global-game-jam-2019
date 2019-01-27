@@ -7,7 +7,7 @@ public class Usable : MonoBehaviour {
 	[SerializeField] private UsableType usableType;
 	[SerializeField] private Sprite icon;
 	[SerializeField] private float cooldown;
-	[SerializeField] private GameObject objectPref;
+	[SerializeField] private GameObject[] usableLevels;
 	[SerializeField] private Transform spawnPoint;
 	private Kid kid;
 	private float lastAttack;
@@ -20,7 +20,8 @@ public class Usable : MonoBehaviour {
 
 	public void Use() {
 		if((Time.time - lastAttack) >= cooldown) {
-			GameObject newObject = Instantiate(objectPref, spawnPoint.position, Quaternion.identity);
+			GameObject curLevelPrefab = usableLevels[Progress.GetUsableLevel(usableType)];
+			GameObject newObject = Instantiate(curLevelPrefab, spawnPoint.position, Quaternion.identity);
 
 			Balloon balloonComp = newObject.GetComponent<Balloon>();
 			if(balloonComp != null) {
@@ -29,7 +30,6 @@ public class Usable : MonoBehaviour {
 
 			if(Progress.IsFinite(usableType)) {
 				Progress.ModAmmo(usableType, -1);
-				Debug.Log(Progress.GetAmmo(usableType));
 			}
 
 			//TODO : Event
