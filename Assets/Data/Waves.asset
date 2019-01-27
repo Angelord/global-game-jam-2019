@@ -143,10 +143,10 @@ MonoBehaviour:
           type: 2}
         spawnFreq: 3
         numEnemies: 1
-      - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
+      - enemy: {fileID: 1063692038662322, guid: daac81367767a4108a0108245ab9eaee,
           type: 2}
-        spawnFreq: 0.5
-        numEnemies: 12
+        spawnFreq: 10
+        numEnemies: 1
   - name: Day 6
     waves:
     - name: Wave 1
