@@ -16,6 +16,7 @@ public static class Progress {
 	public static int Day { get { return day; } }
 	public static int Candy { get { return candy; } set { candy = value; } }
 	public static List<ShopOffer> Offers { get { return offers; } }
+	public static int HouseLevel { get { return houseLevel; } }
 
 	public static void UpgradeHouse() {
 		houseLevel++;

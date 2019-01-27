@@ -11,6 +11,11 @@ public abstract class Unit : MonoBehaviour {
 	public int CurHealth { get { return curHealth; } protected set { curHealth =  Mathf.Clamp(value, 0, MaxHealth); } }
 	public bool Dead { get { return curHealth <= 0; } }
 	
+	public void SetMaxHealth(int val) {
+		this.health = val;
+		this.curHealth = Mathf.Clamp(curHealth, 0, health);
+	}
+
 	public void TakeDamage(int amount) {
 		if(Dead) { return; }
 

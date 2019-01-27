@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class Treehouse : Unit {
 
-	[SerializeField]private Stage stage;
+	[SerializeField] private Stage stage;
+	[SerializeField] private int[] levelHealths;
+	[SerializeField] private float[] levelRegens;
+	[SerializeField] private ParticleSystem regenEffect;
 
 	private Shaker shaker;
+	private float regen;
+	private float lastRegen;
 
 	private void Start() {
 
 		shaker	= GetComponentInChildren<Shaker>();
 		shaker.enabled = false;
 
+		GetComponentInChildren<Animator>().SetInteger("Level", Progress.HouseLevel);
+	
 		EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
 	}
 
 	private void HandleStageStartedEvent(StageStartedEvent stageEv) {
+		int level = Progress.HouseLevel;
+
+		SetMaxHealth(levelHealths[level]);
+		ResetHealth();
+		regen = levelRegens[level];
+
+		GetComponentInChildren<Animator>().SetInteger("Level", Progress.HouseLevel);
+
 		StageGUI.Instance.CreateHealthBar(this);
 	}
 
@@ -28,9 +43,31 @@ public class Treehouse : Unit {
 				transform.position = curPos;
 			}
 		);
+
+		lastRegen = Time.time;
 	}
 
 	protected override void Die() {
 		stage.GameOver();
+	}
+
+	private void Update() {
+		if(Time.time - lastRegen > regen) {
+			
+			Regen();
+			
+			lastRegen = Time.time;
+		}
+	}
+
+	private void Regen() {
+
+		if(CurHealth < MaxHealth) {
+			
+			CurHealth++;
+
+			regenEffect.Play();
+
+		}
 	}
 }
