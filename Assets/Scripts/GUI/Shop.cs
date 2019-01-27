@@ -28,6 +28,10 @@ public class Shop : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		AudioController.Instance.SetLoop("store");
+        AudioController.Instance.SetLoopVolume(0.0f);
+        AudioController.Instance.FadeInLoop(0.2f, 0.45f);
+
 		defaultSelectorSize = selectors[0].sizeDelta.x;
 
 		if(Progress.Offers.Count == 0) {
