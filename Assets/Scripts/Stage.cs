@@ -29,6 +29,7 @@ public class Stage : MonoBehaviour {
 	private void Start() {
 
 		if(Progress.Day == 0) {
+			Progress.ModAmmo(UsableType.Dummy, +1);
 			Progress.ModAmmo(UsableType.Banana, +3);
 		}
 

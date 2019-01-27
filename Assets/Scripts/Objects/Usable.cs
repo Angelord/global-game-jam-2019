@@ -48,5 +48,6 @@ public class Usable : MonoBehaviour {
 public enum UsableType {
 	Balloon,
 	Banana,
+	Dummy,
 	Count
 }

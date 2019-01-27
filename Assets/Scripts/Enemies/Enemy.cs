@@ -94,7 +94,6 @@ public class Enemy : Unit {
 		agent.SetDestination(target.transform.position);
 
 		if((Time.time - lastAttack) > attackCooldown && range.InRange(target)) {
-			Debug.Log("Attacking");
 			Attack();
 		}
 
