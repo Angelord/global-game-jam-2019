@@ -18,6 +18,7 @@ public class WaveData : ScriptableObject {
 	[System.Serializable]
 	private class Day {
 		
+		public string name;
 		public List<Wave> waves = new List<Wave>();		
 	}
 }

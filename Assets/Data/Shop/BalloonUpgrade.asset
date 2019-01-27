@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724cdb640e5d44170b84ac839e73df78, type: 3}
   m_Name: BalloonUpgrade
   m_EditorClassIdentifier: 
-  price: 60
+  price: 40
   offerType: 2
   name: Balloon Upgrade
   description: Upgrades balloon damage and area of effect.

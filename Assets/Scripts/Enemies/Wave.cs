@@ -4,8 +4,16 @@ using UnityEngine;
 
 [System.Serializable]
 public class Wave {
+	public string name;
+	public float delay = 3.0f;
+	public List<SpawnGroup> spawnGroups;
 
-	public float spawnFrequency = 0.8f;
-	public GameObject enemyType;
-	public int numEnemies;
 }
+
+[System.Serializable] 
+	public class SpawnGroup {
+		public GameObject enemy;
+		public float spawnFreq;
+		public int numEnemies;
+	}
+

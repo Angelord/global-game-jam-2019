@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 	
-    [SerializeField] private float breakTimes = 1.0f;
+    [SerializeField] private float breakTimes = 5.0f;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private Stage stage;
     [SerializeField] private WaveData waveData;
@@ -31,13 +31,21 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnNextWave() {
+
         yield return new WaitForSeconds(breakTimes);
 
-        for(int i = 0; i < CurrentWave.numEnemies; i++) {
-            Instantiate(CurrentWave.enemyType, GetNextSpawnPoint().position, Quaternion.identity);
-            yield return new WaitForSeconds(CurrentWave.spawnFrequency);
+        foreach(var spawnGroup in CurrentWave.spawnGroups) {
+            StartCoroutine(SpawnGroup(spawnGroup));
         }
     }   
+
+    private IEnumerator SpawnGroup(SpawnGroup group) {
+
+        for(int i = 0; i < group.numEnemies; i++) {
+            Instantiate(group.enemy, GetNextSpawnPoint().position, Quaternion.identity);
+            yield return new WaitForSeconds(group.spawnFreq);
+        }
+    }
 
     private Transform GetNextSpawnPoint() {
         lastSpawnPoint = (lastSpawnPoint + 1) % spawnPoints.Count;

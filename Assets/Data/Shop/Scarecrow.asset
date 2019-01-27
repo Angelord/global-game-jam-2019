@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724cdb640e5d44170b84ac839e73df78, type: 3}
   m_Name: Scarecrow
   m_EditorClassIdentifier: 
-  price: 8
+  price: 7
   offerType: 1
   name: Scarecrow
   description: A trusty friend. Willing to fight AND die for you. Also he won't take

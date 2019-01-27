@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724cdb640e5d44170b84ac839e73df78, type: 3}
   m_Name: HouseUpgrade_2
   m_EditorClassIdentifier: 
-  price: 80
+  price: 60
   offerType: 3
   name: House Upgrade 2
   description: 'Upgrades you tree-house, increasing its health. Just make sure uncle
