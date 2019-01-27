@@ -15,6 +15,8 @@ public class Treehouse : Unit {
 
 	private void Start() {
 
+		Debug.Log("Progress " + Progress.HouseLevel);
+
 		shaker	= GetComponentInChildren<Shaker>();
 		shaker.enabled = false;
 
@@ -25,6 +27,9 @@ public class Treehouse : Unit {
 
 	private void HandleStageStartedEvent(StageStartedEvent stageEv) {
 		int level = Progress.HouseLevel;
+
+		Debug.Log("Progress " + Progress.HouseLevel);
+
 
 		SetMaxHealth(levelHealths[level]);
 		ResetHealth();

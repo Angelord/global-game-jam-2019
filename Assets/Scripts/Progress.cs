@@ -56,6 +56,9 @@ public static class Progress {
 	}
 
 	public static void Reset() {
+
+		Debug.Log("resetting");
+
 		day = 0;
 		candy = 0;
 		houseLevel = 0;

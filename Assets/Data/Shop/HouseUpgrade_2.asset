@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: HouseUpgrade_2
   m_EditorClassIdentifier: 
   price: 80
-  offerType: 2
+  offerType: 3
   name: House Upgrade 2
   description: 'Upgrades you tree-house, increasing its health. Just make sure uncle
     Phil doesn''t notice you stealing his tools. '
