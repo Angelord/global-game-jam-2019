@@ -10,6 +10,7 @@ public class Dummy : Unit {
 	[SerializeField] private float dealDmgDelay;
 	[SerializeField] private float deathDelay = 0.75f;
 	[SerializeField] private AudioClip deathSound;
+	[SerializeField] private AudioClip attackSound;
 
 	private float lastAttack = 0.0f;
 	private Animator animator;
@@ -85,7 +86,7 @@ public class Dummy : Unit {
 
 		animator.SetTrigger("Attack");
 
-		AudioController.Instance.PlaySound("dummy_attack");
+		AudioController.Instance.PlayClipAt(attackSound, transform.position);
 		
 		Unit target = targets[Random.Range(0, targets.Count)];
 

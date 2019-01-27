@@ -178,6 +178,7 @@ MonoBehaviour:
   dealDmgDelay: 0.3
   deathDelay: 0.7
   deathSound: {fileID: 8300000, guid: 0292112313cb043de8b5553418e81e06, type: 3}
+  attackSound: {fileID: 8300000, guid: 74c87782c8f4b465496085a30b6cc07f, type: 3}
 --- !u!114 &114782560764790780
 MonoBehaviour:
   m_ObjectHideFlags: 1
