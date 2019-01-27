@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbf03c10a34142e695a02d696f27e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 34
+  explosionForce: 24
 --- !u!114 &114427532368857268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771f94b7e42cd4304ad0d0f9f21bdc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 0.4
+  lifetime: 0.38
 --- !u!135 &135008397004426820
 SphereCollider:
   m_ObjectHideFlags: 1
