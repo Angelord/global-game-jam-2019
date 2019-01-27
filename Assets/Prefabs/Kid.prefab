@@ -429,7 +429,7 @@ MonoBehaviour:
   speachBubblePref: {fileID: 1989674079581356, guid: d7cec7c72865c412c9991f2660065185,
     type: 2}
   dazeDuration: 5
-  regenRate: 2.2
+  regenRate: 5
   mvmSpeed: 300
   arrows:
   - {fileID: 21300000, guid: 478aaf3f5545f4710a20d8beac472f18, type: 3}
