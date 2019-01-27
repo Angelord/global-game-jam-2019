@@ -15,6 +15,8 @@ public class Usable : MonoBehaviour {
 
 	public Sprite Icon { get { return icon; } } 
 	public bool CanUse { get { return !Progress.IsFinite(usableType) || (Progress.GetAmmo(usableType) > 0); } }
+	public bool IsFinite { get { return Progress.IsFinite(usableType); } }
+	public int Ammo { get { return Progress.GetAmmo(usableType); } }
 
 	public void Use() {
 		if((Time.time - lastAttack) >= cooldown) {

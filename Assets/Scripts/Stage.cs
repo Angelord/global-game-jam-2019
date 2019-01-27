@@ -27,6 +27,9 @@ public class Stage : MonoBehaviour {
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
 
 	private void Start() {
+		if(Progress.Day == 0) {
+			Progress.ModAmmo(UsableType.Banana, +3);
+		}
 
 		instance = this;
 

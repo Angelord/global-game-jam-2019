@@ -63,6 +63,7 @@ public class Kid : Unit {
 	}
 
 	private void Start() {
+
 		index = lastIndex++;
 
 		usables = GetComponentsInChildren<Usable>();

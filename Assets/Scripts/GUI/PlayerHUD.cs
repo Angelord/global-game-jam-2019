@@ -9,6 +9,7 @@ public class PlayerHUD : MonoBehaviour {
 	[SerializeField] private GameObject root;
 	[SerializeField] private Text candyText;
 	[SerializeField] private Image[] usableIcons;
+	[SerializeField] private Text[] remainingUses;
 
 	private List<Kid> kids = new List<Kid>();
 
@@ -42,6 +43,11 @@ public class PlayerHUD : MonoBehaviour {
 				//TODO : Lerp alpha
 				icon.sprite = kids[i].CurUsable.Icon;
 			}
+		}
+
+		for(int i = 0; i < kids.Count; i++) {
+			remainingUses[i].enabled = kids[i].CurUsable.IsFinite;
+			remainingUses[i].text = kids[i].CurUsable.Ammo.ToString();
 		}
 
 		candyText.text = Progress.Candy.ToString();
