@@ -11,19 +11,23 @@ public class Egg : Unit {
 		
 		CancelInvoke();
 
-		//TODO: play destroy anim
+		EventManager.QueueEvent(new EnemyDiedEvent());
+		
 		Destroy(this.gameObject);
 	}
 
 	private void Start() {
 
 		Invoke("Spawn", spawnsIn);
+		EventManager.TriggerEvent(new EnemySpawnedEvent());
 	}
 
 	private void Spawn() {
 		
 		Instantiate(creature, transform.position, Quaternion.identity);
-		//TODO : play destroy anim
+
+		EventManager.QueueEvent(new EnemyDiedEvent());
+
 		Destroy(this.gameObject);
 	}
 
