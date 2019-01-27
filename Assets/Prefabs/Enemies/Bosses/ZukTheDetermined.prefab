@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114984721548747710}
   - component: {fileID: 114818991646005372}
   m_Layer: 9
-  m_Name: TukTukTheLost
+  m_Name: ZukTheDetermined
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337167503977878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.69, y: 0, z: -2.43}
+  m_LocalPosition: {x: 2.5899029, y: 0, z: -3.4134047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4927618597890890}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   namePrefab: {fileID: 1343952785385034, guid: 9c1acdfedd192476c9563685d8133928, type: 2}
-  name: Tuk Tuk The Lost
+  name: Zuk The Determined
 --- !u!114 &114984721548747710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -309,12 +309,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76da1545aa2e745b1915f98e1c8f0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 28
+  health: 20
   playerStoppingDist: 0.72
   houseStoppingDist: 1.4
   damage: 1
   attackPushback: 40
-  attackCooldown: 0.8
+  attackCooldown: 1.8
   slashPref: {fileID: 1198962100662920, guid: 56919d9aa8f7441b2816a0f38cd09ad6, type: 2}
   hasDeathAnim: 1
   deathDelay: 0.5
@@ -341,7 +341,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195774475279644450
 NavMeshAgent:
@@ -352,7 +352,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.32
-  m_Speed: 2.5
+  m_Speed: 4.5
   m_Acceleration: 100
   avoidancePriority: 60
   m_AngularSpeed: 0
@@ -397,9 +397,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 57445401
   m_SortingLayer: 2
-  m_SortingOrder: 24
+  m_SortingOrder: 34
   m_Sprite: {fileID: 21300000, guid: 3ca22379a931b4d37934151752c56ce4, type: 3}
-  m_Color: {r: 0.761104, g: 1, b: 0.622, a: 0.959}
+  m_Color: {r: 0.39099997, g: 0.6471999, b: 1, a: 0.959}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
