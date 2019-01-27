@@ -6,8 +6,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : Unit {
 
-	private const float DEATH_DELAY = 0.7f;
-
 	private static Treehouse house;
 
 	public float playerStoppingDist = 0.72f;
@@ -17,6 +15,8 @@ public class Enemy : Unit {
 	public float attackPushback;
 	public float attackCooldown;
 	public GameObject slashPref;
+	public bool hasDeathAnim = false; 
+	public float deathDelay = 0.7f;
 
 	private bool following = true;
 	private float lastAttack;
@@ -39,8 +39,12 @@ public class Enemy : Unit {
 
 	protected override void Die() {
 		this.enabled = false;
-
-		Invoke("DestroySelf", DEATH_DELAY);
+		if(hasDeathAnim) {
+			GetComponentInChildren<Animator>().SetTrigger("Die");
+		}
+		
+		agent.enabled = false;
+		Invoke("DestroySelf", deathDelay);
 		EventManager.QueueEvent(new EnemyDiedEvent());
 	}
 
