@@ -24,6 +24,8 @@ public class Dummy : Unit {
 		bar = Instantiate(barPrefab, StageGUI.Instance.transform).GetComponent<Counterbar>();
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
+
+		AudioController.Instance.PlaySound("dummy_thump");
 	}
 
 	public void AddTarget(Unit unit) {
