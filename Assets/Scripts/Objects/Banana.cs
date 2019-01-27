@@ -10,8 +10,17 @@ public class Banana : MonoBehaviour {
 			Unit unitComp = other.gameObject.GetComponent<Unit>();
 			if(unitComp != null) {
 				unitComp.TakeDamage(unitComp.CurHealth);
-				Destroy(this.gameObject);
+
+				GetComponent<Collider>().enabled = false;
+
+				GetComponentInChildren<Animator>().SetTrigger("Splash");
+				
+				Invoke("DestroySelf", 0.7f);
 			}
 		}
+	}
+
+	private void DestroySelf() {
+		Destroy(this.gameObject);
 	}
 }

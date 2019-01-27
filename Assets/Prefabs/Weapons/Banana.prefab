@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4318570340356038}
   - component: {fileID: 212487451604561724}
   - component: {fileID: 114588693373658320}
+  - component: {fileID: 95048074675384854}
   m_Layer: 0
   m_Name: Sprite_Banana
   m_TagString: Untagged
@@ -65,13 +66,30 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566287123948120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5871243, y: 0, z: -2.7347693}
+  m_LocalPosition: {x: -2.03, y: 4.6757812, z: -0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318570340356038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95048074675384854
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723382718222930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 48d856813bd2d45a08d2539cd68eb22c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114588693373658320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 57445401
   m_SortingLayer: 2
-  m_SortingOrder: 27
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 2ac9d459b184b468cabd71e642465388, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
