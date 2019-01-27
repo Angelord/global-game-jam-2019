@@ -81,7 +81,6 @@ public class Shop : MonoBehaviour {
 		}
 
 		for(int i = 0; i < 2; i++) {
-			Debug.Log(playerSelections[i] + " " + optionGroup.GetChild(playerSelections[i]).GetComponentInChildren<ShopOfferGUI>().Offer.name);
 			Vector2 targetPos = optionGroup.GetChild(playerSelections[i]).GetComponent<RectTransform>().position;
 			selectors[i].anchoredPosition = Vector3.Lerp(selectors[i].anchoredPosition, targetPos, selectorSpeed * Time.deltaTime); 
 		}

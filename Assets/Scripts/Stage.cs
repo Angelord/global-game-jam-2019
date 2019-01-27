@@ -28,11 +28,6 @@ public class Stage : MonoBehaviour {
 
 	private void Start() {
 
-		if(Progress.Day == 0) {
-			Progress.ModAmmo(UsableType.Dummy, +1);
-			Progress.ModAmmo(UsableType.Banana, +3);
-		}
-
 		instance = this;
 
 		cameraControl = Camera.main.GetComponent<CameraControl>();
@@ -65,6 +60,12 @@ public class Stage : MonoBehaviour {
 	}
 
 	public void StartStage() {
+
+		if(Progress.Day == 0) {
+			Progress.Candy += 1000;
+			Progress.ModAmmo(UsableType.Dummy, +1);
+			Progress.ModAmmo(UsableType.Banana, +3);
+		}
 
 		AudioController.Instance.SetLoop("battle_main");
         AudioController.Instance.SetLoopVolume(0.0f);

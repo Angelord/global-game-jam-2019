@@ -31,6 +31,9 @@ public class ShopOfferGUI : MonoBehaviour {
 			case OfferType.BuyBanana:
 			Progress.ModAmmo(UsableType.Banana, 1);
 			break;
+			case OfferType.BuyDummy:
+			Progress.ModAmmo(UsableType.Dummy, 1);
+			break;
 			case OfferType.BalloonUpgrade:
 			Progress.UpgradeUsable(UsableType.Balloon);
 			break;
@@ -50,6 +53,7 @@ public class ShopOfferGUI : MonoBehaviour {
 		else {
 			Progress.AddOffer(offer.nextLevel);
 			offer = offer.nextLevel;
+			UpdateDisplay();
 		}
 	}
 

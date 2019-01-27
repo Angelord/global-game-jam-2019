@@ -18,6 +18,7 @@ public class ShopOffer : ScriptableObject {
 
 public enum OfferType {
 	BuyBanana,
+	BuyDummy,
 	BalloonUpgrade,
 	HouseUpgrade,
 }

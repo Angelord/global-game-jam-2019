@@ -1148,9 +1148,10 @@ MonoBehaviour:
   offerGUIPref: {fileID: 1423027534320138, guid: 84fcc4442a95e4246a285fc4bd6c9fcb,
     type: 2}
   initialOffers:
-  - {fileID: 11400000, guid: 4e89248ceafb34ab3af3f804dfc710d7, type: 2}
   - {fileID: 11400000, guid: 89a7fc39bfd9d4738b45499e6c0f7cca, type: 2}
+  - {fileID: 11400000, guid: 2c1532ae6905840269072aa8cbd79d99, type: 2}
   - {fileID: 11400000, guid: 7bdd652ed545d41feae5a487fe950f41, type: 2}
+  - {fileID: 11400000, guid: 4e89248ceafb34ab3af3f804dfc710d7, type: 2}
   optionGroup: {fileID: 966819662}
   selectorSpeed: 16
   swithcFreq: 0.26

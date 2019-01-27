@@ -9,13 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 724cdb640e5d44170b84ac839e73df78, type: 3}
-  m_Name: HouseUpgrade1
+  m_Name: Scarecrow
   m_EditorClassIdentifier: 
-  price: 50
-  offerType: 2
-  name: House Upgrade 1
-  description: 'Upgrades you tree-house, increasing its health. Just make sure uncle
-    Phil doesn''t notice you stealing his tools. '
-  icon: {fileID: 21300000, guid: 3a31b550085364de6ba801e694bbc88f, type: 3}
-  singlePurchase: 1
+  price: 8
+  offerType: 0
+  name: Scarecrow
+  description: A sticky trap.
+  icon: {fileID: 21300000, guid: c635b4260bf99412384a161947da4bbc, type: 3}
+  singlePurchase: 0
   nextLevel: {fileID: 0}
