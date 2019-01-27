@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Treehouse
   - Enemy
+  - GUI
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3143687663
+    locked: 0
+  - name: GUI
+    uniqueID: 1046940195
     locked: 0

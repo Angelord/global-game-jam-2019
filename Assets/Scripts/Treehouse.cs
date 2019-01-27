@@ -7,6 +7,7 @@ public class Treehouse : Unit {
 	[SerializeField] private Stage stage;
 	[SerializeField] private int[] levelHealths;
 	[SerializeField] private float[] levelRegens;
+	[SerializeField] private Collider[] levelColliders;
 	[SerializeField] private ParticleSystem regenEffect;
 
 	private Shaker shaker;
@@ -25,6 +26,10 @@ public class Treehouse : Unit {
 
 	private void HandleStageStartedEvent(StageStartedEvent stageEv) {
 		int level = Progress.HouseLevel;
+
+		for(int i = 0; i < levelColliders.Length; i++) {
+			levelColliders[i].enabled = (i == level);
+		}
 
 		SetMaxHealth(levelHealths[level]);
 		ResetHealth();
