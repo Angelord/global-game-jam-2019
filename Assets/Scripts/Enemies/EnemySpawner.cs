@@ -52,8 +52,8 @@ public class EnemySpawner : MonoBehaviour {
     private IEnumerator SpawnGroup(SpawnGroup group) {
 
         for(int i = 0; i < group.numEnemies; i++) {
-            Instantiate(group.enemy, GetNextSpawnPoint().position, Quaternion.identity);
             yield return new WaitForSeconds(group.spawnFreq);
+            Instantiate(group.enemy, GetNextSpawnPoint().position, Quaternion.identity);
         }
     }
 
