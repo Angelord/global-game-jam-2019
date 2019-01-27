@@ -11,7 +11,6 @@ public class Enemy : Unit {
 	public float playerStoppingDist = 0.72f;
 	public float houseStoppingDist = 1.0f;
 	public int damage;
-	public float attackRange;
 	public float attackPushback;
 	public float attackCooldown;
 	public GameObject slashPref;
@@ -26,6 +25,8 @@ public class Enemy : Unit {
 	private Unit target;
 	private GameObject slash;
 
+	protected float LastAttack { get { return lastAttack; } set { lastAttack = value; } }
+	protected bool Following { get { return following; } set { following = value; } }
 	public Unit Target { get { return target; } }
 
 	public void TargetInRange() {
@@ -64,8 +65,11 @@ public class Enemy : Unit {
 		agent = GetComponent<NavMeshAgent>();
 		range = GetComponentInChildren<EnemyRange>();
 		sprite = GetComponentInChildren<SpriteRenderer>();
-		slash = Instantiate(slashPref);
-		slash.SetActive(false);
+
+		if(slashPref != null) {
+			slash = Instantiate(slashPref);
+			slash.SetActive(false);
+		}
 
 		agent.stoppingDistance = houseStoppingDist;
 		target = house;
@@ -96,7 +100,7 @@ public class Enemy : Unit {
 		sprite.flipX = target.transform.position.x < transform.position.x ? true : false;
 	}
 
-	private void Attack() {
+	protected virtual void Attack() {
 		target.TakeDamage(damage);
 		Rigidbody enRigidbody = target.GetComponent<Rigidbody>();
 		if(enRigidbody != null) {
@@ -105,15 +109,17 @@ public class Enemy : Unit {
 		lastAttack = Time.time;
 		following = false;
 
-		slash.SetActive(true);
-		slash.transform.SetParent(target.transform);
-		slash.transform.localPosition = Vector3.zero;
-		
-		CustomCoroutine.WaitThenExecute(1.0f, () => {
-			 	slash.SetActive(false);
-				slash.transform.SetParent(null);
-			 }
-		);
+		if(slashPref != null) {
+			slash.SetActive(true);
+			slash.transform.SetParent(target.transform);
+			slash.transform.localPosition = Vector3.zero;
+			CustomCoroutine.WaitThenExecute(1.0f, () => {
+					slash.SetActive(false);
+					slash.transform.SetParent(null);
+				}
+			);
+		}
+
 		CustomCoroutine.WaitThenExecute(attackCooldown, () => following = true);
 	}
 
