@@ -12,8 +12,10 @@ public class EnemyRange : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Player" || other.gameObject.tag == "Treehouse") {
+			Debug.Log("enemy in range");
 			Unit otherUnit = other.gameObject.GetComponent<Unit>();
 			if(otherUnit != null && !inRange.Contains(otherUnit)) {
+				Debug.Log("Adding");
 				inRange.Add(otherUnit);
 			}
 		}

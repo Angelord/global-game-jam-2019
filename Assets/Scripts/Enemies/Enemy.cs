@@ -84,9 +84,9 @@ public class Enemy : Unit {
 	}
 
 	private void Update() {
-		if(!agent.enabled || !following || !Stage.Playing) { return; }
+		if(!agent.isActiveAndEnabled || !following || !Stage.Playing) { return; }
 
-		if(!target.enabled || target.Dead) {
+		if(target.gameObject == null || !target.enabled || target.Dead) {
 			agent.stoppingDistance = houseStoppingDist;
 			target = house;
 		}
@@ -94,6 +94,7 @@ public class Enemy : Unit {
 		agent.SetDestination(target.transform.position);
 
 		if((Time.time - lastAttack) > attackCooldown && range.InRange(target)) {
+			Debug.Log("Attacking");
 			Attack();
 		}
 
@@ -114,8 +115,10 @@ public class Enemy : Unit {
 			slash.transform.SetParent(target.transform);
 			slash.transform.localPosition = Vector3.zero;
 			CustomCoroutine.WaitThenExecute(1.0f, () => {
-					slash.SetActive(false);
-					slash.transform.SetParent(null);
+					if(slash != null) {
+						slash.SetActive(false);
+						slash.transform.SetParent(null);
+					}
 				}
 			);
 		}
