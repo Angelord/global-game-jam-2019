@@ -10,7 +10,7 @@ public class Exit : MonoBehaviour {
 			
 			Progress.DayPassed();
 			//TODO : Go to teleshop
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			SceneManager.LoadScene("Shop");
 		}
 	}
 }

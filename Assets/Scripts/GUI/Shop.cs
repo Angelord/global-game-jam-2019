@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour {
 
@@ -18,6 +19,11 @@ public class Shop : MonoBehaviour {
 	public int[] playerSelections = new int[2];
 	public float[] lastSwitches = new float[2];
 	private float defaultSelectorSize;
+
+
+	public void Continue() {
+		SceneManager.LoadScene("Treehouse");
+	}
 
 	// Use this for initialization
 	void Start () {

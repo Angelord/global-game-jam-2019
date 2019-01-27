@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Treehouse.unity
+    guid: c7281c7b4d8764274bae8a1786d6f372
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 5fefe3509011c48148546d47c20f4db7
