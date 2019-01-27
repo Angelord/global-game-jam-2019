@@ -6,6 +6,8 @@ public class StageGUI : MonoBehaviour {
 
 
 	[SerializeField] private GameObject healthbar;
+	[SerializeField] private GameObject pauseMenu;
+	[SerializeField] private GameObject endGameScreen;
 
 	private static StageGUI instance;
 
@@ -13,6 +15,11 @@ public class StageGUI : MonoBehaviour {
 
 	private void Awake() {
 		instance = this;
+	}
+
+	private void Update() {
+		pauseMenu.transform.SetAsLastSibling();
+		endGameScreen.transform.SetAsFirstSibling();
 	}
 
 	public Healthbar CreateHealthBar(Unit unit) {

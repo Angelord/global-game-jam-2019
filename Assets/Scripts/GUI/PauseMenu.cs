@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour {
 	[SerializeField] private GameObject newGameBtn;
 	[SerializeField] private GameObject quitBtn;
 	[SerializeField] private Stage stage;
+	[SerializeField] private GameObject playerHUD;
 
 	private static bool paused = true;
 	private GameObject root;
@@ -70,5 +71,7 @@ public class PauseMenu : MonoBehaviour {
 
 		if(paused) 
 			resumeBtn.SetActive(Stage.Playing);
+
+		playerHUD.SetActive(!paused);
 	}
 }

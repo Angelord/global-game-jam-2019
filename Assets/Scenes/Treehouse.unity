@@ -1388,6 +1388,7 @@ MonoBehaviour:
   newGameBtn: {fileID: 521228336}
   quitBtn: {fileID: 435327230}
   stage: {fileID: 1100877976}
+  playerHUD: {fileID: 2019220333}
 --- !u!1 &403884427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2082,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 1155550779203882, guid: bc3e62ef795694c77b6a39bcd64bf8b9, type: 2}
+  pauseMenu: {fileID: 402382684}
+  endGameScreen: {fileID: 1761630885}
 --- !u!1 &551871215
 GameObject:
   m_ObjectHideFlags: 0
@@ -15759,7 +15762,7 @@ GameObject:
   - component: {fileID: 1598130724}
   - component: {fileID: 1598130727}
   m_Layer: 5
-  m_Name: Text
+  m_Name: NotifyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
