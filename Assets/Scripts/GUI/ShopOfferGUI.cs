@@ -19,7 +19,7 @@ public class ShopOfferGUI : MonoBehaviour {
 	public void Buy() {
 
 		if(!Progress.CanAfford(offer)) {
-			//TODO : play can't afford sound
+			AudioController.Instance.PlaySound("not_enough_money");
 			return;
 		}
 
