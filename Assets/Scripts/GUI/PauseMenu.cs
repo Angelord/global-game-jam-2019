@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour {
 	[SerializeField] private GameObject quitBtn;
 	[SerializeField] private Stage stage;
 	[SerializeField] private GameObject playerHUD;
+	[SerializeField] private GameObject tutorial;
 
 	private static bool paused = true;
 	private GameObject root;
@@ -29,6 +30,10 @@ public class PauseMenu : MonoBehaviour {
 
 		continueBtn.SetActive(false);
 		resumeBtn.SetActive(false);
+	}
+
+	public void HowToPlay() {
+		tutorial.SetActive(!tutorial.activeSelf);
 	}
 
 	public void Resume() {
@@ -69,8 +74,13 @@ public class PauseMenu : MonoBehaviour {
 		
 		root.SetActive(paused);
 
-		if(paused) 
-			resumeBtn.SetActive(Stage.Playing);
+		if(paused) {
+			resumeBtn.SetActive(Stage.Playing); 
+		}
+
+		if(!paused) {
+			tutorial.SetActive(false);
+		}
 
 		playerHUD.SetActive(!paused);
 	}
