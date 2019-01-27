@@ -14,15 +14,17 @@ public class Kid : Unit {
 	[SerializeField] private GameObject healthBar;
 	[SerializeField] private GameObject speachBubblePref;
 	[SerializeField] private GameObject balloon;
-	[Header("Locals")]
-	[SerializeField] private Transform ballonSpawn;
-	[SerializeField] private Transform directionArrow;
 	[Header("Stats")]
 	[SerializeField] private float dazeDuration;
 	[SerializeField] private float regenRate;
 	[SerializeField] private float mvmSpeed;
 	[SerializeField] private float attackCooldown;
 	[SerializeField] private GameObject dazeEffect;
+	[Header("Arrow")]
+	[SerializeField] private Sprite[] arrows;
+	[SerializeField] private Transform[] arrowPositions;
+	[SerializeField] private Transform ballonSpawn;
+	[SerializeField] private SpriteRenderer arrowSprite;
 
 	private int index;
 	private float lastAttack;
@@ -69,6 +71,8 @@ public class Kid : Unit {
 		speech.GetComponent<FollowerGUI>().SetTarget(transform);
 
 		dazeEffect.SetActive(false);
+		
+		arrowSprite.color = Color;
 
 		controls.Horizontal = "Horizontal_" + index;
 		controls.Vertical = "Vertical_" + index;
@@ -145,20 +149,9 @@ public class Kid : Unit {
 			direction = ver > 0.0f ? Direction.Up : Direction.Down;
 		}
 
-		switch(direction) {
-			case Direction.Down:
-				directionArrow.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-				break;
-			case Direction.Up:
-				directionArrow.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-				break;
-			case Direction.Left:
-				directionArrow.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-				break;
-			case Direction.Right:
-				directionArrow.rotation = Quaternion.Euler(0.0f, 270.0f, 0.0f);
-				break;
-		}
+		arrowSprite.transform.position = arrowPositions[(int)direction].position;
+		arrowSprite.sprite = arrows[(int)direction];
+		arrowSprite.flipX = direction == Direction.Left ? true : false;
 	}
 
 	private void Attack() {
