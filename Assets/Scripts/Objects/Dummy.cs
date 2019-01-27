@@ -75,6 +75,8 @@ public class Dummy : Unit {
 	private IEnumerator Attack() {
 
 		animator.SetTrigger("Attack");
+
+		AudioController.Instance.PlaySound("dummy_attack");
 		
 		Unit target = targets[Random.Range(0, targets.Count)];
 
