@@ -38,6 +38,7 @@ public class Kid : Unit {
 	public static bool Locked { get { return locked; } set { locked = value; } }
 	public Color Color { get { return PLAYER_COLORS[index]; } }
 	public Direction Direction { get { return direction; } }
+	public Usable CurUsable { get { return usables[curUsable]; } }
 
 	public void Say(string text) {
 		speech.Show(text);
