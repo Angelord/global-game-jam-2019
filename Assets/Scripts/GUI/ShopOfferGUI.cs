@@ -9,6 +9,8 @@ public class ShopOfferGUI : MonoBehaviour {
 	[SerializeField] private Text priceText;
 	[SerializeField] private Image icon;
 
+	public ShopOffer Offer { get { return offer; } }
+
 	public void Initialize(ShopOffer offer) {
 		this.offer = offer;
 		UpdateDisplay();

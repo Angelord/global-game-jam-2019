@@ -25,15 +25,7 @@ public class Shop : MonoBehaviour {
 
 		defaultSelectorSize = selectors[0].sizeDelta.x;
 
-		#if UNITY_EDITOR 
-			if(Progress.Offers.Count == 0) {
-				foreach(var offer in initialOffers) {
-					Progress.AddOffer(offer);
-				}
-			}
-		#endif
-
-		if(Progress.Day == 2) {
+		if(Progress.Offers.Count == 0) {
 			foreach(var offer in initialOffers) {
 				Progress.AddOffer(offer);
 			}
@@ -41,11 +33,10 @@ public class Shop : MonoBehaviour {
 
 		foreach(var offer in Progress.Offers) {
 			GameObject offerGUi = Instantiate(offerGUIPref, optionGroup);
-			offerGUIPref.GetComponent<ShopOfferGUI>().Initialize(offer);
+			offerGUi.GetComponent<ShopOfferGUI>().Initialize(offer);
 		}
 
 		for(int i = 0; i < 2; i++) {
-			// descriptions[i].Color = Kid.PLAYER_COLORS[i];
 			descriptions[i].transform.parent.GetComponent<Graphic>().color = Kid.PLAYER_COLORS[i];
 			selectors[i].GetComponent<Image>().color = Kid.PLAYER_COLORS[i];
 		}
@@ -85,6 +76,7 @@ public class Shop : MonoBehaviour {
 		}
 
 		for(int i = 0; i < 2; i++) {
+			Debug.Log(playerSelections[i] + " " + optionGroup.GetChild(playerSelections[i]).GetComponentInChildren<ShopOfferGUI>().Offer.name);
 			Vector2 targetPos = optionGroup.GetChild(playerSelections[i]).GetComponent<RectTransform>().position;
 			selectors[i].anchoredPosition = Vector3.Lerp(selectors[i].anchoredPosition, targetPos, selectorSpeed * Time.deltaTime); 
 		}

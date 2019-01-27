@@ -28,7 +28,8 @@ public static class Progress {
 
 	public static void Reset() {
 		day = 0;
-		//...
+		candy = 0;
+		offers.Clear();
 	}
 
 	public static void DayPassed() {
