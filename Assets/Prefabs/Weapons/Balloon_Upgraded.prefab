@@ -132,12 +132,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arcPeak: 0.7
-  damage: 4
+  damage: 6
   minHeight: 0.15
   maxHeight: 0.98
   riseSpeed: 8
   fallSpeed: 11
-  travelDist: 3.6
+  travelDist: 3.4
   explosion: {fileID: 1156031270561314, guid: 30e0f3077231b4f46882eb41e29ce6a7, type: 2}
   maxSize: 1.5
   minSize: 1

@@ -16,7 +16,7 @@ MonoBehaviour:
     - spawnFrequency: 0.5
       enemyType: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
         type: 2}
-      numEnemies: 1
+      numEnemies: 12
   - waves:
     - spawnFrequency: 0.5
       enemyType: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
