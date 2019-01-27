@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
 	
@@ -8,6 +9,7 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private Stage stage;
     [SerializeField] private WaveData waveData;
+    [SerializeField] private Text notifyText;
 
     private List<Wave> waves = new List<Wave>();
     private int waveIndex = 0;
@@ -33,6 +35,14 @@ public class EnemySpawner : MonoBehaviour {
     private IEnumerator SpawnNextWave() {
 
         yield return new WaitForSeconds(breakTimes);
+
+        LerpAlpha textAplha = notifyText.GetComponent<LerpAlpha>();
+        notifyText.text = "Wave " + (waveIndex + 1);
+        textAplha.SetAlpha(0.0f);
+        textAplha.intendedAlpha = 0.8f;
+        CustomCoroutine.WaitThenExecute(1.54f, ()=> {
+            textAplha.intendedAlpha = 0.0f;
+        });
 
         foreach(var spawnGroup in CurrentWave.spawnGroups) {
             StartCoroutine(SpawnGroup(spawnGroup));

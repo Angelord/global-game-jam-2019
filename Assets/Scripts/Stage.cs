@@ -27,12 +27,6 @@ public class Stage : MonoBehaviour {
 
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
 
-	private void Update () {
-		if(Input.GetKeyDown(KeyCode.J)) {
-			StageOver();
-		}
-	}
-
 	private void Start() {
 
 		instance = this;
