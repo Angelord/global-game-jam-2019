@@ -83,6 +83,7 @@ public class Kid : Unit {
 		controls.Horizontal = "Horizontal_" + index;
 		controls.Vertical = "Vertical_" + index;
 		controls.Attack = "Attack_" + index;
+		controls.Cycle = "Cycle_" + index;
 
 		rigidbody = GetComponent<Rigidbody>();
 
@@ -96,8 +97,16 @@ public class Kid : Unit {
 	private void Update() {
 		if(locked || Dead) { return; } 
 
+		if(!CurUsable.CanUse) {
+			SelectNextUsable();
+		}
+
 		if(Input.GetButtonDown(controls.Attack)) {
 			usables[curUsable].Use();
+		}
+
+		if(Input.GetButtonDown(controls.Cycle)) {
+			SelectNextUsable();
 		}
 
 		if(CurHealth < MaxHealth && (Time.time - lastRegen) >= regenRate) {
@@ -105,6 +114,14 @@ public class Kid : Unit {
 			bar.SetValue(CurHealth);
 			lastRegen = Time.time;
 		}
+	}
+
+	private void SelectNextUsable() {
+		int toCheck = curUsable;
+		do {
+			toCheck = (toCheck + 1) % usables.Length;
+		} while(!usables[toCheck].CanUse && toCheck != curUsable);
+		curUsable = toCheck;
 	}
 
 	private void FixedUpdate () {
@@ -163,5 +180,6 @@ public class Kid : Unit {
 		public string Horizontal { get; set; }
 		public string Vertical { get; set; }
 		public string Attack { get; set; }
+		public string Cycle { get; set; }
 	}
 }
