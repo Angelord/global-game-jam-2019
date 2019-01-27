@@ -12,6 +12,8 @@ public abstract class Unit : MonoBehaviour {
 	public bool Dead { get { return curHealth <= 0; } }
 	
 	public void TakeDamage(int amount) {
+		if(Dead) { return; }
+
 		OnTakeDamage(amount);
 		curHealth -= amount;
 		if(curHealth <= 0) {
