@@ -259,6 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootPrefab: {fileID: 1471287283922988, guid: c44371e48967c44cca432dbd5c6d5873, type: 2}
+  minAmount: 0
+  maxAmount: 2
 --- !u!114 &114690401540396248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,7 +299,6 @@ MonoBehaviour:
   playerStoppingDist: 0.72
   houseStoppingDist: 1.4
   damage: 1
-  attackRange: 0.72
   attackPushback: 30
   attackCooldown: 1.1
   slashPref: {fileID: 1198962100662920, guid: 7be2cc0f0465e4f02881b84a9a685799, type: 2}

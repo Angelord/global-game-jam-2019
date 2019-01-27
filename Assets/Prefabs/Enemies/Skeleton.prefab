@@ -272,6 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootPrefab: {fileID: 1471287283922988, guid: c44371e48967c44cca432dbd5c6d5873, type: 2}
+  minAmount: 1
+  maxAmount: 3
 --- !u!114 &114589636600370890
 MonoBehaviour:
   m_ObjectHideFlags: 1
