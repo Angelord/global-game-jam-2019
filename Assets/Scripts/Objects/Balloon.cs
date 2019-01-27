@@ -32,7 +32,8 @@ public class Balloon : MonoBehaviour {
 
 		movDir = DirUtil.DirectionToVec(direction);
 
-		AudioController.Instance.PlaySound("throw");
+		int soundToPlay = Random.Range(1, 5);
+		AudioController.Instance.PlaySound("swish_" + soundToPlay);
 	}
 
 	private void Update() {
