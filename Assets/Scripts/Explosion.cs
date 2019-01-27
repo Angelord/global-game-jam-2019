@@ -11,6 +11,8 @@ public class Explosion : MonoBehaviour {
 
 	private void Start() {
 		sphereCollider = GetComponent<SphereCollider>();
+	
+		AudioController.Instance.PlaySound("splash");
 	}
 
 	public void Initialize(int damage) {

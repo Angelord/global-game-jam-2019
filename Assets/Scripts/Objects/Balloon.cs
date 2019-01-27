@@ -31,6 +31,8 @@ public class Balloon : MonoBehaviour {
 		this.startPos = transform.position;
 
 		movDir = DirUtil.DirectionToVec(direction);
+
+		AudioController.Instance.PlaySound("throw");
 	}
 
 	private void Update() {
