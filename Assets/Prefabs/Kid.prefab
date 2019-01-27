@@ -261,7 +261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322892987440150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.807123, y: 0, z: -1.8311679}
+  m_LocalPosition: {x: -0.061962962, y: 0, z: -2.6152127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4919686570487872}
@@ -430,7 +430,7 @@ MonoBehaviour:
     type: 2}
   dazeDuration: 5
   regenRate: 5
-  mvmSpeed: 300
+  mvmSpeed: 250
   arrows:
   - {fileID: 21300000, guid: 478aaf3f5545f4710a20d8beac472f18, type: 3}
   - {fileID: 21300000, guid: bea52800c619942ca98ff6b0feae44f6, type: 3}
@@ -553,7 +553,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 57445401
   m_SortingLayer: 2
-  m_SortingOrder: 21
+  m_SortingOrder: 29
   m_Sprite: {fileID: 21300000, guid: bea52800c619942ca98ff6b0feae44f6, type: 3}
   m_Color: {r: 1, g: 0.08823532, b: 0.40892497, a: 1}
   m_FlipX: 0
@@ -597,7 +597,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 57445401
   m_SortingLayer: 2
-  m_SortingOrder: 18
+  m_SortingOrder: 26
   m_Sprite: {fileID: 21300000, guid: ed7a5b86a54b34164b9475e9550af072, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
