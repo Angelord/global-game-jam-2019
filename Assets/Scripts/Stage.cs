@@ -62,7 +62,6 @@ public class Stage : MonoBehaviour {
 	public void StartStage() {
 
 		if(Progress.Day == 0) {
-			Progress.Candy += 1000;
 			Progress.ModAmmo(UsableType.Dummy, +1);
 			Progress.ModAmmo(UsableType.Banana, +3);
 		}
