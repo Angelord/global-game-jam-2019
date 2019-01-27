@@ -17,12 +17,12 @@ public class Kid : Unit {
 	[SerializeField] private float dazeDuration;
 	[SerializeField] private float regenRate;
 	[SerializeField] private float mvmSpeed;
-	[SerializeField] private GameObject dazeEffect;
 	[Header("Arrow")]
 	[SerializeField] private Sprite[] arrows;
 	[SerializeField] private Transform[] arrowPositions;
 	[SerializeField] private SpriteRenderer arrowSprite;
 	[Header("Visuals")]
+	[SerializeField] private Color healthColor = Color.red;
 	[SerializeField] private RuntimeAnimatorController[] animControllers = new RuntimeAnimatorController[2];
 
 	private int index;
@@ -51,15 +51,23 @@ public class Kid : Unit {
 	}
 
 	protected override void Die() {
-		dazeEffect.SetActive(true);
 		EventManager.QueueEvent(new KidDiedEvent(this));
-		Invoke("Undaze", dazeDuration);
+		StartCoroutine(Undaze());
 	}
 
-	private void Undaze() {	
+	private IEnumerator Undaze() {
+		
+		bar.Stunned = true;
+		for(int i = 0; i < 5; i++) {
+
+			yield return new WaitForSeconds(dazeDuration / 5);
+
+			bar.SetValue(i + 1);
+		}		
+
+		bar.Stunned = false;
 		ResetHealth();
 		bar.SetValue(CurHealth);
-		dazeEffect.SetActive(false);
 	}
 
 	private void Start() {
@@ -75,8 +83,6 @@ public class Kid : Unit {
 		speech = Instantiate(speachBubblePref, StageGUI.Instance.transform).GetComponent<SpeechBubble>();
 		speech.GetComponent<FollowerGUI>().SetTarget(transform);
 
-		dazeEffect.SetActive(false);
-		
 		GetComponentInChildren<Animator>().runtimeAnimatorController = animControllers[index];
 
 		arrowSprite.color = Color;
@@ -96,6 +102,7 @@ public class Kid : Unit {
 	}
 
 	private void Update() {
+		
 		if(locked || Dead) { return; } 
 
 		if(!CurUsable.CanUse) {
