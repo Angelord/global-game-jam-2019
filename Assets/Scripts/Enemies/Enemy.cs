@@ -16,6 +16,7 @@ public class Enemy : Unit {
 	public GameObject slashPref;
 	public bool hasDeathAnim = false; 
 	public float deathDelay = 0.7f;
+	public AudioClip deathSound;
 
 	private bool following = true;
 	private float lastAttack;
@@ -42,6 +43,10 @@ public class Enemy : Unit {
 		this.enabled = false;
 		if(hasDeathAnim) {
 			GetComponentInChildren<Animator>().SetTrigger("Die");
+		}
+
+		if(deathSound != null) {
+			AudioController.Instance.PlayClipAt(deathSound, transform.position);
 		}
 		
 		agent.enabled = false;
