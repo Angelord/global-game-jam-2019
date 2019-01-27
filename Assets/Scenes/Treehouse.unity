@@ -6346,7 +6346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typePause: 0.05
   punctuationPause: 0.2
-  disableDelay: 3
+  disableDelay: 1.5
 --- !u!114 &803802490
 MonoBehaviour:
   m_ObjectHideFlags: 0

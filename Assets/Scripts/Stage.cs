@@ -99,7 +99,7 @@ public class Stage : MonoBehaviour {
 
 	private IEnumerator OnStageOver() {
 
-		yield return new WaitForSeconds(2.6f);
+		yield return new WaitForSeconds(2.0f);
 
 		Kid.Locked = true;
 
@@ -109,11 +109,11 @@ public class Stage : MonoBehaviour {
 
 		momSpeech.Show("Hank! James! Dinner is ready!");
 
-		yield return new WaitUntil( () => !momSpeech.Typing );
+		yield return new WaitUntil( () => !momSpeech.isActiveAndEnabled );
 
 		gate.Open();
 
-		yield return new WaitForSeconds(2.4f);
+		yield return new WaitForSeconds(1.0f);
 
 		cameraControl.StopFocus();
 
