@@ -9,6 +9,7 @@ public class Dummy : Unit {
 	[SerializeField] private int damage;
 	[SerializeField] private float dealDmgDelay;
 	[SerializeField] private float deathDelay = 0.75f;
+	[SerializeField] private AudioClip deathSound;
 
 	private float lastAttack = 0.0f;
 	private Animator animator;
@@ -51,6 +52,8 @@ public class Dummy : Unit {
 		GetComponentInChildren<DummyRange>().enabled = false;
 		animator.SetTrigger("Die");
 
+		AudioController.Instance.PlayClipAt(deathSound, transform.position);
+
 		Invoke("SelfDestruct", deathDelay);
 	}
 
@@ -60,6 +63,10 @@ public class Dummy : Unit {
 	}
 
 	private void Update() {
+		if(Input.GetKeyDown(KeyCode.X)) {
+			Die();
+		}
+
 		for(int i = targets.Count - 1; i >= 0; i--) {
 			if(targets[i].gameObject == null || targets[i].Dead) {
 				targets.RemoveAt(i);
