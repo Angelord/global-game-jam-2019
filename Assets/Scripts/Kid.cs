@@ -102,18 +102,18 @@ public class Kid : Unit {
 	}
 
 	private void Update() {
-		
+
 		if(locked || Dead) { return; } 
 
 		if(!CurUsable.CanUse) {
 			SelectNextUsable();
 		}
 
-		if(Input.GetButtonDown(controls.Attack)) {
+		if(Stage.Playing && Input.GetButtonDown(controls.Attack)) {
 			usables[curUsable].Use();
 		}
 
-		if(Input.GetButtonDown(controls.Cycle)) {
+		if(Stage.Playing && Input.GetButtonDown(controls.Cycle)) {
 			SelectNextUsable();
 		}
 
