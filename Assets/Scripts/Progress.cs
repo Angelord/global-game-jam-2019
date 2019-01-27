@@ -7,6 +7,7 @@ public static class Progress {
 	private static bool started = false;
 	private static int day = 0;
 	private static int candy = 0;
+	private static int houseLevel = 0;
 	private static List<ShopOffer> offers = new List<ShopOffer>();
 	private static int[] usableAmmo = new int[(int)UsableType.Count];
 	private static int[] usableLevels = new int[(int)UsableType.Count];
@@ -15,6 +16,10 @@ public static class Progress {
 	public static int Day { get { return day; } }
 	public static int Candy { get { return candy; } set { candy = value; } }
 	public static List<ShopOffer> Offers { get { return offers; } }
+
+	public static void UpgradeHouse() {
+		houseLevel++;
+	}
 
 	public static void UpgradeUsable(UsableType type) {
 		usableLevels[(int)type]++;
@@ -52,6 +57,7 @@ public static class Progress {
 	public static void Reset() {
 		day = 0;
 		candy = 0;
+		houseLevel = 0;
 		int[] usableAmmo = new int[(int)UsableType.Count];
 		int[] usableLevels = new int[(int)UsableType.Count];
 		offers.Clear();

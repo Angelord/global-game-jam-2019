@@ -21,7 +21,6 @@ public class Shop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Progress.Candy += 100;
 
 		defaultSelectorSize = selectors[0].sizeDelta.x;
 
@@ -87,7 +86,7 @@ public class Shop : MonoBehaviour {
 			}
 		}
 
-		candyText.text = "$ " + Progress.Candy.ToString();
+		candyText.text = Progress.Candy.ToString();
 	}
 
 }

@@ -8,6 +8,7 @@ public class ShopOffer : ScriptableObject {
 	public int price;
 	public OfferType offerType;
 	public string name;
+	[TextArea]
 	public string description;
 	public Sprite icon;
 	public bool singlePurchase;
@@ -16,7 +17,7 @@ public class ShopOffer : ScriptableObject {
 }
 
 public enum OfferType {
+	BuyBanana,
+	BalloonUpgrade,
 	HouseUpgrade,
-	Banana,
-	BalloonUpgrade
 }

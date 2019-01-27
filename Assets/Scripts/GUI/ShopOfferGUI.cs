@@ -26,7 +26,18 @@ public class ShopOfferGUI : MonoBehaviour {
 		AudioController.Instance.PlaySound("cashier");
 
 		Progress.Candy -= offer.price;
-		//TODO : Effect
+
+		switch(offer.offerType) {
+			case OfferType.BuyBanana:
+			Progress.ModAmmo(UsableType.Banana, 1);
+			break;
+			case OfferType.BalloonUpgrade:
+			Progress.UpgradeUsable(UsableType.Balloon);
+			break;
+			case OfferType.HouseUpgrade:
+			Progress.UpgradeHouse();
+			break;
+		}
 
 		if(!offer.singlePurchase) {
 			return;
