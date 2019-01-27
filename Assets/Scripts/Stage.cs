@@ -28,7 +28,7 @@ public class Stage : MonoBehaviour {
 
 	private void Update() {
 		if(Input.GetKeyDown(KeyCode.K)) {
-			StageOver();
+			Progress.UpgradeUsable(UsableType.Balloon);
 		}
 	}
 
