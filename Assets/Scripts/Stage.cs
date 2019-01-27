@@ -13,6 +13,7 @@ public class Stage : MonoBehaviour {
 	[SerializeField] private GameObject kid2Pref;
 	[SerializeField] private Transform[] kidSpawns = new Transform[2];
 	[SerializeField] private string[] startOfGameLines;
+	[SerializeField] private string[] momLines;
 	[SerializeField] private SpeechBubble momSpeech; 
 	[SerializeField] private Gate gate;
 	[SerializeField] private GameObject gameOverScreen;
@@ -25,6 +26,12 @@ public class Stage : MonoBehaviour {
 	private static Stage instance;
 
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
+
+	private void Update () {
+		if(Input.GetKeyDown(KeyCode.J)) {
+			StageOver();
+		}
+	}
 
 	private void Start() {
 
@@ -108,7 +115,7 @@ public class Stage : MonoBehaviour {
 
 		yield return new WaitUntil(() => cameraControl.FocusedOnTarget);
 
-		momSpeech.Show("Hank! James! Dinner is ready!");
+		momSpeech.Show(momLines[Random.Range(0, momLines.Length)]);
 
 		yield return new WaitUntil( () => !momSpeech.isActiveAndEnabled );
 
