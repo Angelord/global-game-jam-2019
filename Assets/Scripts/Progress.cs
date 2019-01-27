@@ -22,6 +22,18 @@ public static class Progress {
 		houseLevel++;
 	}
 
+	public static void Reset() {
+
+		Debug.Log("resetting");
+
+		day = 0;
+		candy = 0;
+		houseLevel = 0;
+		int[] usableAmmo = new int[(int)UsableType.Count];
+		int[] usableLevels = new int[(int)UsableType.Count];
+		offers.Clear();
+	}
+
 	public static void UpgradeUsable(UsableType type) {
 		usableLevels[(int)type]++;
 	}
@@ -53,18 +65,6 @@ public static class Progress {
 
 	public static void RemoveOffer(ShopOffer offer) {
 		offers.Remove(offer);
-	}
-
-	public static void Reset() {
-
-		Debug.Log("resetting");
-
-		day = 0;
-		candy = 0;
-		houseLevel = 0;
-		int[] usableAmmo = new int[(int)UsableType.Count];
-		int[] usableLevels = new int[(int)UsableType.Count];
-		offers.Clear();
 	}
 
 	public static void DayPassed() {

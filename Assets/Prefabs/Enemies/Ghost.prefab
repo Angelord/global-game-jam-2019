@@ -303,7 +303,7 @@ MonoBehaviour:
   attackCooldown: 1.1
   slashPref: {fileID: 1198962100662920, guid: 7be2cc0f0465e4f02881b84a9a685799, type: 2}
   hasDeathAnim: 1
-  deathDelay: 1
+  deathDelay: 0.5
 --- !u!135 &135092852838804332
 SphereCollider:
   m_ObjectHideFlags: 1
