@@ -7,6 +7,7 @@ public class PlayerHUD : MonoBehaviour {
 
 
 	[SerializeField] private GameObject root;
+	[SerializeField] private Text candyText;
 	[SerializeField] private Image[] usableIcons;
 
 	private List<Kid> kids = new List<Kid>();
@@ -43,5 +44,6 @@ public class PlayerHUD : MonoBehaviour {
 			}
 		}
 
+		candyText.text = Progress.Candy.ToString();
 	}
 }
