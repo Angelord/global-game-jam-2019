@@ -95,6 +95,8 @@ public class Stage : MonoBehaviour {
 
 	private IEnumerator OnStageOver() {
 
+		yield return new WaitForSeconds(2.6f);
+
 		Kid.Locked = true;
 
 		cameraControl.Focus(gate.transform.position);
