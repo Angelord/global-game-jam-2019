@@ -14,7 +14,8 @@ public class FollowerGUI : MonoBehaviour {
 	}
 
 	private void Update() {
-		if(target == null) { 
+		if(target == null || target.gameObject == null) {
+			Destroy(this.gameObject); 
 			return;
 		}
 
