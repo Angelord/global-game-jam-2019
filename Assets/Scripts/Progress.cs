@@ -52,6 +52,8 @@ public static class Progress {
 	public static void Reset() {
 		day = 0;
 		candy = 0;
+		int[] usableAmmo = new int[(int)UsableType.Count];
+		int[] usableLevels = new int[(int)UsableType.Count];
 		offers.Clear();
 	}
 
