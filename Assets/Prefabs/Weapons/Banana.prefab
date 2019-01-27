@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0af14a79aff46e585a7b1fc9eba189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 6
+  squishSound: {fileID: 8300000, guid: 40ab9f28c51674a3fb86f35c9e8e5962, type: 3}
 --- !u!135 &135671594112054484
 SphereCollider:
   m_ObjectHideFlags: 1

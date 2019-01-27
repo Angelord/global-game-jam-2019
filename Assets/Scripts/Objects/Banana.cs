@@ -6,6 +6,7 @@ using UnityEngine;
 public class Banana : MonoBehaviour {
 
 	[SerializeField] private int damage = 6;
+	[SerializeField] private AudioClip squishSound;
 
 	private void OnTriggerEnter(Collider other) {
 		if(other.gameObject.tag == "Enemy") {
@@ -17,6 +18,8 @@ public class Banana : MonoBehaviour {
 
 				GetComponentInChildren<Animator>().SetTrigger("Splash");
 				
+				AudioController.Instance.PlayClipAt(squishSound, transform.position);
+
 				Invoke("DestroySelf", 0.7f);
 			}
 		}
