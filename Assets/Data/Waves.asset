@@ -143,6 +143,21 @@ MonoBehaviour:
           type: 2}
         spawnFreq: 1
         numEnemies: 6
+    - name: Wave 3
+      delay: 3
+      spawnGroups:
+      - enemy: {fileID: 1337167503977878, guid: be19f349d03164940bab1d3606506e4f,
+          type: 2}
+        spawnFreq: 2
+        numEnemies: 1
+      - enemy: {fileID: 1337167503977878, guid: 4792e5b037e2d4f5086b58c48df2629e,
+          type: 2}
+        spawnFreq: 3
+        numEnemies: 1
+      - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
+          type: 2}
+        spawnFreq: 0.5
+        numEnemies: 12
   - name: Day 6
     waves:
     - name: Wave 1
