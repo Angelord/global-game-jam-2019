@@ -8,6 +8,7 @@ public class Dummy : Unit {
 	[SerializeField] private float attackRate;
 	[SerializeField] private int damage;
 	[SerializeField] private float dealDmgDelay;
+	[SerializeField] private float deathDelay = 0.75f;
 
 	private float lastAttack = 0.0f;
 	private Animator animator;
@@ -44,8 +45,16 @@ public class Dummy : Unit {
 	}
 
 	protected override void Die() {
+		this.enabled = false;
+		GetComponentInChildren<DummyRange>().enabled = false;
+		animator.SetTrigger("Die");
+
+		Invoke("SelfDestruct", deathDelay);
+	}
+
+	private void SelfDestruct() {
 		Destroy(this.gameObject);
-		Destroy(bar);
+		Destroy(bar.gameObject);
 	}
 
 	private void Update() {
