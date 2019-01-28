@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca96c34ca2794a2694f097497b07c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 2}
+  offset: {x: 0, y: 0, z: 1.45}
 --- !u!114 &114292977354119766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,9 +89,9 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hank! Phil! dinner is ready!
+  m_Text: 
 --- !u!114 &114738166719292702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,6 +106,7 @@ MonoBehaviour:
   typePause: 0.05
   punctuationPause: 0.2
   disableDelay: 1.5
+  textPaddingHeight: 12
 --- !u!114 &114972510953315140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -161,9 +162,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 927, y: 982}
-  m_SizeDelta: {x: 360, y: 120}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 960, y: 912}
+  m_SizeDelta: {x: 400, y: 120}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224171581717262462
 RectTransform:
   m_ObjectHideFlags: 1
@@ -180,5 +181,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: 0}
+  m_SizeDelta: {x: -24, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}

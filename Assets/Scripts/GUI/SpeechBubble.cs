@@ -9,12 +9,16 @@ public class SpeechBubble : MonoBehaviour {
 	[SerializeField] private float typePause = 0.05f;
 	[SerializeField] private float punctuationPause = 0.1f;
 	[SerializeField] private float disableDelay = 3.0f;
+	[SerializeField] private float textPaddingHeight = 12;
 	private Text uiText;
+	private RectTransform rectTransform;
 	private bool typing = false;
 
 	public bool Typing { get { return typing; } }
 
 	private void Start() {
+		FindDependencies();
+
 		this.gameObject.SetActive(false);
 	}
 
@@ -22,9 +26,10 @@ public class SpeechBubble : MonoBehaviour {
 		if(string.IsNullOrEmpty(text)) { return; }
 
 		if(uiText == null) {
-			uiText = GetComponentInChildren<Text>();
+			FindDependencies();
 		}
 
+		
 		this.gameObject.SetActive(true);
 		StopAllCoroutines();
 		StartCoroutine(DoShow(text));
@@ -35,6 +40,7 @@ public class SpeechBubble : MonoBehaviour {
 		uiText.text = "";
 		for(int i = 0; i < text.Length; i++) {
 			uiText.text += text[i];
+			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, uiText.preferredHeight + textPaddingHeight * 2);
 			if(text[i] != '!' && text[i] != '.' && text[i] != '?') {
 				yield return new WaitForSeconds(typePause);
 			}
@@ -43,9 +49,18 @@ public class SpeechBubble : MonoBehaviour {
 			}
 		}
 
+
 		typing = false;
 
 		yield return new WaitForSeconds(disableDelay);
 		this.gameObject.SetActive(false);
 	}
+
+	private void FindDependencies() {
+
+		uiText = GetComponentInChildren<Text>();
+
+		rectTransform = GetComponent<RectTransform>();
+	}
+
 }
