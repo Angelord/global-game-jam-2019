@@ -8,6 +8,7 @@ Shader "Camera/Hue"
         _Hue("Hue", Range(0, 1)) = 1.0
         _Brightness("Brightness", Range(0, 1)) = 0.5
         _Saturation("Saturation", Range(0, 1)) = 0.5
+        _Contrast("Contrast", Range(0, 1)) = 0.5
     }
  
     SubShader
@@ -55,6 +56,7 @@ Shader "Camera/Hue"
             float _Hue;
             float _Brightness;
             float _Saturation;
+            float _Contrast;
          
             v2f vert (appdata_t v)
             {
@@ -68,7 +70,7 @@ Shader "Camera/Hue"
             fixed4 frag (v2f i) : COLOR
             {
                 float4 startColor = tex2D(_MainTex, i.texcoord);
-                float4 hsbColor = applyHSBEffect(startColor, _Hue, _Brightness, _Saturation);
+                float4 hsbColor = applyHSBEffect(startColor, _Hue, _Brightness, _Saturation, _Contrast);
                 return hsbColor;
             }
             ENDCG
