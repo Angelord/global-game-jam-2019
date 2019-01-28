@@ -7,6 +7,8 @@ public class ScreenEffects : MonoBehaviour {
 
 	private static ScreenEffects instance;
 
+	[SerializeField] private Material renderMat;
+
 	private Jitterer jitterer;
     private Texture2D overlay;
 
@@ -39,6 +41,15 @@ public class ScreenEffects : MonoBehaviour {
 	private void OnDestroy() {
 		instance = null;
 	}
+
+	private void OnRenderImage(RenderTexture source, RenderTexture destination) {
+		if(renderMat != null) {
+        	Graphics.Blit(source, destination, renderMat);
+		}
+		else {
+			Graphics.Blit(source, destination);
+		}
+    }
 
 	private IEnumerator DoFade(bool fadeOut, float duration) {
 		float timeRemaining = duration;
