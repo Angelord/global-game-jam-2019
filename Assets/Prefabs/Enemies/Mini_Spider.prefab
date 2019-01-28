@@ -242,7 +242,7 @@ MonoBehaviour:
   attackPushback: 18
   attackCooldown: 1.2
   slashPref: {fileID: 1198962100662920, guid: 7be2cc0f0465e4f02881b84a9a685799, type: 2}
-  hasDeathAnim: 0
+  hasDeathAnim: 1
   deathDelay: 0.7
   deathSound: {fileID: 8300000, guid: d392e0162bc684d6cb46f61da2bff77a, type: 3}
   spawnedFromEgg: 1
