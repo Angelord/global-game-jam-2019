@@ -36,6 +36,11 @@ public abstract class Unit : MonoBehaviour {
 
 	private void Awake() {
 		curHealth = health;
+		OnAwake();
+	}
+
+	protected virtual void OnAwake() {
+		
 	}
 
 }

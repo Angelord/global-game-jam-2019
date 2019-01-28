@@ -24,6 +24,8 @@ public class Exit : MonoBehaviour {
 
 		yield return new WaitForSeconds(fadeOutDuration);
 
-		SceneManager.LoadScene("Shop");
+		Kid.Locked = false;
+
+		SceneManager.LoadScene("ShopNew");
 	}
 }

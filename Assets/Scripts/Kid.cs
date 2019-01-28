@@ -70,6 +70,12 @@ public class Kid : Unit {
 		bar.SetValue(CurHealth);
 	}
 
+	protected override void OnAwake() {
+
+		speech = Instantiate(speachBubblePref, StageGUI.Instance.transform).GetComponent<SpeechBubble>();
+		speech.GetComponent<FollowerGUI>().SetTarget(transform);
+	}
+
 	private void Start() {
 
 		index = lastIndex++;
@@ -79,9 +85,6 @@ public class Kid : Unit {
 		bar = Instantiate(healthBar, StageGUI.Instance.transform).GetComponent<Counterbar>();
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
-
-		speech = Instantiate(speachBubblePref, StageGUI.Instance.transform).GetComponent<SpeechBubble>();
-		speech.GetComponent<FollowerGUI>().SetTarget(transform);
 
 		GetComponentInChildren<Animator>().runtimeAnimatorController = animControllers[index];
 
