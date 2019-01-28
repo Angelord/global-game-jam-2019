@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy {
 	
-	public GameObject projectile;
-	public float spawnDist;
+	[SerializeField] private GameObject projectile;
+	[SerializeField] private float spawnDist;
+	[SerializeField] private bool waitForAnim = true;
 	private Animator animator;
 
 	protected override void Attack() {
@@ -14,7 +15,6 @@ public class RangedEnemy : Enemy {
 		}
 
 		StartCoroutine(AttackCoroutine());
-		
 	}
 
 	private IEnumerator AttackCoroutine() {
@@ -24,13 +24,21 @@ public class RangedEnemy : Enemy {
 
 		animator.SetTrigger("Attack");
 
-		yield return new WaitForSeconds(0.65f);
+		if(waitForAnim) {
+			yield return new WaitForSeconds(0.65f);
+		}
+
+		LaunchProjectile();
+
+		CustomCoroutine.WaitThenExecute(attackCooldown, () => Following = true);
+	}
+
+	private void LaunchProjectile() {
 
 		Vector3 targetDir = Target.transform.position - transform.position;
 		Vector3 spawnPos = transform.position + targetDir.normalized * spawnDist;
 		GameObject newProj = Instantiate(projectile, spawnPos, Quaternion.identity );
 		newProj.GetComponent<EnemyProjectile>().Initialize(Target.transform.position, damage);
 
-		CustomCoroutine.WaitThenExecute(attackCooldown, () => Following = true);
 	}
 }

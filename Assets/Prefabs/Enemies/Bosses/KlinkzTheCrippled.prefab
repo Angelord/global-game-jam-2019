@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063692038662322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75041544, y: 0, z: -3.403965}
+  m_LocalPosition: {x: -2.0881317, y: 0, z: -3.8159244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4520631945371334}
@@ -270,13 +270,14 @@ MonoBehaviour:
   houseStoppingDist: 3
   damage: 1
   attackPushback: 0
-  attackCooldown: 0.45
+  attackCooldown: 0.3
   slashPref: {fileID: 0}
   hasDeathAnim: 1
   deathDelay: 0.5
   deathSound: {fileID: 0}
   projectile: {fileID: 1632073560677946, guid: d6d52be2237984d21a79210dd9be8ed0, type: 2}
   spawnDist: 0.6
+  waitForAnim: 0
 --- !u!114 &114713891885843164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,7 +346,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.8
+  m_Radius: 4.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135669121101249562
 SphereCollider:
@@ -357,7 +358,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195467718912591676
 NavMeshAgent:
@@ -413,7 +414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 57445401
   m_SortingLayer: 2
-  m_SortingOrder: 34
+  m_SortingOrder: 38
   m_Sprite: {fileID: 21300000, guid: ff3e4501708f1423a886a9f6542c18aa, type: 3}
   m_Color: {r: 1, g: 0.72413796, b: 0, a: 1}
   m_FlipX: 0
