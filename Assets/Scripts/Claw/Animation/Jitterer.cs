@@ -6,7 +6,7 @@ public class Jitterer : MonoBehaviour {
 
 	[SerializeField] private float shakeMagnitude = 0.7f;
  	[SerializeField] private float dampingSpeed = 1.0f;
-	[SerializeField] private float shakeFreq = 0.001f;
+	[SerializeField] private float shakeFreq = 0.05f;
  
 	public void Jitter(float duration) {
 		StartCoroutine(DoShake(duration));

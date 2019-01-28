@@ -27,9 +27,11 @@ public class Stage : MonoBehaviour {
 
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
 
-	private void Start() {
-
+	private void Awake() {
 		instance = this;
+	}
+
+	private void Start() {
 
 		cameraControl = Camera.main.GetComponent<CameraControl>();
 	}
