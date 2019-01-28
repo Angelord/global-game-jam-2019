@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4634191852676356}
   - component: {fileID: 212597712545562526}
+  - component: {fileID: 114692291235714052}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -102,6 +103,17 @@ MonoBehaviour:
   followSpeed: 8
   pickUpRange: 0.45
   amount: 1
+--- !u!114 &114692291235714052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780215855760736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d87a5088e8d4e45ac1fd77efe45504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135054126392666210
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -159,7 +171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 57445401
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 2e2a3d2c3516e4d27998c5bd56aa3dfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

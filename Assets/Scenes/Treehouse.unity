@@ -11011,7 +11011,12 @@ MonoBehaviour:
   - {fileID: 196222998}
   gameOverScreen: {fileID: 1761630885}
   dayText: {fileID: 1598130724}
-  gate: {fileID: 783908403}
+  sequencers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1100877977
 Transform:
   m_ObjectHideFlags: 0
