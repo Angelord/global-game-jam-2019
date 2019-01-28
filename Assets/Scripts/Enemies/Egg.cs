@@ -29,7 +29,11 @@ public class Egg : Unit {
 			AudioController.Instance.PlayClipAt(hatchSound, transform.position);
 		}
 
-		Instantiate(creature, transform.position, Quaternion.identity);
+		GameObject newEnemy = Instantiate(creature, transform.position, Quaternion.identity);
+		Enemy enemyComp = newEnemy.GetComponent<Enemy>();
+		if(enemyComp != null) {
+			enemyComp.spawnedFromEgg = true;
+		}
 
 		Destroy(this.gameObject);
 	}

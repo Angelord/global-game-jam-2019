@@ -6,10 +6,11 @@ using UnityEngine.AI;
 public class Spider : MonoBehaviour {
 
 	[SerializeField] private GameObject egg;
-	[SerializeField] private float spawnFreq;
-	[SerializeField] private float spawnDuration;
+	[SerializeField] private float spawnFreq = 1.1f;
+	[SerializeField] private float spawnDuration = 1.1f;
 	[SerializeField] private float startSpawnDelay = 3.0f;
 
+	private bool spawning;
 	private float lastSpawn;
 	private Animator animator;
 	private NavMeshAgent agent;
@@ -22,14 +23,14 @@ public class Spider : MonoBehaviour {
 	}
 
 	private void Update() {
-		if(Stage.Playing && Time.time - lastSpawn > spawnFreq) {
+		if(Stage.Playing && !spawning && Time.time - lastSpawn > spawnFreq) {
 			StartCoroutine(SpawnEgg());
-			lastSpawn = Time.time;
 		}	
 	}
 
 	private IEnumerator SpawnEgg() {
-		
+		spawning = true;
+
 		animator.SetTrigger("Lay");
 		agent.enabled = false;
 
@@ -37,5 +38,8 @@ public class Spider : MonoBehaviour {
 
 		Instantiate(egg, transform.position, Quaternion.identity);
 		agent.enabled = true;
+
+		spawning = false;
+		lastSpawn = Time.time;
 	}
 }

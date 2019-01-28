@@ -178,7 +178,15 @@ MonoBehaviour:
     - name: Wave 3
       delay: 3
       spawnGroups:
+      - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
+          type: 2}
+        spawnFreq: 0.4
+        numEnemies: 12
       - enemy: {fileID: 1043613487090882, guid: 13df4c021e075492b8ea156bfd06bee5,
           type: 2}
-        spawnFreq: 1
-        numEnemies: 10
+        spawnFreq: 2
+        numEnemies: 2
+      - enemy: {fileID: 1518803219918652, guid: 2ad0d2294f84743d9be098432b667b3a,
+          type: 2}
+        spawnFreq: 15
+        numEnemies: 1
