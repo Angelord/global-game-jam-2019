@@ -17,10 +17,11 @@ public class Dummy : Unit {
 	private List<Unit> targets = new List<Unit>();
 	private Counterbar bar;
 	private SpriteRenderer spriteRenderer;
+	private Shaker shaker;
 
 	private void Start() {
 		animator = GetComponentInChildren<Animator>();
-
+		shaker = GetComponentInChildren<Shaker>();
 		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
 		bar = Instantiate(barPrefab, StageGUI.Instance.transform).GetComponent<Counterbar>();
@@ -46,6 +47,10 @@ public class Dummy : Unit {
 	protected override void OnTakeDamage(int amount) {
 		int val = Mathf.Clamp(CurHealth - amount, 0, MaxHealth);
 		bar.SetValue(val);
+
+		if(shaker != null) {
+			shaker.Shake(0.5f);
+		}
 	}
 
 	protected override void Die() {
@@ -69,7 +74,7 @@ public class Dummy : Unit {
 		}
 
 		for(int i = targets.Count - 1; i >= 0; i--) {
-			if(targets[i].gameObject == null || targets[i].Dead) {
+			if(targets[i] == null || targets[i].gameObject == null || targets[i].Dead) {
 				targets.RemoveAt(i);
 			}
 		}

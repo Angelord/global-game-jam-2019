@@ -41,13 +41,7 @@ public class Treehouse : Unit {
 	}
 
 	protected override void OnTakeDamage(int amount) {
-		shaker.enabled = true;
-		Vector3 curPos = transform.position;
-		CustomCoroutine.WaitThenExecute(1.0f, () => {
-				shaker.enabled = false;
-				transform.position = curPos;
-			}
-		);
+		shaker.Shake(0.7f);
 
 		lastRegen = Time.time;
 	}
