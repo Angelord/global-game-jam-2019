@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour {
 	[SerializeField] private Stage stage;
 	[SerializeField] private GameObject playerHUD;
 	[SerializeField] private GameObject tutorial;
+	[SerializeField] private GameObject credits;
 
 	private static bool paused = true;
 	private GameObject root;
@@ -34,6 +35,10 @@ public class PauseMenu : MonoBehaviour {
 
 	public void HowToPlay() {
 		tutorial.SetActive(!tutorial.activeSelf);
+	}
+	
+	public void Credits() {
+		credits.SetActive(!credits.activeSelf);
 	}
 
 	public void Resume() {
@@ -80,6 +85,7 @@ public class PauseMenu : MonoBehaviour {
 
 		if(!paused) {
 			tutorial.SetActive(false);
+			credits.SetActive(false);
 		}
 
 		playerHUD.SetActive(!paused);
