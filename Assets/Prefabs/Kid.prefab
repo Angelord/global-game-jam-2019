@@ -430,7 +430,7 @@ MonoBehaviour:
     type: 2}
   dazeDuration: 5
   regenRate: 5
-  mvmSpeed: 250
+  mvmSpeed: 230
   arrows:
   - {fileID: 21300000, guid: 478aaf3f5545f4710a20d8beac472f18, type: 3}
   - {fileID: 21300000, guid: bea52800c619942ca98ff6b0feae44f6, type: 3}
