@@ -66,7 +66,6 @@ public class Stage : MonoBehaviour {
 			() => {
 				state = GameState.Playing;
 				EventManager.QueueEvent(new StageStartedEvent());
-			StageOver();
 			}
 		));
 
