@@ -6,29 +6,46 @@ public class Shaker : MonoBehaviour {
 
 	[SerializeField] private float shakeAmount = 1.0f;
 	[SerializeField] private float shakeSpeed = 1.0f;
-	
+
+	private Vector3 initialPos;
+	private bool shaking = false;
+
 	public float ShakeAmount { get { return shakeAmount; } set { shakeAmount = value; } }
 	public float ShakeSpeed { get { return shakeSpeed; } set { shakeSpeed = value; } }
 
 	public void Shake(float duration) {
+		StopAllCoroutines();
+
+		if(shaking) {
+			shaking = false;
+			transform.localPosition = initialPos;
+		}
+
 		StartCoroutine(DoShake(duration));
 	}
 
 	private IEnumerator DoShake(float duration) {
-		Vector3 startPos = transform.localPosition;
+		
+		shaking = true;
+		initialPos = transform.localPosition;
+		
+		float timeRemaining = duration;
 		float shakeTime = 0.0f;
+		
 		do {
 
 			Vector3 pos = transform.localPosition;
-			pos.x = shakeAmount / 2 + Mathf.Sin(Time.time * shakeSpeed) * shakeAmount;
+			pos.x = initialPos.x + Mathf.Sin(shakeTime) * shakeAmount;
 			transform.localPosition = pos;
 
-			shakeTime += Time.deltaTime;
+			shakeTime += Time.deltaTime * shakeSpeed;
+			timeRemaining -= Time.deltaTime;
 		
 			yield return 0;
 
-		} while(shakeTime < duration || Vector3.Distance(startPos, transform.localPosition) < 0.0001f);
+		} while(timeRemaining >= 0.0f || Vector3.Distance(initialPos, transform.localPosition) > 0.1f);
 
-		transform.localPosition = startPos;
+		shaking = false;
+		transform.localPosition = initialPos;
 	}
 }
