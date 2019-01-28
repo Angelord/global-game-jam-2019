@@ -8,6 +8,7 @@ public class ScreenEffects : MonoBehaviour {
 	private static ScreenEffects instance;
 
 	[SerializeField] private Material renderMat;
+	[SerializeField][Range(0, 1)] private float startingAlpha = 0.0f;
 
 	private Jitterer jitterer;
     private Texture2D overlay;
@@ -28,7 +29,7 @@ public class ScreenEffects : MonoBehaviour {
 		instance = this;
 
 		overlay = new Texture2D (1, 1);
-		overlay.SetPixel (0, 0, new Color(0,0,0,0));
+		overlay.SetPixel (0, 0, new Color(0, 0, 0, startingAlpha));
 		overlay.Apply ();
 
 		jitterer = GetComponent<Jitterer>();

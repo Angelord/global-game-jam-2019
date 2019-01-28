@@ -13,12 +13,7 @@ public class Shop : MonoBehaviour {
 	public float swithcFreq = 1.0f;
 	public float enlargedSelectorSize = 130.0f;
 	public Text candyText;
-
-	public Text[] descriptions = new Text[2];
-	public RectTransform[] selectors = new RectTransform[2];
-	public int[] playerSelections = new int[2];
-	public float[] lastSwitches = new float[2];
-	private float defaultSelectorSize;
+	public Text description;
 
 
 	public void Continue() {
@@ -27,12 +22,13 @@ public class Shop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		ScreenEffects.FadeIn(2.0f);
+
+		AudioController.Instance.PlaySound("rooster");
 
 		AudioController.Instance.SetLoop("store");
         AudioController.Instance.SetLoopVolume(0.0f);
-        AudioController.Instance.FadeInLoop(0.2f, 0.45f);
-
-		defaultSelectorSize = selectors[0].sizeDelta.x;
+        AudioController.Instance.FadeInLoop(0.12f, 0.45f);
 
 		if(Progress.Offers.Count == 0) {
 			foreach(var offer in initialOffers) {
@@ -42,58 +38,12 @@ public class Shop : MonoBehaviour {
 
 		foreach(var offer in Progress.Offers) {
 			GameObject offerGUi = Instantiate(offerGUIPref, optionGroup);
-			offerGUi.GetComponent<ShopOfferGUI>().Initialize(offer);
+			offerGUi.GetComponent<ShopOfferGUI>().Initialize(offer, description);
 		}
 
-		for(int i = 0; i < 2; i++) {
-			descriptions[i].transform.parent.GetComponent<Graphic>().color = Kid.PLAYER_COLORS[i];
-			selectors[i].GetComponent<Image>().color = Kid.PLAYER_COLORS[i];
-		}
 	}
 
 	private void Update() {
-
-		for(int i = 0; i < 2; i++) {
-			if(playerSelections[i] >= Progress.Offers.Count) {
-				playerSelections[i] = Progress.Offers.Count - 1;
-			}
-
-			if((Time.time - lastSwitches[i]) <= swithcFreq) {
-				continue;
-			}
-
-			float hor = Input.GetAxis("Horizontal_" + i);
-			if(hor >= 0.1f) {
-				playerSelections[i] = (playerSelections[i] + 1) % Progress.Offers.Count;
-				lastSwitches[i] = Time.time;
-			}
-			 
-			if(hor <= -0.1f) {
-				playerSelections[i] = playerSelections[i] - 1;
-				if(playerSelections[i] < 0) { playerSelections[i] = Progress.Offers.Count - 1; } 
-				lastSwitches[i] = Time.time;
-			}
-
-			descriptions[i].text = Progress.Offers[playerSelections[i]].description;
-
-			if(i == 1 && playerSelections[0] == playerSelections[1]) {
-				selectors[i].sizeDelta = new Vector2(enlargedSelectorSize, enlargedSelectorSize);
-			}
-			else {
-				selectors[i].sizeDelta = new Vector2(defaultSelectorSize, defaultSelectorSize);
-			}
-		}
-
-		for(int i = 0; i < 2; i++) {
-			Vector2 targetPos = optionGroup.GetChild(playerSelections[i]).GetComponent<RectTransform>().position;
-			selectors[i].anchoredPosition = Vector3.Lerp(selectors[i].anchoredPosition, targetPos, selectorSpeed * Time.deltaTime); 
-		}
-
-		for(int i = 0; i < 2; i++) {
-			if(Input.GetButtonDown("Attack_" + i)) {
-				optionGroup.GetChild(playerSelections[i]).GetComponent<ShopOfferGUI>().Buy();
-			}
-		}
 
 		candyText.text = Progress.Candy.ToString();
 	}

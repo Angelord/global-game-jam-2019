@@ -9,12 +9,28 @@ public class ShopOfferGUI : MonoBehaviour {
 	[SerializeField] private Text priceText;
 	[SerializeField] private Image icon;
 
+	private Text descriptionText;
+
 	public ShopOffer Offer { get { return offer; } }
 
-	public void Initialize(ShopOffer offer) {
+	public void Initialize(ShopOffer offer, Text descriptionText = null) {
 		this.offer = offer;
+		this.descriptionText = descriptionText;
 		UpdateDisplay();
 	}
+
+	public void OnHover() {
+		if(descriptionText != null) {
+			descriptionText.text = offer.description;
+		}
+ 	}
+	
+	public void OnHoverEnd() {
+		if(descriptionText != null) {
+			descriptionText.text = "";
+		}
+	}
+	
 
 	public void Buy() {
 

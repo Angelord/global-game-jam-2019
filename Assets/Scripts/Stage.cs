@@ -32,7 +32,7 @@ public class Stage : MonoBehaviour {
 	}
 
 	private void Start() {
-
+		AudioController.Instance.SetLoopVolume(0.0f);
 		cameraControl = Camera.main.GetComponent<CameraControl>();
 	}
 
