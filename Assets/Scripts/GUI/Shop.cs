@@ -17,11 +17,15 @@ public class Shop : MonoBehaviour {
 
 
 	public void Continue() {
-		SceneManager.LoadScene("Treehouse");
+		ScreenEffects.FadeOut(1.5f);
+		Invoke("DoContinue", 1.5f);
 	}
 
-	// Use this for initialization
-	void Start () {
+	private void DoContinue() {
+		SceneManager.LoadScene("Treehouse");
+	}
+	
+	private void Start () {
 		ScreenEffects.FadeIn(2.0f);
 
 		AudioController.Instance.PlaySound("rooster");

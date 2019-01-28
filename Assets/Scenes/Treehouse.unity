@@ -482,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderMat: {fileID: 0}
+  startingAlpha: 1
 --- !u!114 &63531870
 MonoBehaviour:
   m_ObjectHideFlags: 0

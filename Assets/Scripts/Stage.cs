@@ -32,6 +32,7 @@ public class Stage : MonoBehaviour {
 	}
 
 	private void Start() {
+		ScreenEffects.FadeIn(1.6f);
 		AudioController.Instance.SetLoopVolume(0.0f);
 		cameraControl = Camera.main.GetComponent<CameraControl>();
 	}
