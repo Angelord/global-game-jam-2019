@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 548313245}
   - component: {fileID: 548313247}
   - component: {fileID: 548313242}
-  - component: {fileID: 548313246}
+  - component: {fileID: 548313243}
   m_Layer: 0
   m_Name: Treehouse
   m_TagString: Treehouse
@@ -1320,6 +1320,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.63
   m_Center: {x: -0.1, y: 0, z: -0.08}
+--- !u!114 &548313243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548313241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c742e1d3b2834a9a8c4eb75a810fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &548313245
 Transform:
   m_ObjectHideFlags: 0
@@ -1336,29 +1347,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &548313246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 548313241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a59a38dbe24824b7cb0870865c05142f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  stage: {fileID: 0}
-  levelHealths: 140000001e00000032000000
-  levelRegens:
-  - 12
-  - 6
-  - 3
-  levelColliders:
-  - {fileID: 807292598}
-  - {fileID: 103217295}
-  - {fileID: 1128909076}
-  regenEffect: {fileID: 912076594}
 --- !u!54 &548313247
 Rigidbody:
   m_ObjectHideFlags: 0
