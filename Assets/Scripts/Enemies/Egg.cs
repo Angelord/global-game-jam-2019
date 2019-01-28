@@ -10,7 +10,7 @@ public class Egg : Unit {
 	protected override void Die() {
 		
 		CancelInvoke();
-
+		
 		EventManager.QueueEvent(new EnemyDiedEvent());
 		
 		Destroy(this.gameObject);
@@ -25,8 +25,6 @@ public class Egg : Unit {
 	private void Spawn() {
 		
 		Instantiate(creature, transform.position, Quaternion.identity);
-
-		EventManager.QueueEvent(new EnemyDiedEvent());
 
 		Destroy(this.gameObject);
 	}

@@ -17,6 +17,7 @@ public class Enemy : Unit {
 	public bool hasDeathAnim = false; 
 	public float deathDelay = 0.7f;
 	public AudioClip deathSound;
+	public bool spawnedFromEgg = false;
 
 	private bool following = true;
 	private float lastAttack;
@@ -79,7 +80,9 @@ public class Enemy : Unit {
 		agent.stoppingDistance = houseStoppingDist;
 		target = house;
 
-		EventManager.TriggerEvent(new EnemySpawnedEvent());
+		if(!spawnedFromEgg) {
+			EventManager.TriggerEvent(new EnemySpawnedEvent());
+		}
 	}
 
 	private void TryFindTreehouse() {
