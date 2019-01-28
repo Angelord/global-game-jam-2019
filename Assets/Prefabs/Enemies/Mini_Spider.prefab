@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 65129445540276208}
   - component: {fileID: 54261535427205992}
   - component: {fileID: 195429971654905244}
-  - component: {fileID: 114541438160325604}
   - component: {fileID: 114023406163130322}
   m_Layer: 9
   m_Name: Mini_Spider
@@ -279,20 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf9579eb63334ffba8b6f0cbba4cc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114541438160325604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1319893888568180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd8010c6dee948edae507c9aca6dca5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootPrefab: {fileID: 1471287283922988, guid: c44371e48967c44cca432dbd5c6d5873, type: 2}
-  minAmount: 1
-  maxAmount: 1
 --- !u!135 &135029471153882190
 SphereCollider:
   m_ObjectHideFlags: 1
