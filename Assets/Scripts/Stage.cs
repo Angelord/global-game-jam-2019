@@ -41,18 +41,21 @@ public class Stage : MonoBehaviour {
 	}
 
 	public void StageOver() {
+
 		if(!Playing) { return; }
 
 		state = GameState.Victory;
 		StartCoroutine(OnStageOver());
 	}
 
-	public void GameOver() {
+	public void StageLost() {
 		if(!Playing) { return; }
 
 		state = GameState.Lost;
+
 		Treehouse house = GameObject.FindGameObjectWithTag("Treehouse").GetComponent<Treehouse>();
 		cameraControl.Focus(house.transform.position);
+	
 		CustomCoroutine.WaitThenExecute( END_GAME_DELAY, () => gameOverScreen.SetActive(true));
 	}
 
@@ -67,10 +70,6 @@ public class Stage : MonoBehaviour {
 			Progress.ModAmmo(UsableType.Banana, +3);
 		}
 
-		AudioController.Instance.SetLoop("battle_main");
-        AudioController.Instance.SetLoopVolume(0.0f);
-        AudioController.Instance.FadeInLoop(0.2f, 0.75f);
-
 		GameObject player1 = Instantiate(kid1Pref, kidSpawns[0].position, Quaternion.identity);
 		kids.Add(player1.GetComponent<Kid>());
 
@@ -82,24 +81,29 @@ public class Stage : MonoBehaviour {
 
 	private IEnumerator OnStageStarting() {
 		
+		AudioController.Instance.SetLoop("battle_main");
+        AudioController.Instance.SetLoopVolume(0.0f);
+        AudioController.Instance.FadeInLoop(0.2f, 0.75f);
+
 		yield return new WaitForSeconds(0.5f);
 
 		dayText.gameObject.SetActive(true);
 		dayText.text = "Day " + (Progress.Day + 1);
 		dayText.GetComponent<LerpAlpha>().SetAlpha(0.0f);
 		dayText.GetComponent<LerpAlpha>().intendedAlpha = 1.0f;
-		
 		CustomCoroutine.WaitThenExecute(3.0f, () => dayText.GetComponent<LerpAlpha>().intendedAlpha = 0.0f);
 
 		//Play start game lines
 		kids[Random.Range(0, kids.Count )].Say(startOfGameLines[Random.Range(0, startOfGameLines.Length)]);
 
-		EventManager.QueueEvent(new StageStartedEvent());
-
 		state = GameState.Playing;
+
+		EventManager.QueueEvent(new StageStartedEvent());
 	}
 
 	private IEnumerator OnStageOver() {
+
+		AudioController.Instance.FadeOutLoop(0.35f);
 
 		yield return new WaitForSeconds(2.0f);
 
@@ -108,6 +112,10 @@ public class Stage : MonoBehaviour {
 		cameraControl.Focus(gate.transform.position);
 
 		yield return new WaitUntil(() => cameraControl.FocusedOnTarget);
+
+		AudioController.Instance.SetLoopVolume(0.0f);
+		AudioController.Instance.SetLoop("victory");
+		AudioController.Instance.FadeInLoop(0.35f, 0.8f);
 
 		momSpeech.Show(momLines[Random.Range(0, momLines.Length)]);
 

@@ -30,6 +30,13 @@ public class DeveloperControls : MonoBehaviour {
 					SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 				}
 			}
-		}		
+		}	
+
+		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Z) && Input.GetKeyDown(KeyCode.I)) {
+			GameObject stageObj = GameObject.Find("Stage");
+			if(stageObj != null) {
+				stageObj.GetComponent<Stage>().StageOver();
+			}
+		}	
 	}
 }

@@ -53,7 +53,7 @@ public class Treehouse : Unit {
 	}
 
 	protected override void Die() {
-		stage.GameOver();
+		stage.StageLost();
 	}
 
 	private void Update() {
