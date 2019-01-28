@@ -11009,21 +11009,9 @@ MonoBehaviour:
   kidSpawns:
   - {fileID: 798068659}
   - {fileID: 196222998}
-  startOfGameLines:
-  - Let's do this!
-  - Pew pew!
-  - They don't stand a chance!
-  - Watch yourself, bro!
-  - Defend the base!
-  - There's no end to them!
-  momLines:
-  - Hank! Phil! Dinner is ready!
-  - Where have you two gone wandering again?
-  - Bedtime, boys! Don't make me shout.
-  momSpeech: {fileID: 1474740157}
-  gate: {fileID: 783908403}
   gameOverScreen: {fileID: 1761630885}
   dayText: {fileID: 1598130724}
+  gate: {fileID: 783908403}
 --- !u!4 &1100877977
 Transform:
   m_ObjectHideFlags: 0
@@ -12545,12 +12533,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224065458959179308, guid: d7cec7c72865c412c9991f2660065185,
     type: 2}
   m_PrefabInternal: {fileID: 312626094}
---- !u!114 &1474740157 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114738166719292702, guid: d7cec7c72865c412c9991f2660065185,
-    type: 2}
-  m_PrefabInternal: {fileID: 312626094}
-  m_Script: {fileID: 11500000, guid: 1e0b1eb9e16eb486a905b95ae2d3a20d, type: 3}
 --- !u!1 &1503016815
 GameObject:
   m_ObjectHideFlags: 0

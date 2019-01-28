@@ -36,6 +36,8 @@ public class EnemySpawner : MonoBehaviour {
 
         yield return new WaitForSeconds(breakTimes);
 
+        stage.WaveStarted(waveIndex);
+
         LerpAlpha textAplha = notifyText.GetComponent<LerpAlpha>();
         notifyText.text = "Wave " + (waveIndex + 1);
         textAplha.SetAlpha(0.0f);
@@ -74,6 +76,7 @@ public class EnemySpawner : MonoBehaviour {
                 stage.StageOver();
             }
             else {
+                stage.WaveOver(waveIndex - 1);
                 StartCoroutine(SpawnNextWave());
             }
         }

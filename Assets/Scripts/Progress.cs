@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class Progress {
 
+	public const int LAST_DAY = 5;
+
 	private static bool started = false;
 	private static int day = 0;
 	private static int candy = 0;
