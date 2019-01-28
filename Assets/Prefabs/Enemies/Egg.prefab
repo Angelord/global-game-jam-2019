@@ -102,6 +102,7 @@ MonoBehaviour:
   health: 1
   spawnsIn: 5
   creature: {fileID: 1319893888568180, guid: 76a0942c5bb9b43eba5284428cbd3be8, type: 2}
+  hatchSound: {fileID: 8300000, guid: aefdae205bf97411ea7f37bd35e9c8b8, type: 3}
 --- !u!114 &114995975645724860
 MonoBehaviour:
   m_ObjectHideFlags: 1
