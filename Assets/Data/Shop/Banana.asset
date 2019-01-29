@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724cdb640e5d44170b84ac839e73df78, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  price: 2
+  price: 3
   offerType: 0
   name: Banana
   description: A sticky trap.
