@@ -137,10 +137,11 @@ MonoBehaviour:
   maxHeight: 0.98
   riseSpeed: 8
   fallSpeed: 11
-  travelDist: 3.4
   explosion: {fileID: 1156031270561314, guid: 30e0f3077231b4f46882eb41e29ce6a7, type: 2}
   maxSize: 1.5
   minSize: 1
+  horizontalTravelDist: 3.4
+  verticalTravelDist: 2.7
 --- !u!114 &114731649331856112
 MonoBehaviour:
   m_ObjectHideFlags: 1

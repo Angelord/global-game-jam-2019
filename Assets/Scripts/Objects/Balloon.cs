@@ -10,12 +10,14 @@ public class Balloon : MonoBehaviour {
 	[SerializeField] private float maxHeight = 1.0f;
 	[SerializeField] private float riseSpeed = 6.0f;
 	[SerializeField] private float fallSpeed = 12.0f;
-	[SerializeField] private float travelDist = 5.0f;
 	[SerializeField] private GameObject explosion;
 	[SerializeField] private float maxSize;
 	[SerializeField] private float minSize;
+	[SerializeField] private float horizontalTravelDist = 3.4f;
+	[SerializeField] private float verticalTravelDist = 3.1f;
 
 	private float speed = 10.0f;
+	private float travelDist;
 	private Vector3 startPos;
 	private Vector3 movDir;
 	private Direction direction;
@@ -29,6 +31,13 @@ public class Balloon : MonoBehaviour {
 		this.speed = riseSpeed;
 		this.direction = direction;
 		this.startPos = transform.position;
+
+		if(direction == Direction.Left || direction == Direction.Right) {
+			travelDist = horizontalTravelDist;
+		}
+		else {
+			travelDist = verticalTravelDist;
+		}
 
 		movDir = DirUtil.DirectionToVec(direction);
 
