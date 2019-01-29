@@ -55,6 +55,7 @@ public class Stage : MonoBehaviour {
 
 		GameObject player2 = Instantiate(kid2Pref, kidSpawns[1].position, Quaternion.identity);
 		kids.Add(player2.GetComponent<Kid>());
+        player2.GetComponent<Kid>().bot = true;
 
 		dayText.gameObject.SetActive(true);
 		dayText.text = "Day " + (Progress.Day + 1);

@@ -39,6 +39,9 @@ public class Kid : Unit {
 	public Color Color { get { return PLAYER_COLORS[index]; } }
 	public Direction Direction { get { return direction; } }
 	public Usable CurUsable { get { return usables[curUsable]; } }
+   public bool bot;
+    private bool botAttack;
+    private bool botActive = true;
 
 	public void Say(string text) {
 		speech.Show(text);
@@ -106,13 +109,15 @@ public class Kid : Unit {
 
 	private void Update() {
 
-		if(locked || Dead) { return; } 
+		if(locked || Dead) { return; }
+
+        if (Input.GetKeyDown(KeyCode.J)) botActive = !botActive;
 
 		if(!CurUsable.CanUse) {
 			SelectNextUsable();
 		}
 
-		if(Stage.Playing && Input.GetButtonDown(controls.Attack)) {
+		if(Stage.Playing && (Input.GetButtonDown(controls.Attack) || (bot && botActive && botAttack ))){
 			usables[curUsable].Use();
 		}
 
@@ -135,11 +140,76 @@ public class Kid : Unit {
 		curUsable = toCheck;
 	}
 
-	private void FixedUpdate () {
+    private GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
+    private void FixedUpdate () {
 		if(locked || Dead) { return; }
 
-		float hor = Input.GetAxis(controls.Horizontal);
-		float ver = Input.GetAxis(controls.Vertical);
+        float hor = 0, ver = 0;
+
+
+      if (bot && botActive) {
+            GameObject target = FindClosestEnemy();
+            if(target)
+            {
+                float delta = 0.1f;
+                var position = target.transform.position;
+                float magX = Mathf.Abs(position.x - transform.position.x);
+                float magZ = Mathf.Abs(position.z - transform.position.z);
+
+                if (magX < magZ)
+                {
+                    if (magX > delta)
+                    {
+                        botAttack = false;
+                        hor = position.x > transform.position.x ? 0.8f : -0.8f;
+
+                    }
+                    else
+                    {
+                        botAttack = true;
+                        ver = position.z > transform.position.z ? 0.1f : -0.1f;
+                    }
+                }
+                else
+                {
+                    if (magZ > delta)
+                    {
+                        botAttack = false;
+                        ver = position.z > transform.position.z ? 0.8f : -0.8f;
+
+                    }
+                    else
+                    {
+                        botAttack = true;
+                        hor = position.x > transform.position.x ? 0.5f : -0.5f;
+                    }
+                }
+            }
+       
+        }
+      else {
+            hor = Input.GetAxis(controls.Horizontal);
+           ver = Input.GetAxis(controls.Vertical);
+       }
 		
 
 		Vector3 topLeft = Camera.main.ScreenToWorldPoint(new Vector3(SCREEN_LOCK_MARGIN, SCREEN_LOCK_MARGIN, 0));
