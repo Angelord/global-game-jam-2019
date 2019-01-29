@@ -8,7 +8,7 @@ public class EndGame : MonoBehaviour {
 	public LerpAlpha thankYouAlpha;
 
 	private void Start () {
-		thankYouAlpha.IntendedAlpha = 0.9f;
+		thankYouAlpha.IntendedAlpha = 1.0f;
 		ScreenEffects.FadeIn(3.0f);
 	}
 

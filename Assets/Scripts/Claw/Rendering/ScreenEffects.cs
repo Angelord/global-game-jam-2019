@@ -25,7 +25,7 @@ public class ScreenEffects : MonoBehaviour {
 		instance.StartCoroutine(instance.DoFade(false, duration));
 	}
 
-    private void Start(){
+	private void Awake() {
 		instance = this;
 
 		overlay = new Texture2D (1, 1);
@@ -33,7 +33,7 @@ public class ScreenEffects : MonoBehaviour {
 		overlay.Apply ();
 
 		jitterer = GetComponent<Jitterer>();
-    }
+	}
 
 	private void OnGUI(){
 		GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), overlay);
