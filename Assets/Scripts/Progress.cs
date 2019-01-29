@@ -31,6 +31,9 @@ public static class Progress {
 
 	public static void Reset() {
 		data = new ProgressData();
+		Progress.ModAmmo(UsableType.Dummy, +1);
+		Progress.ModAmmo(UsableType.Banana, +3);
+
 		savedData = new ProgressData();
 		savedData.day = -1;
 	}
