@@ -55,6 +55,12 @@ public class PauseMenu : MonoBehaviour {
 
 	public void NewGame() {
 		Progress.Reset();
+		
+		if(!Progress.GameStarted) {
+			Progress.ModAmmo(UsableType.Dummy, +1);
+			Progress.ModAmmo(UsableType.Banana, +3);
+		}
+
 		Progress.GameStarted = true;
 
 		if(Stage.Playing) {

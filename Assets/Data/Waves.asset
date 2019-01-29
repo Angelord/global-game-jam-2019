@@ -50,7 +50,7 @@ MonoBehaviour:
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
           type: 2}
-        spawnFreq: 1.5
+        spawnFreq: 1.4
         numEnemies: 6
       - enemy: {fileID: 1043613487090882, guid: 13df4c021e075492b8ea156bfd06bee5,
           type: 2}

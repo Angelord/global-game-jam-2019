@@ -5,41 +5,42 @@ using UnityEngine;
 public static class Progress {
 
 	public const int LAST_DAY = 5;
-
 	private static bool started = false;
-	private static int day = 0;
-	private static int candy = 0;
-	private static int houseLevel = 0;
-	private static List<ShopOffer> offers = new List<ShopOffer>();
-	private static int[] usableAmmo = new int[(int)UsableType.Count];
-	private static int[] usableLevels = new int[(int)UsableType.Count];
-
+	private static ProgressData savedData = new ProgressData();
+	private static ProgressData data = new ProgressData();
+	private static int daySaved = -1;
+	
 	public static bool GameStarted { get { return started; } set { started = value; } }
-	public static int Day { get { return day; } set { day = value; } }
-	public static int Candy { get { return candy; } set { candy = value; } }
-	public static List<ShopOffer> Offers { get { return offers; } }
-	public static int HouseLevel { get { return houseLevel; } }
+	public static int Day { get { return data.day; } set { data.day = value; } }
+	public static int Candy { get { return data.candy; } set { data.candy = value; } }
+	public static List<ShopOffer> Offers { get { return data.offers; } }
+	public static int HouseLevel { get { return data.houseLevel; } }
+
+	public static void Save() {
+		if(daySaved != data.day) {
+			savedData = data;
+			daySaved = data.day;
+		}
+	}
+
+	public static void Load() {
+		data = savedData;
+	}
 
 	public static void UpgradeHouse() {
-		houseLevel++;
+		data.houseLevel++;
 	}
 
 	public static void Reset() {
-
-		day = 0;
-		candy = 0;
-		houseLevel = 0;
-		offers.Clear();
-		usableAmmo = new int[(int)UsableType.Count];
-		usableLevels = new int[(int)UsableType.Count];
+		data = new ProgressData((int)UsableType.Count);
 	}
 
 	public static void UpgradeUsable(UsableType type) {
-		usableLevels[(int)type]++;
+		data.usableLevels[(int)type]++;
 	}
 
 	public static int GetUsableLevel(UsableType type) {
-		return usableLevels[(int)type];
+		return data.usableLevels[(int)type];
 	} 
 
 	public static bool IsFinite(UsableType usable) {
@@ -48,11 +49,11 @@ public static class Progress {
 	}
 
 	public static void ModAmmo(UsableType usable, int amount) {
-		usableAmmo[(int)usable] += amount;
+		data.usableAmmo[(int)usable] += amount;
 	}
 
 	public static int GetAmmo(UsableType usable) {
-		return usableAmmo[(int)usable];
+		return data.usableAmmo[(int)usable];
 	}
 
 	public static bool CanAfford(ShopOffer offer) {
@@ -60,15 +61,38 @@ public static class Progress {
 	}
 
 	public static void AddOffer(ShopOffer offer) {
-		offers.Add(offer);
+		data.offers.Add(offer);
 	}
 
 	public static void RemoveOffer(ShopOffer offer) {
-		offers.Remove(offer);
+		data.offers.Remove(offer);
 	}
 
 	public static void DayPassed() {
-		day++;
+		data.day++;
+	}
+}
+
+public struct ProgressData {
+	public int day;
+	public int candy;
+	public int houseLevel;
+	public List<ShopOffer> offers;
+	public int[] usableAmmo;
+	public int[] usableLevels;
+
+	public ProgressData(int numUsables) {
+		day = 0;
+		candy = 0;
+		houseLevel = 0;
+		offers = new List<ShopOffer>();
+		usableAmmo = new int[numUsables];
+		usableLevels = new int[numUsables];
+	}
+
+
+	public void Print() {
+		Debug.Log("printing");
 	}
 }
 

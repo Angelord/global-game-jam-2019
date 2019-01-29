@@ -44,11 +44,8 @@ public class Stage : MonoBehaviour {
 	}
 
 	public void StartStage() {
-		Debug.Log("Starting stage");
-		if(Progress.Day == 0) {
-			Progress.ModAmmo(UsableType.Dummy, +1);
-			Progress.ModAmmo(UsableType.Banana, +3);
-		}
+		
+		Progress.Save();
 
 		GameObject player1 = Instantiate(kid1Pref, kidSpawns[0].position, Quaternion.identity);
 		kids.Add(player1.GetComponent<Kid>());
@@ -68,8 +65,6 @@ public class Stage : MonoBehaviour {
 				EventManager.QueueEvent(new StageStartedEvent());
 			}
 		));
-
-
 	}
 
 	public void StageOver() {
@@ -101,6 +96,9 @@ public class Stage : MonoBehaviour {
 	}
 
 	public void Restart() {
+
+		Progress.Load();
+
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
