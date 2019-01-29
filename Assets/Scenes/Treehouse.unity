@@ -2299,12 +2299,12 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 548313241}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b791ed2ae0f374a8da3b26ad306fe640, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.63
-  m_Center: {x: -0.1, y: 0, z: -0.08}
+  m_Radius: 0.5
+  m_Center: {x: -0.1, y: 0, z: 0.05}
 --- !u!4 &548313245
 Transform:
   m_ObjectHideFlags: 0
