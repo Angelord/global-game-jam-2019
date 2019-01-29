@@ -13,6 +13,8 @@ public class SpeechBubble : MonoBehaviour {
 	private Text uiText;
 	private RectTransform rectTransform;
 	private bool typing = false;
+	private LerpAlpha[] alphaLerpers;
+	private float defaultAlpha;
 
 	public bool Typing { get { return typing; } }
 
@@ -28,7 +30,6 @@ public class SpeechBubble : MonoBehaviour {
 		if(uiText == null) {
 			FindDependencies();
 		}
-
 		
 		this.gameObject.SetActive(true);
 		StopAllCoroutines();
@@ -49,18 +50,26 @@ public class SpeechBubble : MonoBehaviour {
 			}
 		}
 
-
 		typing = false;
+
+		for(int i = 0; i < alphaLerpers.Length; i++) {
+			alphaLerpers[i].IntendedAlpha = 0.0f;
+		}
 
 		yield return new WaitForSeconds(disableDelay);
 		this.gameObject.SetActive(false);
+
+		for(int i = 0; i < alphaLerpers.Length; i++) {
+			alphaLerpers[i].SetAlpha(defaultAlpha);
+		}
 	}
 
 	private void FindDependencies() {
-
+		if(uiText != null) { return; }
 		uiText = GetComponentInChildren<Text>();
-
 		rectTransform = GetComponent<RectTransform>();
+		defaultAlpha = GetComponent<Image>().color.a;
+		alphaLerpers = GetComponentsInChildren<LerpAlpha>();
 	}
 
 }

@@ -5,11 +5,18 @@ using UnityEngine.UI;
 public class LerpAlpha : MonoBehaviour {
 
 	public float speed = 2.5f;
-	public float intendedAlpha;
+	
+	private float intendedAlpha;
 	private Graphic image;
 	
+	public float IntendedAlpha {
+		get { return intendedAlpha; }
+		set { intendedAlpha = value; }
+	}
+
 	void Awake () {
 		image = GetComponent<Graphic>();
+		intendedAlpha = image.color.a;
 	}
 	
 	void Update() {

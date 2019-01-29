@@ -59,8 +59,8 @@ public class Stage : MonoBehaviour {
 		dayText.gameObject.SetActive(true);
 		dayText.text = "Day " + (Progress.Day + 1);
 		dayText.GetComponent<LerpAlpha>().SetAlpha(0.0f);
-		dayText.GetComponent<LerpAlpha>().intendedAlpha = 1.0f;
-		CustomCoroutine.WaitThenExecute(3.0f, () => dayText.GetComponent<LerpAlpha>().intendedAlpha = 0.0f);
+		dayText.GetComponent<LerpAlpha>().IntendedAlpha = 1.0f;
+		CustomCoroutine.WaitThenExecute(3.0f, () => dayText.GetComponent<LerpAlpha>().IntendedAlpha = 0.0f);
 
 		sequencer.StartCoroutine(sequencer.OnStageStarted(
 			() => {
