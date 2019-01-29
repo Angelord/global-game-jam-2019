@@ -28,6 +28,12 @@ public class PauseMenu : MonoBehaviour {
 
 			root.SetActive(false);
 		}
+		else {
+
+			AudioController.Instance.SetLoop("spooky_2");
+			AudioController.Instance.SetLoopVolume(0.0f);
+			AudioController.Instance.FadeInLoop(0.3f, 0.8f);
+		}
 
 		continueBtn.SetActive(false);
 		resumeBtn.SetActive(false);
@@ -80,10 +86,12 @@ public class PauseMenu : MonoBehaviour {
 		root.SetActive(paused);
 
 		if(paused) {
+			AudioController.Instance.PauseLoop();
 			resumeBtn.SetActive(Stage.Playing); 
 		}
 
 		if(!paused) {
+			AudioController.Instance.ResumeLoop();
 			tutorial.SetActive(false);
 			credits.SetActive(false);
 		}

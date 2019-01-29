@@ -298,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namePrefab: {fileID: 1343952785385034, guid: 9c1acdfedd192476c9563685d8133928, type: 2}
   name: Zuk The Determined
+  bossTheme: spooky
 --- !u!114 &114984721548747710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,6 +320,7 @@ MonoBehaviour:
   hasDeathAnim: 1
   deathDelay: 0.5
   deathSound: {fileID: 0}
+  spawnedFromEgg: 0
 --- !u!135 &135092852838804332
 SphereCollider:
   m_ObjectHideFlags: 1
