@@ -15,6 +15,7 @@ MonoBehaviour:
   - name: Day 1
     waves:
     - name: Wave 1
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -22,6 +23,7 @@ MonoBehaviour:
         spawnFreq: 1.4
         numEnemies: 4
     - name: Wave 2
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -31,6 +33,7 @@ MonoBehaviour:
   - name: Day 2
     waves:
     - name: Wave 1
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -42,6 +45,7 @@ MonoBehaviour:
         spawnFreq: 2
         numEnemies: 2
     - name: Wave 2
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -55,6 +59,7 @@ MonoBehaviour:
   - name: Day 3
     waves:
     - name: Wave 1
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -66,6 +71,7 @@ MonoBehaviour:
         spawnFreq: 2
         numEnemies: 5
     - name: Wave 2
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -83,6 +89,7 @@ MonoBehaviour:
   - name: Day 4
     waves:
     - name: Wave 1
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -94,6 +101,7 @@ MonoBehaviour:
         spawnFreq: 1
         numEnemies: 4
     - name: Wave 2
+      songLoop: spooky
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -107,6 +115,7 @@ MonoBehaviour:
   - name: Day 5
     waves:
     - name: Wave 1
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -118,6 +127,7 @@ MonoBehaviour:
         spawnFreq: 2
         numEnemies: 6
     - name: Wave 2
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -133,6 +143,7 @@ MonoBehaviour:
         spawnFreq: 1
         numEnemies: 6
     - name: Wave 3
+      songLoop: spooky
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: be19f349d03164940bab1d3606506e4f,
@@ -150,6 +161,7 @@ MonoBehaviour:
   - name: Day 6
     waves:
     - name: Wave 1
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -165,6 +177,7 @@ MonoBehaviour:
         spawnFreq: 1
         numEnemies: 4
     - name: Wave 2
+      songLoop: 
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,
@@ -176,6 +189,7 @@ MonoBehaviour:
         spawnFreq: 1
         numEnemies: 8
     - name: Wave 3
+      songLoop: spooky
       delay: 3
       spawnGroups:
       - enemy: {fileID: 1337167503977878, guid: 6103300c26d6545da8c32ea4b3cb4376,

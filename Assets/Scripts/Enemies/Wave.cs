@@ -4,8 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class Wave {
-	public string songLoop;
 	public string name;
+	public string songLoop;
 	public float delay = 3.0f;
 	public List<SpawnGroup> spawnGroups;
 
