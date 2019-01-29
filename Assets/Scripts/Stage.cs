@@ -13,12 +13,11 @@ public class Stage : MonoBehaviour {
 	[SerializeField] private Transform[] kidSpawns = new Transform[2];
 	[SerializeField] private GameObject gameOverScreen;
 	[SerializeField] private Text dayText;
-	[SerializeField] private StageSequencer[] sequencers = new StageSequencer[Progress.LAST_DAY];
+	[SerializeField] private StageSequencer sequencer;
 
 	private GameState state = GameState.InMenu;
 	private CameraControl cameraControl; 
 	private List<Kid> kids = new List<Kid>();
-	private StageSequencer sequencer;
 	
 	private static Stage instance;
 
@@ -28,8 +27,6 @@ public class Stage : MonoBehaviour {
 	private void Awake() {
 
 		instance = this;
-
-		sequencer = sequencers[Progress.Day];
 	}
 
 	private void Start() {
