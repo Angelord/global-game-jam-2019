@@ -29,9 +29,9 @@ public static class Progress {
 		day = 0;
 		candy = 0;
 		houseLevel = 0;
+		offers.Clear();
 		usableAmmo = new int[(int)UsableType.Count];
 		usableLevels = new int[(int)UsableType.Count];
-		offers.Clear();
 	}
 
 	public static void UpgradeUsable(UsableType type) {
