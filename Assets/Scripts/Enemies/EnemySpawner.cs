@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] private Stage stage;
     [SerializeField] private WaveData waveData;
     [SerializeField] private Text notifyText;
+    [SerializeField] private string defaultWaveLoop = "battle_main";
 
     private List<Wave> waves = new List<Wave>();
     private int waveIndex = 0;
@@ -34,7 +35,16 @@ public class EnemySpawner : MonoBehaviour {
 
     private IEnumerator SpawnNextWave() {
 
-        yield return new WaitForSeconds(breakTimes);
+        AudioController.Instance.FadeOutLoop(0.6f);
+
+        yield return new WaitForSeconds(breakTimes / 4);
+
+        string loopToPlay = string.IsNullOrEmpty(CurrentWave.songLoop) ? defaultWaveLoop : CurrentWave.songLoop;
+        AudioController.Instance.SetLoop(loopToPlay);
+        AudioController.Instance.SetLoopVolume(0.0f);
+        AudioController.Instance.FadeInLoop(0.6f, 0.8f);
+
+        yield return new WaitForSeconds(breakTimes - breakTimes / 4);
 
         stage.WaveStarted(waveIndex);
 

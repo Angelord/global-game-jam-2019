@@ -30,9 +30,9 @@ public class StageSequencer : MonoBehaviour {
 
 	public virtual IEnumerator OnStageStarted(System.Action onReady) {
 
-		AudioController.Instance.SetLoop("battle_main");
-        AudioController.Instance.SetLoopVolume(0.0f);
-        AudioController.Instance.FadeInLoop(0.2f, 0.75f);
+		// AudioController.Instance.SetLoop("battle_main");
+        // AudioController.Instance.SetLoopVolume(0.0f);
+        // AudioController.Instance.FadeInLoop(0.2f, 0.75f);
 
 		yield return new WaitForSeconds(0.5f);
 
