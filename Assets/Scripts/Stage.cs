@@ -54,10 +54,14 @@ public class Stage : MonoBehaviour {
 		kids.Add(player2.GetComponent<Kid>());
 
 		dayText.gameObject.SetActive(true);
+		dayText.transform.SetAsLastSibling();
 		dayText.text = "Day " + (Progress.Day + 1);
 		dayText.GetComponent<LerpAlpha>().SetAlpha(0.0f);
 		dayText.GetComponent<LerpAlpha>().IntendedAlpha = 1.0f;
-		CustomCoroutine.WaitThenExecute(3.0f, () => dayText.GetComponent<LerpAlpha>().IntendedAlpha = 0.0f);
+		CustomCoroutine.WaitThenExecute(3.0f, () => {
+			dayText.GetComponent<LerpAlpha>().IntendedAlpha = 0.0f;
+			dayText.transform.SetAsLastSibling();	 
+		});
 
 		sequencer.StartCoroutine(sequencer.OnStageStarted(
 			() => {
@@ -92,7 +96,10 @@ public class Stage : MonoBehaviour {
 		Treehouse house = GameObject.FindGameObjectWithTag("Treehouse").GetComponent<Treehouse>();
 		cameraControl.Focus(house.transform.position);
 	
-		CustomCoroutine.WaitThenExecute( END_GAME_DELAY, () => gameOverScreen.SetActive(true));
+		CustomCoroutine.WaitThenExecute( END_GAME_DELAY, () => {
+			gameOverScreen.transform.SetAsLastSibling();
+			gameOverScreen.SetActive(true);
+		});
 	}
 
 	public void Restart() {

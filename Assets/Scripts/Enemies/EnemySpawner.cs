@@ -50,6 +50,7 @@ public class EnemySpawner : MonoBehaviour {
 
         LerpAlpha textAplha = notifyText.GetComponent<LerpAlpha>();
         notifyText.text = "Wave " + (waveIndex + 1);
+        notifyText.transform.SetAsLastSibling();
         textAplha.SetAlpha(0.0f);
         textAplha.IntendedAlpha = 0.8f;
         CustomCoroutine.WaitThenExecute(1.54f, ()=> {

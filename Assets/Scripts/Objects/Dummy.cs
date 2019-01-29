@@ -25,6 +25,7 @@ public class Dummy : Unit {
 		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
 		bar = Instantiate(barPrefab, StageGUI.Instance.transform).GetComponent<Counterbar>();
+		bar.transform.SetAsFirstSibling();
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
 

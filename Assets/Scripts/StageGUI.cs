@@ -25,6 +25,7 @@ public class StageGUI : MonoBehaviour {
 	public Healthbar CreateHealthBar(Unit unit) {
 
 		Healthbar newBar = Instantiate(healthbar, this.transform).GetComponent<Healthbar>();
+		newBar.transform.SetAsFirstSibling();
 
 		newBar.SetTarget(unit);
 

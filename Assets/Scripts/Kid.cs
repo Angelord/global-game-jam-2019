@@ -85,6 +85,7 @@ public class Kid : Unit {
 		bar = Instantiate(healthBar, StageGUI.Instance.transform).GetComponent<Counterbar>();
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
+		bar.transform.SetAsFirstSibling();
 
 		GetComponentInChildren<Animator>().runtimeAnimatorController = animControllers[index];
 
