@@ -14,7 +14,6 @@ public class EndGame : MonoBehaviour {
 
 	public void NewGame() {
 		Progress.Reset();
-		Progress.GameStarted = false;
 		ScreenEffects.FadeOut(1.2f);
 		
 		CustomCoroutine.WaitThenExecute(1.2f, () => { SceneManager.LoadScene("Treehouse"); } );

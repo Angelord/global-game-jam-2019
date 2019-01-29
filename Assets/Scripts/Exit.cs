@@ -26,6 +26,11 @@ public class Exit : MonoBehaviour {
 
 		Kid.Locked = false;
 
-		SceneManager.LoadScene("ShopNew");
+		if(Progress.Day > Progress.LAST_DAY) {
+			SceneManager.LoadScene("EndScene");
+		}
+		else {
+			SceneManager.LoadScene("ShopNew");
+		}
 	}
 }

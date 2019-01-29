@@ -26,6 +26,7 @@ public class Stage : MonoBehaviour {
 	public static bool Playing { get { return instance.state == GameState.Playing; } }
 
 	private void Awake() {
+
 		instance = this;
 
 		sequencer = sequencers[Progress.Day];
@@ -38,13 +39,15 @@ public class Stage : MonoBehaviour {
 	}
 
 	private void OnDestroy() {
+
 		if(instance == this) { 
+
 			instance = null;
 		}
 	}
 
 	public void StartStage() {
-
+		Debug.Log("Starting stage");
 		if(Progress.Day == 0) {
 			Progress.ModAmmo(UsableType.Dummy, +1);
 			Progress.ModAmmo(UsableType.Banana, +3);
@@ -66,6 +69,7 @@ public class Stage : MonoBehaviour {
 			() => {
 				state = GameState.Playing;
 				EventManager.QueueEvent(new StageStartedEvent());
+				StageOver();
 			}
 		));
 
