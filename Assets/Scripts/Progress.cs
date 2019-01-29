@@ -8,7 +8,6 @@ public static class Progress {
 	private static bool started = false;
 	private static ProgressData savedData = new ProgressData();
 	private static ProgressData data = new ProgressData();
-	private static int daySaved = -1;
 	
 	public static bool GameStarted { get { return started; } set { started = value; } }
 	public static int Day { get { return data.day; } set { data.day = value; } }
@@ -17,14 +16,13 @@ public static class Progress {
 	public static int HouseLevel { get { return data.houseLevel; } }
 
 	public static void Save() {
-		if(daySaved != data.day) {
-			savedData = data;
-			daySaved = data.day;
+		if(savedData.day != data.day) {
+			data.CopyTo(savedData);
 		}
 	}
 
 	public static void Load() {
-		data = savedData;
+		savedData.CopyTo(data);
 	}
 
 	public static void UpgradeHouse() {
@@ -32,7 +30,9 @@ public static class Progress {
 	}
 
 	public static void Reset() {
-		data = new ProgressData((int)UsableType.Count);
+		data = new ProgressData();
+		savedData = new ProgressData();
+		savedData.day = -1;
 	}
 
 	public static void UpgradeUsable(UsableType type) {
@@ -73,26 +73,26 @@ public static class Progress {
 	}
 }
 
-public struct ProgressData {
-	public int day;
-	public int candy;
-	public int houseLevel;
-	public List<ShopOffer> offers;
-	public int[] usableAmmo;
-	public int[] usableLevels;
+public class ProgressData {
+	public int day = 0;
+	public int candy = 0;
+	public int houseLevel = 0;
+	public List<ShopOffer> offers = new List<ShopOffer>();
+	public int[] usableAmmo = new int[(int)UsableType.Count];
+	public int[] usableLevels = new int[(int)UsableType.Count];
 
-	public ProgressData(int numUsables) {
-		day = 0;
-		candy = 0;
-		houseLevel = 0;
-		offers = new List<ShopOffer>();
-		usableAmmo = new int[numUsables];
-		usableLevels = new int[numUsables];
-	}
-
-
-	public void Print() {
-		Debug.Log("printing");
+	public void CopyTo(ProgressData target) {
+		target.day = day;
+		target.candy = candy;
+		target.houseLevel = houseLevel;
+		target.offers.Clear();
+		foreach(var offer in offers) {
+			target.offers.Add(offer);
+		}
+		for(int i = 0; i < (int)UsableType.Count; i++) {
+			target.usableAmmo[i] = usableAmmo[i];
+			target.usableLevels[i] = usableLevels[i];
+		}
 	}
 }
 

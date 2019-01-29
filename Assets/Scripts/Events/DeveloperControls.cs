@@ -32,11 +32,15 @@ public class DeveloperControls : MonoBehaviour {
 			}
 		}	
 
-		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Z) && Input.GetKeyDown(KeyCode.I)) {
+		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Z) && Input.GetKeyDown(KeyCode.Alpha8)) {
 			GameObject stageObj = GameObject.Find("Stage");
 			if(stageObj != null) {
 				stageObj.GetComponent<Stage>().StageOver();
 			}
+		}	
+
+		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Z) && Input.GetKeyDown(KeyCode.Alpha7)) {
+			Progress.Candy += 100;
 		}	
 	}
 }
