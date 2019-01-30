@@ -14,8 +14,8 @@ MonoBehaviour:
   price: 40
   offerType: 3
   name: House Upgrade 1
-  description: 'Upgrades you tree-house, increasing its health. Just make sure uncle
-    Phil doesn''t notice you stealing his tools. '
+  description: 'Upgrades you tree-house to level 2, increasing its health. Just make
+    sure dad doesn''t catch you stealing his tools. '
   icon: {fileID: 21300000, guid: 3a31b550085364de6ba801e694bbc88f, type: 3}
   singlePurchase: 1
   nextLevel: {fileID: 11400000, guid: df2b306808e074932adc027b3c5e755c, type: 2}

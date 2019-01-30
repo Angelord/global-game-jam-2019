@@ -14,7 +14,7 @@ MonoBehaviour:
   price: 12
   offerType: 1
   name: Scarecrow
-  description: A trusty friend. Willing to fight AND die for you. Also he won't take
+  description: A trusty friend. Willing to fight AND die for you. Also, he won't take
     your stuff without asking.
   icon: {fileID: 21300000, guid: c635b4260bf99412384a161947da4bbc, type: 3}
   singlePurchase: 0
