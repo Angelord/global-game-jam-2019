@@ -46,7 +46,7 @@ public class Treehouse : Unit {
 		lastRegen = Time.time;
 	}
 
-	protected override void Die() {
+	public override void Die() {
 		stage.StageLost();
 	}
 

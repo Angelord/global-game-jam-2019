@@ -8,7 +8,7 @@ public class Egg : Unit {
 	[SerializeField] private GameObject creature;
 	[SerializeField] private AudioClip hatchSound;
 
-	protected override void Die() {
+	public override void Die() {
 		
 		CancelInvoke();
 		

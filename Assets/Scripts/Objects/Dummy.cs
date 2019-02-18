@@ -54,7 +54,7 @@ public class Dummy : Unit {
 		}
 	}
 
-	protected override void Die() {
+	public override void Die() {
 		this.enabled = false;
 		GetComponentInChildren<DummyRange>().enabled = false;
 		animator.SetTrigger("Die");

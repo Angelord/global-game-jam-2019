@@ -50,7 +50,7 @@ public class Kid : Unit {
 		lastRegen = Time.time;
 	}
 
-	protected override void Die() {
+	public override void Die() {
 		EventManager.QueueEvent(new KidDiedEvent(this));
 		StartCoroutine(Undaze());
 	}

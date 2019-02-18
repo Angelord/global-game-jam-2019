@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DeveloperControls : MonoBehaviour {
 
+	//Controls
+	//Shift + Z + Number 	- Skip to level Number
+	//Shift + X + 1 	 	- Skip wave
+	//Shift + X + 2		 	- Skip stage
+	//Shift + X + 3		 	- Gain 100 candy
+
 	private int MAX_LEVELS = 6; 
 
  	private KeyCode[] keyCodes = {
@@ -38,14 +44,21 @@ public class DeveloperControls : MonoBehaviour {
 			}
 		}	
 
-		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Z) && Input.GetKeyDown(KeyCode.Alpha8)) {
+		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Alpha1)) {
+			GameObject spawnerObj = GameObject.Find("Spawner");
+			if(spawnerObj != null) {
+				spawnerObj.GetComponent<EnemySpawner>().SkipWave();
+			}
+		}
+
+		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Alpha2)) {
 			GameObject stageObj = GameObject.Find("Stage");
 			if(stageObj != null) {
 				stageObj.GetComponent<Stage>().StageOver();
 			}
 		}	
 
-		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Z) && Input.GetKeyDown(KeyCode.Alpha7)) {
+		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Alpha3)) {
 			Progress.Candy += 100;
 		}	
 	}

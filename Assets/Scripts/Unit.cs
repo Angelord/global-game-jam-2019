@@ -26,13 +26,13 @@ public abstract class Unit : MonoBehaviour {
 		}
 	}
 
+	public abstract void Die();
+	
 	protected void ResetHealth() {
 		curHealth = health;
 	}
 
 	protected virtual void OnTakeDamage(int amount) { }
-
-	protected abstract void Die();
 
 	private void Awake() {
 		curHealth = health;

@@ -19,6 +19,28 @@ public class EnemySpawner : MonoBehaviour {
 
     private Wave CurrentWave { get { return waves[waveIndex]; } }
 
+
+    public void SkipWave() {
+
+        if(waveIndex == waves.Count || !Stage.Playing) { return; }
+
+        StopAllCoroutines();
+
+        if(livingEnemies == 0) {
+            EndWave();
+            return;
+        }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(var enemy in enemies) {
+            Enemy enemyComp = enemy.GetComponent<Enemy>();
+            if(enemyComp) {
+                enemyComp.Die();
+            }
+        }
+    }
+
     private void Start() {
         
         EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
@@ -82,14 +104,18 @@ public class EnemySpawner : MonoBehaviour {
     private void HandleEnemyDiedEvent(EnemyDiedEvent diedEv) {
         livingEnemies--;
         if(livingEnemies == 0) {
-            waveIndex++;
-            if(waveIndex == waves.Count) {
-                stage.StageOver();
-            }
-            else {
-                stage.WaveOver(waveIndex - 1);
-                StartCoroutine(SpawnNextWave());
-            }
+            EndWave();
         }
     } 
+
+    private void EndWave() {
+        waveIndex++;
+        if(waveIndex == waves.Count) {
+            stage.StageOver();
+        }
+        else {
+            stage.WaveOver(waveIndex - 1);
+            StartCoroutine(SpawnNextWave());
+        }
+    }
 }

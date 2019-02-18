@@ -40,7 +40,7 @@ public class Enemy : Unit {
 		this.target = target;
 	}
 
-	protected override void Die() {
+	public override void Die() {
 		this.enabled = false;
 		if(hasDeathAnim) {
 			GetComponentInChildren<Animator>().SetTrigger("Die");
