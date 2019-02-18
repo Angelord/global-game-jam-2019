@@ -41,10 +41,12 @@ public class PauseMenu : MonoBehaviour {
 
 	public void HowToPlay() {
 		tutorial.SetActive(!tutorial.activeSelf);
+		credits.SetActive(!tutorial.activeSelf);
 	}
 	
 	public void Credits() {
 		credits.SetActive(!credits.activeSelf);
+		tutorial.SetActive(!credits.activeSelf);
 	}
 
 	public void Resume() {
