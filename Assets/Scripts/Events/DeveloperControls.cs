@@ -17,7 +17,13 @@ public class DeveloperControls : MonoBehaviour {
          KeyCode.Alpha7,
          KeyCode.Alpha8,
          KeyCode.Alpha9,
-     };
+	};
+
+	private void Start() {
+		if(!Application.isEditor) {
+			this.enabled = false;
+		}
+	}
  
 	private void Update () {
 
