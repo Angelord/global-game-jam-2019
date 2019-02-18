@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0890941361efe4cb4b7bd0a8f6194d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 5
   spawnsIn: 5.2
   creature: {fileID: 1043613487090882, guid: 13df4c021e075492b8ea156bfd06bee5, type: 2}
   hatchSound: {fileID: 8300000, guid: aefdae205bf97411ea7f37bd35e9c8b8, type: 3}

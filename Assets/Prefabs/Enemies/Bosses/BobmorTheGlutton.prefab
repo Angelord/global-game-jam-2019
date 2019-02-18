@@ -238,9 +238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egg: {fileID: 1161724633103742, guid: d3a99905f26b347a296810b5cc077755, type: 2}
-  spawnFreq: 1.7
+  spawnFreq: 1.6
   spawnDuration: 1.15
-  startSpawnDelay: 5
+  startSpawnDelay: 4.5
 --- !u!114 &114578308966660974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76da1545aa2e745b1915f98e1c8f0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 44
+  health: 60
   playerStoppingDist: 0.8
   houseStoppingDist: 1.4
   damage: 1
@@ -287,7 +287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namePrefab: {fileID: 1343952785385034, guid: 9c1acdfedd192476c9563685d8133928, type: 2}
   name: Bobmor The Glutton
-  bossTheme: 
 --- !u!114 &114799431525719962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,7 +356,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.32
-  m_Speed: 1.2
+  m_Speed: 1.52
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 0

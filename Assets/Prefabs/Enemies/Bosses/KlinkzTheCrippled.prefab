@@ -254,7 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   namePrefab: {fileID: 1343952785385034, guid: 9c1acdfedd192476c9563685d8133928, type: 2}
   name: Klinkz The Crippled
-  bossTheme: spooky
 --- !u!114 &114655864203225952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,7 +370,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.32
-  m_Speed: 1.3
+  m_Speed: 1.35
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 0
