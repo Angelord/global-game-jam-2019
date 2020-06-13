@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5029179B-0688-4BE6-9488-0D99F85B1EC3}" SchemaVersion="97">
+	<States>
+		<WorkUnit Name="Treehouse Trouble" ID="{5029179B-0688-4BE6-9488-0D99F85B1EC3}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Battle_State" ID="{59A80D17-AB1D-4B4C-BE16-3DEF1FC3D01A}">
+					<ChildrenList>
+						<State Name="None" ID="{BF68AD51-D87B-4A68-A976-D1CFCFF3568F}"/>
+						<State Name="Battle" ID="{E029BA0F-E8C9-4020-B3FC-AAD2640AB0A3}"/>
+						<State Name="Explore" ID="{86BAF481-A106-48A7-A29D-74E22D7E60E7}"/>
+						<State Name="Shelter" ID="{D559F3F8-9632-48E9-B72B-BB20341420A1}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="Menu" ID="{11603F32-2A80-4113-A5CA-C6DE902651A3}">
+					<ChildrenList>
+						<State Name="None" ID="{E5D01CD0-E077-410A-8511-50D37C49CF4D}"/>
+						<State Name="Pause" ID="{FAF6671E-BC10-405D-BA5F-9EAC7DC8024E}"/>
+						<State Name="Play" ID="{6F52EA5F-6984-4FE5-A42F-0DE96027A018}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

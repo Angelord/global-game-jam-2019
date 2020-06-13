@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D7ABCAE0-9F02-47B1-9642-2246BC9B0C69}" SchemaVersion="97">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{D7ABCAE0-9F02-47B1-9642-2246BC9B0C69}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="TreeHouse Trouble" ID="{30E5BEDB-C40F-4CFC-9B05-DC878768F4DB}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

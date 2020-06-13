@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{30E5BEDB-C40F-4CFC-9B05-DC878768F4DB}" SchemaVersion="97" RootDocumentID="{D7ABCAE0-9F02-47B1-9642-2246BC9B0C69}">
+	<SoundcasterSessions>
+		<WorkUnit Name="TreeHouse Trouble" ID="{30E5BEDB-C40F-4CFC-9B05-DC878768F4DB}" OwnerID="{D7ABCAE0-9F02-47B1-9642-2246BC9B0C69}" PersistMode="Nested">
+			<ChildrenList>
+				<SoundcasterSession Name="Session" ID="{08907B6C-CFAE-4F3A-A39E-7FA2609477FD}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Music_Battle" ID="{EA6E5A4D-B052-4549-98C5-ABD8DE272B07}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_Explore" ID="{7580B90D-026D-476C-B6DF-A2EC5971F2E1}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Music_House_Menu" ID="{4E4867DF-3D05-4BFE-99F3-0E2F54BF6D96}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Play" ID="{6F52EA5F-6984-4FE5-A42F-0DE96027A018}"/>
+						<CurrentStateRef Name="Explore" ID="{86BAF481-A106-48A7-A29D-74E22D7E60E7}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>
