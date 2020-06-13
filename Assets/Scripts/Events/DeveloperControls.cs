@@ -7,7 +7,7 @@ public class DeveloperControls : MonoBehaviour {
 
 	//Controls
 	//Shift + Z + Number 	- Skip to level Number
-	//Shift + X + 1 	 	- Skip wave
+	//Shift + X + 1 	 	- Kill all enemies
 	//Shift + X + 2		 	- Skip stage
 	//Shift + X + 3		 	- Gain 100 candy
 
@@ -47,7 +47,7 @@ public class DeveloperControls : MonoBehaviour {
 		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Alpha1)) {
 			GameObject spawnerObj = GameObject.Find("Spawner");
 			if(spawnerObj != null) {
-				spawnerObj.GetComponent<EnemySpawner>().SkipWave();
+				spawnerObj.GetComponent<EnemySpawner>().KillAllEnemies();
 			}
 		}
 

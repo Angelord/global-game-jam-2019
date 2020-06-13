@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class Shop : MonoBehaviour {
 
@@ -22,18 +21,13 @@ public class Shop : MonoBehaviour {
 	}
 
 	private void DoContinue() {
+		EventManager.TriggerEvent(new ShopExitedEvent());
 		SceneManager.LoadScene("Treehouse");
 	}
 	
 	private void Start () {
 		ScreenEffects.FadeIn(2.0f);
-
-		AudioController.Instance.PlaySound("rooster");
-
-		AudioController.Instance.SetLoop("store");
-        AudioController.Instance.SetLoopVolume(0.0f);
-        AudioController.Instance.FadeInLoop(0.12f, 0.45f);
-
+		
 		if(Progress.Offers.Count == 0) {
 			foreach(var offer in initialOffers) {
 				Progress.AddOffer(offer);

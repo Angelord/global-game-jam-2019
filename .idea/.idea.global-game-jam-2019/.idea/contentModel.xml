@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Projects\Games\global-game-jam-2019" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="BuiltInShaders" t="Include">
+          <e p="CGIncludes" t="Include">
+            <e p="HLSLSupport.cginc" t="Include" />
+            <e p="HSB.cginc" t="Include" />
+            <e p="UnityCG.cginc" t="Include" />
+            <e p="UnityCG.glslinc" t="Include" />
+            <e p="UnityGBuffer.cginc" t="Include" />
+            <e p="UnityInstancing.cginc" t="Include" />
+            <e p="UnityShaderUtilities.cginc" t="Include" />
+            <e p="UnityShaderVariables.cginc" t="Include" />
+            <e p="UnitySprites.cginc" t="Include" />
+            <e p="UnityStandardUtils.cginc" t="Include" />
+          </e>
+          <e p="DaylightEffect.shader" t="Include" />
+          <e p="license.txt" t="Include" />
+          <e p="Sprites-Default.shader" t="Include" />
+          <e p="Sprites-Diffuse.shader" t="Include" />
+          <e p="Sprites-Mask.shader" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Audio" t="Include">
+            <e p="ButtonAudioEffects.cs" t="Include" />
+            <e p="MusicManager.cs" t="Include" />
+            <e p="SFXManager.cs" t="Include" />
+          </e>
+          <e p="CameraControl.cs" t="Include" />
+          <e p="Claw" t="Include">
+            <e p="Animation" t="Include">
+              <e p="Jitterer.cs" t="Include" />
+              <e p="LerpAlpha.cs" t="Include" />
+              <e p="MatchPosition.cs" t="Include" />
+              <e p="Shaker.cs" t="Include" />
+            </e>
+            <e p="Audio" t="Include">
+              <e p="AudioController.cs" t="Include" />
+            </e>
+            <e p="Events" t="Include">
+              <e p="EventManager.cs" t="Include" />
+              <e p="GameEvent.cs" t="Include" />
+            </e>
+            <e p="Objects" t="Include">
+              <e p="RandomlyEnabled.cs" t="Include" />
+              <e p="TemporaryObject.cs" t="Include" />
+            </e>
+            <e p="Physics" t="Include">
+              <e p="CollisionIgnorer.cs" t="Include" />
+            </e>
+            <e p="Rendering" t="Include">
+              <e p="RecursiveRendererSort.cs" t="Include" />
+              <e p="ScreenEffects.cs" t="Include" />
+              <e p="SpritePositionSorter.cs" t="Include" />
+            </e>
+            <e p="Time" t="Include">
+              <e p="CustomCoroutine.cs" t="Include" />
+              <e p="TimedBehaviour.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Direction.cs" t="Include" />
+          <e p="Enemies" t="Include">
+            <e p="Boss.cs" t="Include" />
+            <e p="Egg.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyAudioData.cs" t="Include" />
+            <e p="EnemyProjectile.cs" t="Include" />
+            <e p="EnemyRange.cs" t="Include" />
+            <e p="EnemySenses.cs" t="Include" />
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="LootDropper.cs" t="Include" />
+            <e p="RangedEnemy.cs" t="Include" />
+            <e p="SineAgentSpeed.cs" t="Include" />
+            <e p="Spider.cs" t="Include" />
+            <e p="Wave.cs" t="Include" />
+            <e p="WaveData.cs" t="Include" />
+          </e>
+          <e p="Events" t="Include">
+            <e p="CandyCollectedEvent.cs" t="Include" />
+            <e p="DeveloperControls.cs" t="Include" />
+            <e p="EnemyDiedEvent.cs" t="Include" />
+            <e p="EnemySpawnedEvent.cs" t="Include" />
+            <e p="GuiEvents.cs" t="Include" />
+            <e p="KidDiedEvent.cs" t="Include" />
+            <e p="KidSpawnedEvent.cs" t="Include" />
+            <e p="StageStartedEvent.cs" t="Include" />
+          </e>
+          <e p="Exit.cs" t="Include" />
+          <e p="Explosion.cs" t="Include" />
+          <e p="Gate.cs" t="Include" />
+          <e p="GUI" t="Include">
+            <e p="Counterbar.cs" t="Include" />
+            <e p="CreditsGenerator.cs" t="Include" />
+            <e p="EndGame.cs" t="Include" />
+            <e p="FollowerGUI.cs" t="Include" />
+            <e p="GamePausedEvent.cs" t="Include" />
+            <e p="GameResumedEvent.cs" t="Include" />
+            <e p="Healthbar.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="PlayerHUD.cs" t="Include" />
+            <e p="Selector.cs" t="Include" />
+            <e p="Shop.cs" t="Include" />
+            <e p="ShopExitedEvent.cs" t="Include" />
+            <e p="ShopOfferGUI.cs" t="Include" />
+            <e p="SpeechBubble.cs" t="Include" />
+          </e>
+          <e p="Kid.cs" t="Include" />
+          <e p="Objects" t="Include">
+            <e p="Balloon.cs" t="Include" />
+            <e p="Banana.cs" t="Include" />
+            <e p="CandyLoot.cs" t="Include" />
+            <e p="Dummy.cs" t="Include" />
+            <e p="DummyRange.cs" t="Include" />
+            <e p="Loot.cs" t="Include" />
+            <e p="ShopOffer.cs" t="Include" />
+            <e p="Usable.cs" t="Include" />
+          </e>
+          <e p="Progress.cs" t="Include" />
+          <e p="Sequencers" t="Include">
+            <e p="DayOneSequencer.cs" t="Include" />
+            <e p="SequencerData.cs" t="Include" />
+            <e p="StageSequencer.cs" t="Include" />
+          </e>
+          <e p="ShopEnteredEvent.cs" t="Include" />
+          <e p="ShopTreehouse.cs" t="Include" />
+          <e p="SingletonObject.cs" t="Include" />
+          <e p="Stage.cs" t="Include" />
+          <e p="StageGUI.cs" t="Include" />
+          <e p="TEMP.cs" t="Include" />
+          <e p="Treehouse.cs" t="Include" />
+          <e p="Unit.cs" t="Include" />
+          <e p="WaveOverEvent.cs" t="Include" />
+          <e p="WaveStartedEvent.cs" t="Include" />
+        </e>
+        <e p="StreamingAssets" t="Include">
+          <e p="desc.txt" t="Include" />
+        </e>
+        <e p="Wwise" t="Include">
+          <e p="Deployment" t="Include">
+            <e p="API" t="Include">
+              <e p="Generated" t="Include">
+                <e p="Common" t="Include">
+                  <e p="Ak3DPositionType.cs" t="Include" />
+                  <e p="Ak3DSpatializationMode.cs" t="Include" />
+                  <e p="AkAcousticSurface.cs" t="Include" />
+                  <e p="AkActionOnEventType.cs" t="Include" />
+                  <e p="AkAudioDeviceState.cs" t="Include" />
+                  <e p="AkAudioFormat.cs" t="Include" />
+                  <e p="AkAudioInterruptionCallbackInfo.cs" t="Include" />
+                  <e p="AkAudioSettings.cs" t="Include" />
+                  <e p="AkAudioSourceChangeCallbackInfo.cs" t="Include" />
+                  <e p="AkAuxSendValue.cs" t="Include" />
+                  <e p="AkBankCallbackInfo.cs" t="Include" />
+                  <e p="AkBankContent.cs" t="Include" />
+                  <e p="AkBusHierarchyFlags.cs" t="Include" />
+                  <e p="AkCallbackInfo.cs" t="Include" />
+                  <e p="AkCallbackSerializer.cs" t="Include" />
+                  <e p="AkCallbackType.cs" t="Include" />
+                  <e p="AkChannelConfig.cs" t="Include" />
+                  <e p="AkChannelConfigType.cs" t="Include" />
+                  <e p="AkChannelEmitter.cs" t="Include" />
+                  <e p="AkChannelOrdering.cs" t="Include" />
+                  <e p="AkConnectionType.cs" t="Include" />
+                  <e p="AkCurveInterpolation.cs" t="Include" />
+                  <e p="AkDeviceDescription.cs" t="Include" />
+                  <e p="AkDeviceSettings.cs" t="Include" />
+                  <e p="AkDiffractionFlags.cs" t="Include" />
+                  <e p="AkDiffractionPathInfo.cs" t="Include" />
+                  <e p="AkDurationCallbackInfo.cs" t="Include" />
+                  <e p="AkDynamicSequenceItemCallbackInfo.cs" t="Include" />
+                  <e p="AkDynamicSequenceType.cs" t="Include" />
+                  <e p="AkEventCallbackInfo.cs" t="Include" />
+                  <e p="AkExternalSourceInfo.cs" t="Include" />
+                  <e p="AkFloorPlane.cs" t="Include" />
+                  <e p="AkGlobalCallbackLocation.cs" t="Include" />
+                  <e p="AkGroupType.cs" t="Include" />
+                  <e p="AkImageSourceParams.cs" t="Include" />
+                  <e p="AkImageSourceSettings.cs" t="Include" />
+                  <e p="AkInitializationSettings.cs" t="Include" />
+                  <e p="AkInitSettings.cs" t="Include" />
+                  <e p="AkIterator.cs" t="Include" />
+                  <e p="AkMarkerCallbackInfo.cs" t="Include" />
+                  <e p="AkMeteringFlags.cs" t="Include" />
+                  <e p="AkMIDICcTypes.cs" t="Include" />
+                  <e p="AkMIDIEvent.cs" t="Include" />
+                  <e p="AkMIDIEventCallbackInfo.cs" t="Include" />
+                  <e p="AkMIDIEventTypes.cs" t="Include" />
+                  <e p="AkMIDIPost.cs" t="Include" />
+                  <e p="AkMonitorErrorCode.cs" t="Include" />
+                  <e p="AkMonitorErrorLevel.cs" t="Include" />
+                  <e p="AkMonitoringCallbackInfo.cs" t="Include" />
+                  <e p="AkMultiPositionType.cs" t="Include" />
+                  <e p="AkMusicPlaylistCallbackInfo.cs" t="Include" />
+                  <e p="AkMusicSettings.cs" t="Include" />
+                  <e p="AkMusicSyncCallbackInfo.cs" t="Include" />
+                  <e p="AkObjectInfo.cs" t="Include" />
+                  <e p="AkObstructionOcclusionValues.cs" t="Include" />
+                  <e p="AkOutputSettings.cs" t="Include" />
+                  <e p="AkPanningRule.cs" t="Include" />
+                  <e p="AkPlaylist.cs" t="Include" />
+                  <e p="AkPlaylistArray.cs" t="Include" />
+                  <e p="AkPlaylistItem.cs" t="Include" />
+                  <e p="AkPluginType.cs" t="Include" />
+                  <e p="AkPositioningInfo.cs" t="Include" />
+                  <e p="AkPreparationType.cs" t="Include" />
+                  <e p="AkQueryRTPCValue.cs" t="Include" />
+                  <e p="AkRamp.cs" t="Include" />
+                  <e p="AkReflectionPathInfo.cs" t="Include" />
+                  <e p="AkResourceMonitorDataSummary.cs" t="Include" />
+                  <e p="AKRESULT.cs" t="Include" />
+                  <e p="AkRoomParams.cs" t="Include" />
+                  <e p="AkSegmentInfo.cs" t="Include" />
+                  <e p="AkSerializedCallbackHeader.cs" t="Include" />
+                  <e p="AkSourceChannelOrdering.cs" t="Include" />
+                  <e p="AkSourceSettings.cs" t="Include" />
+                  <e p="AkSpatialAudioInitSettings.cs" t="Include" />
+                  <e p="AkSpeakerPanningType.cs" t="Include" />
+                  <e p="AkStreamMgrSettings.cs" t="Include" />
+                  <e p="AkTaskContext.cs" t="Include" />
+                  <e p="AkTransform.cs" t="Include" />
+                  <e p="AkTriangle.cs" t="Include" />
+                </e>
+                <e p="Mac" t="Include">
+                  <e p="AkCommunicationSettings_Mac.cs" t="Include" />
+                  <e p="AkPlatformInitSettings_Mac.cs" t="Include" />
+                  <e p="AkSoundEngine_Mac.cs" t="Include" />
+                  <e p="AkSoundEnginePINVOKE_Mac.cs" t="Include" />
+                  <e p="AkThreadProperties_Mac.cs" t="Include" />
+                  <e p="AkUnityPlatformSpecificSettings_Mac.cs" t="Include" />
+                </e>
+                <e p="Windows" t="Include">
+                  <e p="AkAudioAPI_Windows.cs" t="Include" />
+                  <e p="AkCommunicationSettings_Windows.cs" t="Include" />
+                  <e p="AkPlatformInitSettings_Windows.cs" t="Include" />
+                  <e p="AkSoundEngine_Windows.cs" t="Include" />
+                  <e p="AkSoundEnginePINVOKE_Windows.cs" t="Include" />
+                  <e p="AkThreadProperties_Windows.cs" t="Include" />
+                  <e p="AkUnityPlatformSpecificSettings_Windows.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Handwritten" t="Include">
+                <e p="Common" t="Include">
+                  <e p="AkAudioInputManager.cs" t="Include" />
+                  <e p="AkBankManager.cs" t="Include" />
+                  <e p="AkBasePathGetter.cs" t="Include" />
+                  <e p="AkCallbackManager.cs" t="Include" />
+                  <e p="AkCommonPlatformSettings.cs" t="Include" />
+                  <e p="AkEnumFlagAttribute.cs" t="Include" />
+                  <e p="AkLogger.cs" t="Include" />
+                  <e p="AkRoomAwareManager.cs" t="Include" />
+                  <e p="AkRoomManager.cs" t="Include" />
+                  <e p="AkShowOnlyAttribute.cs" t="Include" />
+                  <e p="AkSoundEngine.cs" t="Include" />
+                  <e p="AkUtilities.cs" t="Include" />
+                  <e p="AkVector.cs" t="Include" />
+                  <e p="AkVertex.cs" t="Include" />
+                  <e p="AkWwiseEditorSettings.cs" t="Include" />
+                  <e p="AkWwiseInitializationSettings.cs" t="Include" />
+                  <e p="AkWwiseXMLWatcher.cs" t="Include" />
+                  <e p="Arrays" t="Include">
+                    <e p="AkAcousticSurfaceArray.cs" t="Include" />
+                    <e p="AkAuxSendArray.cs" t="Include" />
+                    <e p="AkBaseArray.cs" t="Include" />
+                    <e p="AkChannelEmitterArray.cs" t="Include" />
+                    <e p="AkDeviceDescriptionArray.cs" t="Include" />
+                    <e p="AkDiffractionPathInfoArray.cs" t="Include" />
+                    <e p="AkExternalSourceInfoArray.cs" t="Include" />
+                    <e p="AkMIDIPostArray.cs" t="Include" />
+                    <e p="AkObjectInfoArray.cs" t="Include" />
+                    <e p="AkObstructionOcclusionValuesArray.cs" t="Include" />
+                    <e p="AkPositionArray.cs" t="Include" />
+                    <e p="AkReflectionPathInfoArray.cs" t="Include" />
+                    <e p="AkSourceSettingsArray.cs" t="Include" />
+                    <e p="AkTriangleArray.cs" t="Include" />
+                  </e>
+                  <e p="Timeline" t="Include">
+                    <e p="AkTimelineEventPlayable.cs" t="Include" />
+                    <e p="AkTimelineEventTrack.cs" t="Include" />
+                    <e p="AkTimelineRtpcPlayable.cs" t="Include" />
+                    <e p="AkTimelineRtpcTrack.cs" t="Include" />
+                  </e>
+                  <e p="WwiseObjects" t="Include">
+                    <e p="WwiseAcousticTextureReference.cs" t="Include" />
+                    <e p="WwiseAuxBusReference.cs" t="Include" />
+                    <e p="WwiseBankReference.cs" t="Include" />
+                    <e p="WwiseEventReference.cs" t="Include" />
+                    <e p="WwiseObjectReference.cs" t="Include" />
+                    <e p="WwiseObjectType.cs" t="Include" />
+                    <e p="WwiseRtpcReference.cs" t="Include" />
+                    <e p="WwiseStateGroupReference.cs" t="Include" />
+                    <e p="WwiseStateReference.cs" t="Include" />
+                    <e p="WwiseSwitchGroupReference.cs" t="Include" />
+                    <e p="WwiseSwitchReference.cs" t="Include" />
+                    <e p="WwiseTriggerReference.cs" t="Include" />
+                  </e>
+                  <e p="WwiseTypes" t="Include">
+                    <e p="AkWwiseAcousticTexture.cs" t="Include" />
+                    <e p="AkWwiseAuxBus.cs" t="Include" />
+                    <e p="AkWwiseBank.cs" t="Include" />
+                    <e p="AkWwiseBaseGroupType.cs" t="Include" />
+                    <e p="AkWwiseBaseType.cs" t="Include" />
+                    <e p="AkWwiseCallbackFlags.cs" t="Include" />
+                    <e p="AkWwiseEvent.cs" t="Include" />
+                    <e p="AkWwiseRtpc.cs" t="Include" />
+                    <e p="AkWwiseState.cs" t="Include" />
+                    <e p="AkWwiseSwitch.cs" t="Include" />
+                    <e p="AkWwiseTrigger.cs" t="Include" />
+                    <e p="AkWwiseTypeMigration.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Mac" t="Include">
+                  <e p="AkMacSettings.cs" t="Include" />
+                </e>
+                <e p="WAAPI" t="Include">
+                  <e p="AkWaapiClient.cs" t="Include" />
+                  <e p="AkWaapiClient_PINVOKE.cs" t="Include" />
+                </e>
+                <e p="Windows" t="Include">
+                  <e p="AkWindowsSettings.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Components" t="Include">
+              <e p="AkAmbient.cs" t="Include" />
+              <e p="AkAmbientLargeModePositioner.cs" t="Include" />
+              <e p="AkAudioListener.cs" t="Include" />
+              <e p="AkBank.cs" t="Include" />
+              <e p="AkEarlyReflections.cs" t="Include" />
+              <e p="AkEmitterObstructionOcclusion.cs" t="Include" />
+              <e p="AkEnvironment.cs" t="Include" />
+              <e p="AkEnvironmentPortal.cs" t="Include" />
+              <e p="AkEvent.cs" t="Include" />
+              <e p="AkEventCallbackData.cs" t="Include" />
+              <e p="AkEventPlayable.cs" t="Include" />
+              <e p="AkEventPlayableBehavior.cs" t="Include" />
+              <e p="AkEventTrack.cs" t="Include" />
+              <e p="AkGameObj.cs" t="Include" />
+              <e p="AkGameObjEnvironmentData.cs" t="Include" />
+              <e p="AkGameObjListenerList.cs" t="Include" />
+              <e p="AkGameObjPositionData.cs" t="Include" />
+              <e p="AkGameObjPositionOffsetData.cs" t="Include" />
+              <e p="AkGameObjPosOffsetData.cs" t="Include" />
+              <e p="AkInitializer.cs" t="Include" />
+              <e p="AkMemBankLoader.cs" t="Include" />
+              <e p="AkObstructionOcclusion.cs" t="Include" />
+              <e p="AkRoom.cs" t="Include" />
+              <e p="AkRoomAwareObject.cs" t="Include" />
+              <e p="AkRoomPortal.cs" t="Include" />
+              <e p="AkRoomPortalObstruction.cs" t="Include" />
+              <e p="AkRTPCPlayable.cs" t="Include" />
+              <e p="AkRTPCTrack.cs" t="Include" />
+              <e p="AkSoundEngineController.cs" t="Include" />
+              <e p="AkSpatialAudioDebugDraw.cs" t="Include" />
+              <e p="AkSpatialAudioEmitter.cs" t="Include" />
+              <e p="AkSpatialAudioListener.cs" t="Include" />
+              <e p="AkState.cs" t="Include" />
+              <e p="AkSurfaceReflector.cs" t="Include" />
+              <e p="AkSwitch.cs" t="Include" />
+              <e p="AkTerminator.cs" t="Include" />
+              <e p="AkTriggerBase.cs" t="Include" />
+              <e p="AkTriggerCollisionEnter.cs" t="Include" />
+              <e p="AkTriggerCollisionExit.cs" t="Include" />
+              <e p="AkTriggerDisable.cs" t="Include" />
+              <e p="AkTriggerEnable.cs" t="Include" />
+              <e p="AkTriggerEnter.cs" t="Include" />
+              <e p="AkTriggerExit.cs" t="Include" />
+              <e p="AkTriggerHandler.cs" t="Include" />
+              <e p="AkTriggerMouseDown.cs" t="Include" />
+              <e p="AkTriggerMouseEnter.cs" t="Include" />
+              <e p="AkTriggerMouseExit.cs" t="Include" />
+              <e p="AkTriggerMouseUp.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="WwiseComponents" t="Include">
+              <e p="AkAmbientInspector.cs" t="Include" />
+              <e p="AkAudioListenerInspector.cs" t="Include" />
+              <e p="AkBankInspector.cs" t="Include" />
+              <e p="AkBaseInspector.cs" t="Include" />
+              <e p="AkEnvironmentInspector.cs" t="Include" />
+              <e p="AkEnvironmentPortalInspector.cs" t="Include" />
+              <e p="AkEventInspector.cs" t="Include" />
+              <e p="AkEventPlayableInspector.cs" t="Include" />
+              <e p="AkGameObjectInspector.cs" t="Include" />
+              <e p="AkGameObjListenerListDrawer.cs" t="Include" />
+              <e p="AkPortalManager.cs" t="Include" />
+              <e p="AkRoomAwareObjectInspector.cs" t="Include" />
+              <e p="AkRoomInspector.cs" t="Include" />
+              <e p="AkRoomPortalInspector.cs" t="Include" />
+              <e p="AkRTPCPlayableInspector.cs" t="Include" />
+              <e p="AkRTPCTrackInspector.cs" t="Include" />
+              <e p="AkSpatialAudioListenerInspector.cs" t="Include" />
+              <e p="AkStateInspector.cs" t="Include" />
+              <e p="AkSwitchInspector.cs" t="Include" />
+              <e p="AkUnityEventHandlerInspector.cs" t="Include" />
+            </e>
+            <e p="WwiseMenu" t="Include">
+              <e p="Common" t="Include">
+                <e p="AkUnityBuilderBase.cs" t="Include" />
+                <e p="AkUnityPluginInstallerBase.cs" t="Include" />
+                <e p="AkWwiseIdConverter.cs" t="Include" />
+              </e>
+              <e p="Mac" t="Include">
+                <e p="AkWwiseMenu_Mac.cs" t="Include" />
+              </e>
+              <e p="Windows" t="Include">
+                <e p="AkWwiseMenu_Windows.cs" t="Include" />
+              </e>
+            </e>
+            <e p="WwiseSetupWizard" t="Include">
+              <e p="AkBuildPreprocessor.cs" t="Include" />
+              <e p="AkPluginActivator.cs" t="Include" />
+              <e p="AkUnitySettingsParser.cs" t="Include" />
+              <e p="AkWSAUtils.cs" t="Include" />
+              <e p="AkWwisePostImportCallbackSetup.cs" t="Include" />
+              <e p="AkWwiseSetupWizard.cs" t="Include" />
+              <e p="AkXboxOneUtils.cs" t="Include" />
+            </e>
+            <e p="WwiseTypes" t="Include">
+              <e p="AcousticTextureDrawer.cs" t="Include" />
+              <e p="AuxBusDrawer.cs" t="Include" />
+              <e p="BankDrawer.cs" t="Include" />
+              <e p="BaseTypeDrawer.cs" t="Include" />
+              <e p="EventDrawer.cs" t="Include" />
+              <e p="RTPCDrawer.cs" t="Include" />
+              <e p="StateDrawer.cs" t="Include" />
+              <e p="SwitchDrawer.cs" t="Include" />
+              <e p="TriggerDrawer.cs" t="Include" />
+            </e>
+            <e p="WwiseWindows" t="Include">
+              <e p="AkWwiseComponentPicker.cs" t="Include" />
+              <e p="AkWwisePicker.cs" t="Include" />
+              <e p="AkWwiseProjectData.cs" t="Include" />
+              <e p="AkWwiseProjectInfo.cs" t="Include" />
+              <e p="AkWwiseTreeView.cs" t="Include" />
+              <e p="AkWwiseWWUBuilder.cs" t="Include" />
+              <e p="AkWwiseXMLBuilder.cs" t="Include" />
+              <e p="TreeViewControl" t="Include">
+                <e p="TreeViewControl.cs" t="Include" />
+                <e p="TreeViewItem.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Extensions" t="Include">
+            <e p="AkSoundEngine.extensions.cs" t="Include" />
+          </e>
+          <e p="Version.txt" t="Include" />
+        </e>
+        <e p="WwiseSettings.xml" t="Include" />
+      </e>
+      <e p="global-game-jam-2019.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\Almoxis\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Almoxis\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_global-game-jam-2019.-1842526664.00" t="ExcludeRecursive" />
+  </component>
+</project>

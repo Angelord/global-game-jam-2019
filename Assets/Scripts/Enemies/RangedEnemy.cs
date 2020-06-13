@@ -14,6 +14,8 @@ public class RangedEnemy : Enemy {
 			animator = GetComponentInChildren<Animator>();
 		}
 
+		audioData.RangedAttackEffect.Post(gameObject);
+
 		StartCoroutine(AttackCoroutine());
 	}
 

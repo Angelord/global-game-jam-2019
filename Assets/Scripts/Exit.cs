@@ -26,6 +26,7 @@ public class Exit : MonoBehaviour {
 
 		Kid.Locked = false;
 
+		EventManager.TriggerEvent(new ShopEnteredEvent());
 		if(Progress.Day > Progress.LAST_DAY) {
 			SceneManager.LoadScene("EndScene");
 		}

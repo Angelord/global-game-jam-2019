@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,9 +28,7 @@ public class SpeechBubble : MonoBehaviour {
 	public void Show(string text) {
 		if(string.IsNullOrEmpty(text)) { return; }
 
-		if(uiText == null) {
-			FindDependencies();
-		}
+		if(uiText == null) { FindDependencies(); }
 		
 		this.gameObject.SetActive(true);
 		StopAllCoroutines();

@@ -16,9 +16,9 @@ public class Enemy : Unit {
 	public GameObject slashPref;
 	public bool hasDeathAnim = false; 
 	public float deathDelay = 0.7f;
-	public AudioClip deathSound;
 	public bool spawnedFromEgg = false;
-
+	public EnemyAudioData audioData;
+	
 	private bool following = true;
 	private float lastAttack;
 	private NavMeshAgent agent;
@@ -41,15 +41,14 @@ public class Enemy : Unit {
 	}
 
 	public override void Die() {
+		
 		this.enabled = false;
 		if(hasDeathAnim) {
 			GetComponentInChildren<Animator>().SetTrigger("Die");
 		}
 
-		if(deathSound != null) {
-			AudioController.Instance.PlayClipAt(deathSound, transform.position);
-		}
-		
+		audioData.DeathEffect.Post(gameObject);
+
 		agent.enabled = false;
 		Invoke("DestroySelf", deathDelay);
 		EventManager.QueueEvent(new EnemyDiedEvent());
@@ -116,6 +115,13 @@ public class Enemy : Unit {
 		}
 		lastAttack = Time.time;
 		following = false;
+
+		if (target.CompareTag("Treehouse")) {
+			audioData.AttackHouseEffect.Post(gameObject);
+		}
+		else {
+			audioData.AttackPlayerEffect.Post(gameObject);
+		}
 
 		if(slashPref != null) {
 			slash.SetActive(true);

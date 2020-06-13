@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 public class Kid : Unit {
@@ -24,7 +25,10 @@ public class Kid : Unit {
 	[Header("Visuals")]
 	[SerializeField] private Color healthColor = Color.red;
 	[SerializeField] private RuntimeAnimatorController[] animControllers = new RuntimeAnimatorController[2];
-
+	[Header("Audio")] 
+	[SerializeField] private AK.Wwise.Event deathAudioEv;
+	[SerializeField] private AK.Wwise.Event painAudioEv;
+	
 	private int index;
 	private Controls controls;
 	private new Rigidbody rigidbody;
@@ -41,16 +45,18 @@ public class Kid : Unit {
 	public Usable CurUsable { get { return usables[curUsable]; } }
 
 	public void Say(string text) {
+		EventManager.TriggerEvent(new KidSaidEvent());
 		speech.Show(text);
-		//TODO : play sound
 	}
 
 	protected override void OnTakeDamage(int amount) {
+		painAudioEv.Post(gameObject);
 		bar.SetValue(Mathf.Clamp(CurHealth - amount, 0, int.MaxValue));
 		lastRegen = Time.time;
 	}
 
-	public override void Die() {
+	public override void Die() { 
+		deathAudioEv.Post(gameObject);
 		EventManager.QueueEvent(new KidDiedEvent(this));
 		StartCoroutine(Undaze());
 	}

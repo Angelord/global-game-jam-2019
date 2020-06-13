@@ -6,7 +6,6 @@ public class Egg : Unit {
 
 	[SerializeField] private float spawnsIn;
 	[SerializeField] private GameObject creature;
-	[SerializeField] private AudioClip hatchSound;
 
 	public override void Die() {
 		
@@ -24,10 +23,6 @@ public class Egg : Unit {
 	}
 
 	private void Spawn() {
-		
-		if(hatchSound != null) {
-			AudioController.Instance.PlayClipAt(hatchSound, transform.position);
-		}
 
 		GameObject newEnemy = Instantiate(creature, transform.position, Quaternion.identity);
 		Enemy enemyComp = newEnemy.GetComponent<Enemy>();

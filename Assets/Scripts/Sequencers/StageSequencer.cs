@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 
 public class StageSequencer : MonoBehaviour {
@@ -29,10 +30,6 @@ public class StageSequencer : MonoBehaviour {
 	}
 
 	public virtual IEnumerator OnStageStarted(System.Action onReady) {
-
-		// AudioController.Instance.SetLoop("battle_main");
-        // AudioController.Instance.SetLoopVolume(0.0f);
-        // AudioController.Instance.FadeInLoop(0.2f, 0.75f);
 
 		yield return new WaitForSeconds(0.5f);
 
@@ -65,6 +62,7 @@ public class StageSequencer : MonoBehaviour {
 		AudioController.Instance.SetLoop("victory");
 		AudioController.Instance.FadeInLoop(0.35f, 0.8f);
 
+		EventManager.TriggerEvent(new MomSaidEvent());
 		data.momSpeech.Show(momLines[Random.Range(0, momLines.Length)]);
 
 		yield return new WaitUntil( () => !data.momSpeech.isActiveAndEnabled );

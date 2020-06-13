@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Events;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +10,8 @@ public class Spider : MonoBehaviour {
 	[SerializeField] private float spawnFreq = 1.1f;
 	[SerializeField] private float spawnDuration = 1.1f;
 	[SerializeField] private float startSpawnDelay = 3.0f;
-
+	public AK.Wwise.Event EggSpawnedAudioEv;
+	
 	private bool spawning;
 	private float lastSpawn;
 	private Animator animator;
@@ -35,6 +37,8 @@ public class Spider : MonoBehaviour {
 		agent.enabled = false;
 
 		yield return new WaitForSeconds(spawnDuration);
+
+		EggSpawnedAudioEv.Post(gameObject);
 
 		Instantiate(egg, transform.position, Quaternion.identity);
 		agent.enabled = true;

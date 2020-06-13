@@ -31,6 +31,10 @@ public class EnemySpawner : MonoBehaviour {
             return;
         }
 
+        KillAllEnemies();
+    }
+
+    public void KillAllEnemies() {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach(var enemy in enemies) {
@@ -57,17 +61,9 @@ public class EnemySpawner : MonoBehaviour {
 
     private IEnumerator SpawnNextWave() {
 
-        AudioController.Instance.FadeOutLoop(0.6f);
+        yield return new WaitForSeconds(breakTimes);
 
-        yield return new WaitForSeconds(breakTimes / 4);
-
-        string loopToPlay = string.IsNullOrEmpty(CurrentWave.songLoop) ? defaultWaveLoop : CurrentWave.songLoop;
-        AudioController.Instance.SetLoop(loopToPlay);
-        AudioController.Instance.SetLoopVolume(0.0f);
-        AudioController.Instance.FadeInLoop(0.6f, 0.8f);
-
-        yield return new WaitForSeconds(breakTimes - breakTimes / 4);
-
+        EventManager.TriggerEvent(new WaveStartedEvent());
         stage.WaveStarted(waveIndex);
 
         LerpAlpha textAplha = notifyText.GetComponent<LerpAlpha>();
@@ -109,7 +105,9 @@ public class EnemySpawner : MonoBehaviour {
     } 
 
     private void EndWave() {
+        
         waveIndex++;
+        EventManager.TriggerEvent(new WaveOverEvent());
         if(waveIndex == waves.Count) {
             stage.StageOver();
         }

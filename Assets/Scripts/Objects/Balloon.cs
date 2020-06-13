@@ -15,7 +15,8 @@ public class Balloon : MonoBehaviour {
 	[SerializeField] private float minSize;
 	[SerializeField] private float horizontalTravelDist = 3.4f;
 	[SerializeField] private float verticalTravelDist = 3.1f;
-
+	public AK.Wwise.Event ShootAudioEv;
+	
 	private float speed = 10.0f;
 	private float travelDist;
 	private Vector3 startPos;
@@ -40,9 +41,8 @@ public class Balloon : MonoBehaviour {
 		}
 
 		movDir = DirUtil.DirectionToVec(direction);
-
-		int soundToPlay = Random.Range(1, 5);
-		AudioController.Instance.PlaySound("swish_" + soundToPlay);
+		
+		ShootAudioEv.Post(gameObject);
 	}
 
 	private void Update() {

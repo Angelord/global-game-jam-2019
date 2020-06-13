@@ -9,8 +9,9 @@ public class Dummy : Unit {
 	[SerializeField] private int damage;
 	[SerializeField] private float dealDmgDelay;
 	[SerializeField] private float deathDelay = 0.75f;
-	[SerializeField] private AudioClip deathSound;
-	[SerializeField] private AudioClip attackSound;
+	public AK.Wwise.Event SummonAudioEv;
+	public AK.Wwise.Event DeathAudioEv;
+	public AK.Wwise.Event AttackAudioEv;
 
 	private float lastAttack = 0.0f;
 	private Animator animator;
@@ -29,7 +30,7 @@ public class Dummy : Unit {
 		bar.SetValue(MaxHealth);
 		bar.GetComponent<FollowerGUI>().SetTarget(transform);
 
-		AudioController.Instance.PlaySound("dummy_thump");
+		SummonAudioEv.Post(gameObject);
 	}
 
 	public void AddTarget(Unit unit) {
@@ -59,7 +60,7 @@ public class Dummy : Unit {
 		GetComponentInChildren<DummyRange>().enabled = false;
 		animator.SetTrigger("Die");
 
-		AudioController.Instance.PlayClipAt(deathSound, transform.position);
+		DeathAudioEv.Post(gameObject);
 
 		Invoke("SelfDestruct", deathDelay);
 	}
@@ -92,7 +93,7 @@ public class Dummy : Unit {
 
 		animator.SetTrigger("Attack");
 
-		AudioController.Instance.PlayClipAt(attackSound, transform.position);
+		AttackAudioEv.Post(gameObject);
 		
 		Unit target = targets[Random.Range(0, targets.Count)];
 

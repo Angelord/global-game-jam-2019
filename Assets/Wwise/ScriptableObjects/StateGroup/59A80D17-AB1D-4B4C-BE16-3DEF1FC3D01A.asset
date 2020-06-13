@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fa7c335ac813f4395f1f2727c8696a, type: 3}
+  m_Name: 59A80D17-AB1D-4B4C-BE16-3DEF1FC3D01A
+  m_EditorClassIdentifier: 
+  objectName: Battle_State
+  id: 2739846761
+  guid: 59A80D17-AB1D-4B4C-BE16-3DEF1FC3D01A

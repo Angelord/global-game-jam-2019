@@ -62,10 +62,10 @@
 						</Event>
 						<Event Name="Typing_Long" ID="{F399C0B2-9013-4A56-AADF-4AFE0AB40755}">
 							<ChildrenList>
-								<Action Name="" ID="{B4A99064-371E-4D71-AFED-986643247027}" ShortID="487012296">
+								<Action Name="" ID="{572DDD8C-AF07-44D4-BBF2-F1EDF638C7D0}" ShortID="879913779">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="TT_SFX_Typing_Short" ID="{E50D3564-1CCE-4079-88BC-BA4D6A1DDED0}" WorkUnitID="{B432885F-2BF7-49AA-AF06-95394763C721}"/>
+											<ObjectRef Name="TT_SFX_Typing_Long" ID="{E6ACCC57-4FBF-4A89-B8CD-5CC15516D52A}" WorkUnitID="{B432885F-2BF7-49AA-AF06-95394763C721}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -186,12 +186,22 @@
 				</Folder>
 				<Folder Name="Music" ID="{20F0D511-05BC-4CFB-8F95-5DB779302217}" ShortID="758749016">
 					<ChildrenList>
-						<Event Name="Music_Explore" ID="{1F19EEA1-9215-42B3-80EA-D3D8487268FB}">
+						<Event Name="Music_Start" ID="{1F19EEA1-9215-42B3-80EA-D3D8487268FB}">
 							<ChildrenList>
 								<Action Name="" ID="{F7763F2A-9B54-4B5E-BEB2-C5D2A047ACA1}" ShortID="660699395">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Music" ID="{8F98365C-87A6-4D60-8AAD-FB775338CBB2}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2E9ED078-13AE-4FBF-BAEE-CCAA603BABBF}" ShortID="295192829">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pause" ID="{FAF6671E-BC10-405D-BA5F-9EAC7DC8024E}" WorkUnitID="{5029179B-0688-4BE6-9488-0D99F85B1EC3}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

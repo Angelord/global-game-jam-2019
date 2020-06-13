@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
@@ -56,6 +54,7 @@ public class PauseMenu : MonoBehaviour {
 	public void Continue() { }
 
 	public void NewGame() {
+		
 		Progress.Reset();
 		
 		Progress.GameStarted = true;
@@ -89,12 +88,13 @@ public class PauseMenu : MonoBehaviour {
 		root.SetActive(paused);
 
 		if(paused) {
+			EventManager.TriggerEvent(new GamePausedEvent());
 			AudioController.Instance.PauseLoop();
 			resumeBtn.SetActive(Stage.Playing); 
 		}
 
 		if(!paused) {
-			AudioController.Instance.ResumeLoop();
+			EventManager.TriggerEvent(new GameResumedEvent());
 			tutorial.SetActive(false);
 			credits.SetActive(false);
 		}
