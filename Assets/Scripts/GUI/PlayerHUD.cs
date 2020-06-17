@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,11 @@ public class PlayerHUD : MonoBehaviour {
 		root.SetActive(false);
 		EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
 		EventManager.AddListener<KidSpawnedEvent>(HandleKidSpawnedEvnet);
+	}
+
+	private void OnDestroy() {
+		EventManager.RemoveListener<StageStartedEvent>(HandleStageStartedEvent);
+		EventManager.RemoveListener<KidSpawnedEvent>(HandleKidSpawnedEvnet);
 	}
 
 	private void HandleStageStartedEvent(StageStartedEvent startedEv) { 
