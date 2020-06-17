@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +23,10 @@ public class Treehouse : Unit {
 		GetComponentInChildren<Animator>().SetInteger("Level", Progress.HouseLevel);
 	
 		EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
+	}
+
+	private void OnDestroy() {
+		EventManager.RemoveListener<StageStartedEvent>(HandleStageStartedEvent);
 	}
 
 	private void HandleStageStartedEvent(StageStartedEvent stageEv) {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,6 +49,10 @@ public class CameraControl : MonoBehaviour {
 		boundsMax.x -= halfscreenWidth;
 		boundsMin.y += halfscreenHeight;
 		boundsMax.y -= halfscreenHeight;
+	}
+
+	private void OnDestroy() {
+		EventManager.RemoveListener<KidSpawnedEvent>(HandleKidSpawnedEvent);
 	}
 
 	private void Update() {

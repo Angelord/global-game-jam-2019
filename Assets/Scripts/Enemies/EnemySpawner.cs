@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,10 +47,15 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private void Start() {
-        
         EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
         EventManager.AddListener<EnemySpawnedEvent>(HandleEnemySpawnedEvent);
         EventManager.AddListener<EnemyDiedEvent>(HandleEnemyDiedEvent);
+    }
+
+    private void OnDestroy() {
+        EventManager.RemoveListener<StageStartedEvent>(HandleStageStartedEvent);
+        EventManager.RemoveListener<EnemySpawnedEvent>(HandleEnemySpawnedEvent);
+        EventManager.RemoveListener<EnemyDiedEvent>(HandleEnemyDiedEvent);
     }
 
     private void HandleStageStartedEvent(StageStartedEvent startedEvent) {
