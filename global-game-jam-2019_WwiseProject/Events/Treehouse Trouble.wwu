@@ -181,7 +181,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="New_Event" ID="{91A8EC43-9510-4B36-8826-47BD5B562651}"/>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{20F0D511-05BC-4CFB-8F95-5DB779302217}" ShortID="758749016">

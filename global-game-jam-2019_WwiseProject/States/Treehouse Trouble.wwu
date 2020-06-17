@@ -18,6 +18,13 @@
 						<State Name="Play" ID="{6F52EA5F-6984-4FE5-A42F-0DE96027A018}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="Life" ID="{5B93A65D-6211-4D81-9D8F-98EED36AFDD4}">
+					<ChildrenList>
+						<State Name="None" ID="{D2492EA2-7958-445D-B81E-9F3465F05871}"/>
+						<State Name="Dead" ID="{3319571E-0B6E-4217-ABF2-BC1AF3A1F272}"/>
+						<State Name="Alive" ID="{7971D935-A1D1-4353-BBA6-75873744C7F0}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
