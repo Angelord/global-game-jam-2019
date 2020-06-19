@@ -1,7 +1,2 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class StageStartedEvent : GameEvent {
-
-}
+﻿
+public class StageStartedEvent : GameEvent { }
