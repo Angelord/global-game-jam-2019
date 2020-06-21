@@ -17,11 +17,21 @@
 							<ObjectRef Name="Music_House_Menu" ID="{4E4867DF-3D05-4BFE-99F3-0E2F54BF6D96}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
 							<Position X="2" Y="0"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Music_Death" ID="{156726E1-9E25-4EF1-8969-A7E62B0A9C0F}" WorkUnitID="{7AB37FD2-B098-4854-A388-B474B10E4507}"/>
+							<Position X="3" Y="0"/>
+						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true"/>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Players_Death" ID="{D731442C-BFDF-49A6-B9B9-AFE2C75B2BB8}"/>
+							<Value>5</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Play" ID="{6F52EA5F-6984-4FE5-A42F-0DE96027A018}"/>
-						<CurrentStateRef Name="Explore" ID="{86BAF481-A106-48A7-A29D-74E22D7E60E7}"/>
+						<CurrentStateRef Name="Battle" ID="{E029BA0F-E8C9-4020-B3FC-AAD2640AB0A3}"/>
+						<CurrentStateRef Name="Alive" ID="{7971D935-A1D1-4353-BBA6-75873744C7F0}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

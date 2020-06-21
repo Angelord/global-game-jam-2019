@@ -15,7 +15,7 @@ MonoBehaviour:
   DeathEffect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 39a504909a253a04c95e61fcc4d6b3f9,
+    WwiseObjectReference: {fileID: 11400000, guid: cda0adf178a8837458d3c519e013d70a,
       type: 2}
   AttackHouseEffect:
     idInternal: 0
@@ -30,4 +30,5 @@ MonoBehaviour:
   RangedAttackEffect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: e9180538bb24907428459e831972c567,
+      type: 2}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{19A3B2AE-D901-4D19-B3A2-27978F62654C}" SchemaVersion="97">
+	<Triggers>
+		<WorkUnit Name="Treehouse Trouble" ID="{19A3B2AE-D901-4D19-B3A2-27978F62654C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Trigger Name="Game_Over" ID="{82F1DD92-98D8-42D4-B0C5-DFC7D9FD70E8}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Triggers>
+</WwiseDocument>

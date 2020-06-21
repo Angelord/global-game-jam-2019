@@ -432,6 +432,11 @@
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Spider_Death" ID="{6828B1DF-F120-4194-8C9C-B6C5A9F589B5}" ShortID="102165274">
 					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -445,9 +450,14 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-8</Value>
+								<Value>-10</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -508,6 +518,11 @@
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Spider_Lay_Egg" ID="{FCEB1EAA-E264-4402-BEEA-89AD007A0E66}" ShortID="382929963">
 					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -521,9 +536,14 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>-12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1027,6 +1047,112 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="TT_SFX_Player_Death" ID="{F9CEAAEE-D3A3-4F42-ADB9-1B5626FA1217}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</BlendContainer>
+				<BlendContainer Name="Skeleton_Attack" ID="{4D1E2176-9071-4EB6-BABE-2B56A4724AF3}" ShortID="761285721">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{5FB92060-8038-46B9-9C08-3529386C0925}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Min" Type="Real64" Value="-100"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C561A142-AD03-4312-B2EC-6A64CE31A48A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{140E54E9-043F-46FA-A9D2-7BA965BFCA0A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="TT_Skeleton_Attack" ID="{B1ED1F4F-F7CB-4138-831E-FB115854F350}" ShortID="509648027">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C561A142-AD03-4312-B2EC-6A64CE31A48A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{140E54E9-043F-46FA-A9D2-7BA965BFCA0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TT_Skeleton_Attack" ID="{2D55266A-7A70-4AF0-9333-1BABF6A2013D}">
+									<Language>SFX</Language>
+									<AudioFile>TT_Skeleton_Attack.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="220425259"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="TT_Skeleton_Attack" ID="{2D55266A-7A70-4AF0-9333-1BABF6A2013D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</BlendContainer>
+				<BlendContainer Name="Skeleton_Death" ID="{EEA344BD-EFC3-4592-81DC-8E3D89460ED6}" ShortID="743147824">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{0692BA67-3881-420F-8DEC-0855671CCEAE}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="100"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C561A142-AD03-4312-B2EC-6A64CE31A48A}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{140E54E9-043F-46FA-A9D2-7BA965BFCA0A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="TT_Skeleton_Death" ID="{333E9305-1706-4E20-9B79-64FD7C3A27A2}" ShortID="433554478">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C561A142-AD03-4312-B2EC-6A64CE31A48A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{140E54E9-043F-46FA-A9D2-7BA965BFCA0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TT_Skeleton_Death" ID="{343700AA-B6C1-4F16-9CB8-C5F003720816}">
+									<Language>SFX</Language>
+									<AudioFile>TT_Skeleton_Death.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="862638481"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="TT_Skeleton_Death" ID="{343700AA-B6C1-4F16-9CB8-C5F003720816}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

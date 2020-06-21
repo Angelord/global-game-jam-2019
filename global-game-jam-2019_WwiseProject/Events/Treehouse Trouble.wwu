@@ -181,6 +181,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Skeleton_Death" ID="{7439BD1E-F656-4C0E-BD51-0AC30D1B55AD}">
+							<ChildrenList>
+								<Action Name="" ID="{29713CEB-A5E0-4825-8733-6AF682AA6BBC}" ShortID="783149578">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Skeleton_Death" ID="{EEA344BD-EFC3-4592-81DC-8E3D89460ED6}" WorkUnitID="{B432885F-2BF7-49AA-AF06-95394763C721}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Skeleton_Attack" ID="{D9726DD7-039B-488E-BCA5-482B68623FD8}">
+							<ChildrenList>
+								<Action Name="" ID="{CA479052-E5EE-4744-AECE-BD85DED24F15}" ShortID="888989544">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Skeleton_Attack" ID="{4D1E2176-9071-4EB6-BABE-2B56A4724AF3}" WorkUnitID="{B432885F-2BF7-49AA-AF06-95394763C721}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{20F0D511-05BC-4CFB-8F95-5DB779302217}" ShortID="758749016">
@@ -211,6 +233,43 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Explore" ID="{86BAF481-A106-48A7-A29D-74E22D7E60E7}" WorkUnitID="{5029179B-0688-4BE6-9488-0D99F85B1EC3}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Music_Death" ID="{156726E1-9E25-4EF1-8969-A7E62B0A9C0F}">
+							<ChildrenList>
+								<Action Name="" ID="{673DCDEE-9793-4925-BF64-C597C3DBD705}" ShortID="6081927">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TT_Game_Over" ID="{4F0EEA92-24E3-4012-A46A-63D4AE6A4D57}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BE139DC0-B044-4186-B74E-91420A0182E1}" ShortID="683843153">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Players_Death" ID="{D731442C-BFDF-49A6-B9B9-AFE2C75B2BB8}" WorkUnitID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{59F3FB7A-1E39-4D4F-ADB2-A820A4A2444D}" ShortID="342480510">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Battle" ID="{EA6E5A4D-B052-4549-98C5-ABD8DE272B07}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

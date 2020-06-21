@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C3FD8C83-C5B9-4FA6-AF7C-A04D53D79E80}" SchemaVersion="97">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{C3FD8C83-C5B9-4FA6-AF7C-A04D53D79E80}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C3FD8C83-C5B9-4FA6-AF7C-A04D53D79E80}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Treehouse Trouble" ID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

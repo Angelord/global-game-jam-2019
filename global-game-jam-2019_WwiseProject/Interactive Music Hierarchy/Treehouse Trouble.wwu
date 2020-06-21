@@ -18,6 +18,34 @@
 					<ChildrenList>
 						<MusicPlaylistContainer Name="Music_Battle" ID="{EA6E5A4D-B052-4549-98C5-ABD8DE272B07}" ShortID="711085508">
 							<PropertyList>
+								<Property Name="PlaybackSpeed" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{71699182-C6DB-43B3-BB86-A2B22AF78439}" ShortID="370406918">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Players_Death" ID="{D731442C-BFDF-49A6-B9B9-AFE2C75B2BB8}" WorkUnitID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{E90E9294-205B-485E-8B5D-A008CACB236F}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.25</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>5</XPos>
+														<YPos>1</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 								<Property Name="Tempo" Type="Real64" Value="115"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -426,7 +454,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>23.01969</XPos>
-																				<YPos>-0</YPos>
+																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																			</Point>
 																			<Point>
@@ -474,7 +502,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>16.32385</XPos>
-																				<YPos>-0</YPos>
+																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																			</Point>
 																			<Point>
@@ -692,7 +720,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>65.26832</XPos>
-																				<YPos>-0</YPos>
+																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																			</Point>
 																			<Point>
@@ -736,7 +764,7 @@
 																			</Point>
 																			<Point>
 																				<XPos>36.41138</XPos>
-																				<YPos>-0</YPos>
+																				<YPos>0</YPos>
 																				<Flags>0</Flags>
 																			</Point>
 																			<Point>
@@ -778,6 +806,15 @@
 									<TransitionInfo/>
 								</MusicTransition>
 							</TransitionList>
+							<StingerList>
+								<MusicStinger Name="" ID="{82671AB8-929D-4554-A730-0B4637BB44BE}">
+									<PropertyList>
+										<Property Name="PlaySegmentAt" Type="int16" Value="3"/>
+									</PropertyList>
+									<TriggerRef Name="Game_Over" ID="{82F1DD92-98D8-42D4-B0C5-DFC7D9FD70E8}" WorkUnitID="{19A3B2AE-D901-4D19-B3A2-27978F62654C}"/>
+									<SegmentRef Name="TT_Game_Over" ID="{4F0EEA92-24E3-4012-A46A-63D4AE6A4D57}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+								</MusicStinger>
+							</StingerList>
 							<Playlist>
 								<MusicPlaylistItem Name="" ID="{2B675AC8-FF28-4B63-96BE-E13BEA176F16}" ShortID="1031107096">
 									<ChildrenList>
@@ -1531,6 +1568,73 @@
 								</MusicPlaylistItem>
 							</Playlist>
 						</MusicPlaylistContainer>
+						<MusicSegment Name="TT_Game_Over" ID="{4F0EEA92-24E3-4012-A46A-63D4AE6A4D57}" ShortID="381614115">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="10434.7916666667"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{C561A142-AD03-4312-B2EC-6A64CE31A48A}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{140E54E9-043F-46FA-A9D2-7BA965BFCA0A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="TT_Game_Over" ID="{78305B12-891F-4D40-8509-A510A35C6E50}" ShortID="466112603">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{140E54E9-043F-46FA-A9D2-7BA965BFCA0A}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="TT_Game_Over" ID="{C952F65A-3A62-4E53-A1A6-9C18187E736F}">
+											<Language>SFX</Language>
+											<AudioFile>TT_Game_Over.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="791122231"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{6C8EEDAF-391F-411C-AAAA-A2A6609B7F77}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{95A56112-56D7-4F69-AE1E-9E3F6884CBC7}">
+											<ClipList>
+												<MusicClip Name="TT_Game_Over" ID="{158C1FAF-524A-468D-AC42-C39090BAACE3}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="10434.7916666667"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="TT_Game_Over" ID="{C952F65A-3A62-4E53-A1A6-9C18187E736F}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{317B9EDE-8ACE-49BA-8366-0CE88B20B7DC}"/>
+								<MusicCue Name="Exit Cue" ID="{04451313-6180-4516-8B34-5E054FCCAFF2}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="10434.7916666667"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
 					</ChildrenList>
 					<StateInfo>
 						<StateGroupList>
