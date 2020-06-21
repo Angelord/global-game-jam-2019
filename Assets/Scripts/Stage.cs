@@ -96,6 +96,8 @@ public class Stage : MonoBehaviour {
 		Treehouse house = GameObject.FindGameObjectWithTag("Treehouse").GetComponent<Treehouse>();
 		cameraControl.Focus(house.transform.position);
 	
+		EventManager.TriggerEvent(new StageLostEvent());
+		
 		CustomCoroutine.WaitThenExecute( END_GAME_DELAY, () => {
 			gameOverScreen.transform.SetAsLastSibling();
 			gameOverScreen.SetActive(true);
@@ -105,11 +107,9 @@ public class Stage : MonoBehaviour {
 	public void Restart() {
 
 		Progress.Load();
-
+		
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
-
-	
 }
 
 public enum GameState {

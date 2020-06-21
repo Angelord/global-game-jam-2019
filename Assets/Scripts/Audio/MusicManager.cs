@@ -20,6 +20,8 @@ namespace Audio {
 
             EventManager.AddListener<GamePausedEvent>(HandleGamePausedEvent);
             EventManager.AddListener<GameResumedEvent>(HandleGameResumedEvent);
+            EventManager.AddListener<StageStartedEvent>(HandleStageStartedEvent);
+            EventManager.AddListener<StageLostEvent>(HandleStageLostEvent);
             EventManager.AddListener<WaveStartedEvent>(HandleWaveStartedEvent);
             EventManager.AddListener<WaveOverEvent>(HandleWaveOverEvent);
             EventManager.AddListener<ShopEnteredEvent>(HandleShopEnteredEvent);
@@ -29,6 +31,8 @@ namespace Audio {
         private void OnDestroy() {
             EventManager.RemoveListener<GamePausedEvent>(HandleGamePausedEvent);
             EventManager.RemoveListener<GameResumedEvent>(HandleGameResumedEvent);
+            EventManager.RemoveListener<StageStartedEvent>(HandleStageStartedEvent);
+            EventManager.RemoveListener<StageLostEvent>(HandleStageLostEvent);
             EventManager.RemoveListener<WaveStartedEvent>(HandleWaveStartedEvent);
             EventManager.RemoveListener<WaveOverEvent>(HandleWaveOverEvent);
             EventManager.RemoveListener<ShopEnteredEvent>(HandleShopEnteredEvent);
@@ -36,6 +40,15 @@ namespace Audio {
         }
 
         private void HandleGamePausedEvent(GamePausedEvent gameEvent) {
+            PauseState.SetValue();
+        }
+
+        private void HandleStageStartedEvent(StageStartedEvent gameEvent) {
+            ExploreState.SetValue();
+            PlayState.SetValue();
+        }
+
+        private void HandleStageLostEvent(StageLostEvent gameEvent) {
             PauseState.SetValue();
         }
 
