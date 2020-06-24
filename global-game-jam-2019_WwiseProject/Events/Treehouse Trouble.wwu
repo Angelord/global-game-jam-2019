@@ -240,36 +240,13 @@
 						</Event>
 						<Event Name="Music_Death" ID="{156726E1-9E25-4EF1-8969-A7E62B0A9C0F}">
 							<ChildrenList>
-								<Action Name="" ID="{673DCDEE-9793-4925-BF64-C597C3DBD705}" ShortID="6081927">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="TT_Game_Over" ID="{4F0EEA92-24E3-4012-A46A-63D4AE6A4D57}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{BE139DC0-B044-4186-B74E-91420A0182E1}" ShortID="683843153">
+								<Action Name="" ID="{FE88EEB2-1274-40AA-AB9E-C5F99F5D60E6}" ShortID="701682812">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="38"/>
-										<Property Name="Delay" Type="Real64" Value="1"/>
-										<Property Name="FadeInCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="2"/>
-										<Property Name="GameParameterValue" Type="Real64" Value="5"/>
+										<Property Name="ActionType" Type="int16" Value="22"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Players_Death" ID="{D731442C-BFDF-49A6-B9B9-AFE2C75B2BB8}" WorkUnitID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{59F3FB7A-1E39-4D4F-ADB2-A820A4A2444D}" ShortID="342480510">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="3"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Music_Battle" ID="{EA6E5A4D-B052-4549-98C5-ABD8DE272B07}" WorkUnitID="{7E86B7D4-A6A4-4ABD-AFD8-5403F00B134E}"/>
+											<ObjectRef Name="Death" ID="{8C6FC9CC-EE17-4AC4-90A5-65ADCBC1CC63}" WorkUnitID="{5029179B-0688-4BE6-9488-0D99F85B1EC3}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
