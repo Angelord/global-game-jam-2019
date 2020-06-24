@@ -22,15 +22,10 @@
 							<Position X="3" Y="0"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="Players_Death" ID="{D731442C-BFDF-49A6-B9B9-AFE2C75B2BB8}"/>
-							<Value>5</Value>
-						</RTPCValue>
-					</RTPCValueList>
+					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Play" ID="{6F52EA5F-6984-4FE5-A42F-0DE96027A018}"/>
-						<CurrentStateRef Name="Battle" ID="{E029BA0F-E8C9-4020-B3FC-AAD2640AB0A3}"/>
+						<CurrentStateRef Name="None" ID="{BF68AD51-D87B-4A68-A976-D1CFCFF3568F}"/>
 						<CurrentStateRef Name="Alive" ID="{7971D935-A1D1-4353-BBA6-75873744C7F0}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>

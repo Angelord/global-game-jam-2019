@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}" SchemaVersion="97" RootDocumentID="{C3FD8C83-C5B9-4FA6-AF7C-A04D53D79E80}">
 	<GameParameters>
-		<WorkUnit Name="Treehouse Trouble" ID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}" OwnerID="{C3FD8C83-C5B9-4FA6-AF7C-A04D53D79E80}" PersistMode="Nested">
-			<ChildrenList>
-				<GameParameter Name="Players_Death" ID="{D731442C-BFDF-49A6-B9B9-AFE2C75B2BB8}">
-					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="5"/>
-						<Property Name="Max" Type="Real64" Value="5"/>
-						<Property Name="RTPCRamping" Type="int16" Value="1"/>
-					</PropertyList>
-				</GameParameter>
-			</ChildrenList>
-		</WorkUnit>
+		<WorkUnit Name="Treehouse Trouble" ID="{238AA07B-9BA7-41A8-93F7-E1D3C3FBE5AE}" OwnerID="{C3FD8C83-C5B9-4FA6-AF7C-A04D53D79E80}" PersistMode="Nested"/>
 	</GameParameters>
 </WwiseDocument>
