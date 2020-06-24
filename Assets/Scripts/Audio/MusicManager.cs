@@ -6,6 +6,7 @@ namespace Audio {
         private static bool musicInitialized = false;
 
         public AK.Wwise.Event MusicStartEvent;
+        public AK.Wwise.Event MusicDeathEvent;
         public AK.Wwise.State PauseState;
         public AK.Wwise.State PlayState;
         public AK.Wwise.State ExploreState;
@@ -49,6 +50,7 @@ namespace Audio {
         }
 
         private void HandleStageLostEvent(StageLostEvent gameEvent) {
+            MusicDeathEvent.Post(gameObject);
             PauseState.SetValue();
         }
 

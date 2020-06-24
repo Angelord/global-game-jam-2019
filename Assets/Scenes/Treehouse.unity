@@ -21644,6 +21644,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 85a33851d335e594aa6d584af8627fdd,
       type: 2}
+  MusicDeathEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ea7df6717e3899c41967c9f26ffa17ec,
+      type: 2}
   PauseState:
     idInternal: 0
     valueGuidInternal: 
