@@ -10,6 +10,7 @@ public class DeveloperControls : MonoBehaviour {
 	//Shift + X + 1 	 	- Kill all enemies
 	//Shift + X + 2		 	- Skip stage
 	//Shift + X + 3		 	- Gain 100 candy
+	//Shift + X + 4		 	- Lose the stage instantly
 
 	private int MAX_LEVELS = 6; 
 
@@ -60,6 +61,13 @@ public class DeveloperControls : MonoBehaviour {
 
 		if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Alpha3)) {
 			Progress.Candy += 100;
-		}	
+		}
+
+		if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.X) && Input.GetKeyDown(KeyCode.Alpha4)) {
+			GameObject stageObj = GameObject.Find("Stage");
+			if(stageObj != null) {
+				stageObj.GetComponent<Stage>().StageLost();
+			}
+		}
 	}
 }
