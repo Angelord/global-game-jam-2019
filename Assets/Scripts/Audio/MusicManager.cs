@@ -3,6 +3,8 @@
 namespace Audio {
     public class MusicManager : MonoBehaviour {
 
+        private const float SET_BATTLE_STATE_DELAY = 2.7f;
+        
         private static bool musicInitialized = false;
 
         public AK.Wwise.Event MusicStartEvent;
@@ -59,7 +61,11 @@ namespace Audio {
         }
 
         private void HandleWaveStartedEvent(WaveStartedEvent gameEvent) {
-            BattleState.SetValue();
+            CustomCoroutine.WaitThenExecute(SET_BATTLE_STATE_DELAY, () => {
+                if (EnemySpawner.IsInWave) { // Make sure the wave didn't end while we were waiting
+                    BattleState.SetValue();
+                }
+            });
         }
         
         private void HandleWaveOverEvent(WaveOverEvent gameEvent) {

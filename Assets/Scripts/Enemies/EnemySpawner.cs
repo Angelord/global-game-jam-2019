@@ -17,6 +17,9 @@ public class EnemySpawner : MonoBehaviour {
     private int waveIndex = 0;
     private int lastSpawnPoint = 0;
     private int livingEnemies;
+    private static bool isInWave = false;
+
+    public static bool IsInWave => isInWave;
 
     private Wave CurrentWave { get { return waves[waveIndex]; } }
 
@@ -69,6 +72,7 @@ public class EnemySpawner : MonoBehaviour {
 
         yield return new WaitForSeconds(breakTimes);
 
+        isInWave = true;
         EventManager.TriggerEvent(new WaveStartedEvent());
         stage.WaveStarted(waveIndex);
 
@@ -113,6 +117,7 @@ public class EnemySpawner : MonoBehaviour {
     private void EndWave() {
         
         waveIndex++;
+        isInWave = false;
         EventManager.TriggerEvent(new WaveOverEvent());
         if(waveIndex == waves.Count) {
             stage.StageOver();
